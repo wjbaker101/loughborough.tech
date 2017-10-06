@@ -89,14 +89,6 @@
                         </div>
                     </article>
                     <article class="committee-container">
-                        <div class="face-container"><div class="face niall"></div></div>
-                        <div class="description">
-                            <p class="name">Niall Perri</p>
-                            <p class="role">TREASURER</p>
-                            <p class="course">Computer Science</p>
-                        </div>
-                    </article>
-                    <article class="committee-container">
                         <div class="face-container"><div class="face jas"></div></div>
                         <div class="description">
                             <p class="name">Jasmeen Tatani</p>
