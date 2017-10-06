@@ -17,30 +17,26 @@
             
             .logo-container
             {
-                height: 302px;
                 max-width: 500px;
+                max-height: 302px;
                 margin: 0 auto;
                 position: relative;
+            }
+            
+            #logo-background
+            {
+                width: 100%;
+                height: calc(100% - 10px); /* -10px to prevent "black area under logo" issue */
+                position: absolute;
+                left: 0;
+                z-index: -1;
                 background-color: #000;
             }
             
-            .logo-container > *
-            {
-                width: 100%;
-                height: 100%;
-                position: absolute;
-                top: 0;
-                left: 0;
-            }
-            
-            .logo-container > *:not(#logo-background)
-            {
-                pointer-events: none;
-            }
-            
-            .logo-container img
+            .logo-container .logo
             {
                 z-index: 1;
+                pointer-events: none;
             }
             
             .title-container strong
@@ -166,10 +162,10 @@
     <body id="top">
         <?php displayHeader(); ?>
         <div class="title-container">
-            <div class="cell cell-middle text-centered">
+            <div class="cell cell-middle hpadding-small text-centered">
                 <div class="logo-container">
                     <canvas id="logo-background" resize></canvas>
-                    <img src="/resources/images/title-logo.png" width="500">
+                    <img class="logo" src="/resources/images/title-logo.png" width="500">
                 </div>
                 <h3 class="vpadding-small">Loughborough University's <strong>Tech and Coding</strong> Society</h3>
                 <p><a href="https://www.lsu.co.uk/society/lsuhack/" target="_blank"><button>Join</button></a></p>
