@@ -4,3 +4,5 @@
 /resources/style/.sass-cache
 /resources/style/css/
 *.bat
+/resources/page/database.php
+php_errors.log
