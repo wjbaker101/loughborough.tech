@@ -204,6 +204,19 @@ $sizes:
     display: table-cell;
     vertical-align: top;
     
+    &.l1 { width: 8.33%; }
+    &.l2 { width: 16.66%; }
+    &.l3 { width: 25%; }
+    &.l4 { width: 33.33%; }
+    &.l5 { width: 41.66%; }
+    &.l6 { width: 50%; }
+    &.l7 { width: 58.33%; }
+    &.l8 { width: 66.66%; }
+    &.l9 { width: 75%; }
+    &.l10 { width: 83.33%; }
+    &.l11 { width: 91.66%; }
+    &.l12 { width: 100%; display: block; }
+    
     @media screen and (max-width: $breakpoint-large)
     {
         &.m1 { width: 8.33%; }
@@ -217,7 +230,7 @@ $sizes:
         &.m9 { width: 75%; }
         &.m10 { width: 83.33%; }
         &.m11 { width: 91.66%; }
-        &.m12 { width: 100%; }
+        &.m12 { width: 100%; display: block; }
     }
     
     @media screen and (max-width: $breakpoint-small)
@@ -240,19 +253,6 @@ $sizes:
 .cell-top { vertical-align: top; }
 .cell-middle { vertical-align: middle; }
 .cell-bottom { vertical-align: bottom; }
-
-.cell-1 { width: 8.33%; }
-.cell-2 { width: 16.66%; }
-.cell-3 { width: 25%; }
-.cell-4 { width: 33.33%; }
-.cell-5 { width: 41.66%; }
-.cell-6 { width: 50%; }
-.cell-7 { width: 58.33%; }
-.cell-8 { width: 66.66%; }
-.cell-9 { width: 75%; }
-.cell-10 { width: 83.33%; }
-.cell-11 { width: 91.66%; }
-.cell-12 { width: 100%; }
 
 h1, h2, h3, h4
 {
