@@ -7,38 +7,22 @@
         <?php displayHead(); ?>
         
         <style>
+            .loading-container.done
+            {
+                opacity: 0;
+                transition: opacity 0.5s;
+            }
+            
             .events-container
             {
-                max-width: 1024px;
-                margin: 0 auto;
+                border-spacing: 1em;
+                opacity: 1;
+                transition: opacity 0.5s;
             }
             
-            .events-container article
+            .events-container.loaded
             {
-                padding: 3em 2em;
-                margin: 0 auto;
-            }
-            
-            .events-container article .valign
-            {
-                width: 100%;
-                display: table;
-            }
-            
-            .events-container article .valign .content
-            {
-                display: table-cell;
-                vertical-align: middle;
-            }
-            
-            .events-container article .valign .container .content
-            {
-                padding-right: 2em;
-            }
-            
-            .events-container article .valign .content.right
-            {
-                text-align: right;
+                opacity: 1;
             }
             
             .events-container article.past
@@ -46,73 +30,111 @@
                 opacity: 0.25;
             }
             
-            .events-container article::after
+            .events-container article
             {
-                content: '';
-                display: table;
-                clear: both;
+                border: 1px solid #edeef0;
+                border-bottom: 2px solid #4ac0de;
+                transition: border-color 0.5s;
             }
             
-            .events-container article .info span
+            .events-container article:hover
             {
-                display: block;
+                border-color: #4ac0de;
+                border-bottom: 2px solid #4ac0de;
             }
             
-            .events-container article .info span.category
+            .events-container article .image
             {
-                display: inline;
-                vertical-align: middle;
-                padding: 0.3em;
-                border: 2px solid #4ac0de;
-                font-weight: bold;
-                font-size: 0.6em;
-                text-transform: uppercase;
-                text-shadow: none;
+                max-width: 100%;
+                max-height: 175px;
             }
             
-            .events-container article .info span.title
-            {
-                margin-bottom: 0.75em;
-                font-size: 1.5em;
-                transition: text-shadow 0.25s;
-            }
-            
-            .events-container article .info span.title .text
-            {
-                display: inline;
-                vertical-align: middle;
-            }
-            
-            .events-container article .info span.location
-            {
-                font-size: 0.85em;
-            }
-            
-            .events-container article .info span.date
+            .events-container article .date
             {
                 font-weight: bold;
-            }
-            
-            @media screen and (max-width: 720px)
-            {
-                .events-container article .valign .content
-                {
-                    display: block;
-                    margin-bottom: 2em;
-                }
-                
-                .events-container article .valign .container .content
-                {
-                    padding-right: 0;
-                }
-                
-                .events-container article .valign .content.right
-                {
-                    text-align: center;
-                    margin-bottom: 0;
-                }
             }
         </style>
+        
+        <script>
+            window.addEventListener('load', () =>
+            {
+                const getDay = (index = 0) =>
+                {
+                    const values = ['MON', 'TUES', 'WED', 'THURS', 'FRI', 'SAT', 'SUN'];
+                    
+                    if (index < 0 || index > 6) return 'ERR';
+                    
+                    return values[index];
+                };
+                
+                const getDateSuffixed = date =>
+                {
+                    const s = ['th', 'st', 'nd', 'rd'];
+                    v = date % 100;
+                    return date + (s[(v - 20) % 10] || s[v] || s[0]);
+                };
+                
+                const getMonth = (index = 0) =>
+                {
+                    const values = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
+                    
+                    if (index < 0 || index > 11) return 'ERR';
+                    
+                    return values[index];
+                };
+                
+                const formatDigits = (number = 0) =>
+                {
+                    if (number < 10) return `0${number}`;
+                    
+                    return String(number);
+                };
+                
+                techSoc.ajax.onSuccess(response =>
+                {
+                    const events = [...response.contents.events.upcoming, ...response.contents.events.past];
+                    
+                    const eventsHTML = events.map(event =>
+                    {
+                        const startDate = new Date(event.StartDate);
+                        const endDate = new Date(event.EndDate);
+                        
+                        const formattedDate = `${getDay(startDate.getDay())}, ${getDateSuffixed(startDate.getDate())} ${getMonth(startDate.getMonth())} ${startDate.getFullYear()}`;
+                        
+                        const formattedTime = `${formatDigits(startDate.getHours())}:${formatDigits(startDate.getMinutes())} - ${formatDigits(endDate.getHours())}:${formatDigits(endDate.getMinutes())}`;
+                        
+                        const pastEvent = (new Date() > endDate) ? ' past' : '';
+                        
+                        const location = (event.MapUrl !== null) ? `<a class="page-link-underline" href="https://maps.lboro.ac.uk/?l=${event.MapUrl}" target="_blank">${event.Name}</a>` : event.Name;
+                        
+                        return `<article class="cell l6 m12 vpadding-regular hpadding-small text-centered${pastEvent}">
+                                    <p><img class="image" src="${event.ImageFileLocation}"></p>
+                                    <h3>${event.Title}</h3>
+                                    <p class="date">${formattedDate}</p>
+                                    <p class="time">${formattedTime}</p>
+                                    <p class="location">${location}</p>
+                                </article>`
+                    });
+                    
+                    let output = '';
+                    
+                    for (let i = 0; i < eventsHTML.length; ++i)
+                    {
+                        if (i != 0 && i % 2 == 0) output += '</div>'
+                        if (i % 2 == 0) output += '<div class="cell-row">';
+                        
+                        output += eventsHTML[i];
+                    }
+                    
+                    document.querySelector('.events-container').innerHTML = output;
+                })
+                .onFailure(status =>
+                {
+                    techSoc.displayInfoMessage('.message-output', techSoc.createResponse('failed', `Unable to load events.<br>Error ${status}.`, 'ERROR'));
+                })
+                .send({ method: 'GET', url: 'resources/get-events.php' });
+            });
+        </script>
     </head>
     <body id="top">
         <?php displayHeader(); ?>
@@ -121,57 +143,10 @@
                 <section class="section">
                     <h1 class="text-centered">Society Events</h1>
                 </section>
-                <section class="events-container section vpadding-mid">
-                    <?php
-                        
-                        require_once($_SERVER['DOCUMENT_ROOT'] . '/resources/page/database.php');
-                        
-                        if (!$connection) return;
-                        
-                        $sql = "SELECT * FROM Events, Buildings WHERE Events.BuildingID=Buildings.BuildingID ORDER BY StartDate DESC";
-                        
-                        $query = $connection->query($sql);
-                        
-                        if (!$query) return;
-                        
-                        while($result = $query->fetch_assoc())
-                        {
-                            $date = (new DateTime($result["EndDate"]) < new DateTime()) ? "past" : "";
-                            
-                            echo '<article class="' . $date . '">
-                                    <div class="valign">
-                                        <div class="container">
-                                            <div class="content">
-                                                <div class="info">
-                                                    <span class="date">' . formatDate(new DateTime($result["StartDate"]), new DateTime($result["EndDate"])) . '</span>
-                                                    <span class="time">' . formatTime(new DateTime($result["StartDate"]), new DateTime($result["EndDate"])) . '</span>
-                                                </div>
-                                            </div>
-                                            <div class="content">
-                                                <div class="info">
-                                                    <span class="title"><span class="category">' . $result["Category"] . '</span> <span class="text">' . $result["Title"] . '</span></span>
-                                                    <a class="page-link-underline" href="https://maps.lboro.ac.uk/?l=' . $result["MapUrl"] . '" target="_blank"><span class="location">' . $result["Name"] . ' ' . $result["RoomNumber"] . '</span></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </article>';
-                        }
-                        
-                        function formatTime($dateTime1, $dateTime2)
-                        {
-                            return $dateTime1->format("H:i") . " - " . $dateTime2->format("H:i");
-                        }
-                        
-                        function formatDate($dateTime1, $dateTime2)
-                        {
-                            if ($dateTime1->format("dmY") === $dateTime2->format("dmY"))
-                            {
-                                return strtoupper($dateTime1->format("D, ")) . $dateTime1->format("jS ") . strtoupper($dateTime1->format("M Y"));
-                            }
-                        }
-                        
-                        ?>
+                <section class="section vpadding-mid">
+                    <div class="loading-container"></div>
+                    <div class="message-output text-centered"></div>
+                    <div class="events-container"></div>
                 </section>
             </div>
         </div>
