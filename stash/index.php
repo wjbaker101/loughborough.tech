@@ -26,6 +26,14 @@
                             <img src="/resources/images/stash/hoodie-back-preview.png" width="450">
                         </div>
                     </div>
+                    <div class="vpadding-regular clearfix">
+                        <div class="col-6 m12">
+                            <img src="/resources/images/stash/hoodie-white-front.jpg" width="450">
+                        </div>
+                        <div class="col-6 m12">
+                            <img src="/resources/images/stash/hoodie-white-back.jpg" width="450">
+                        </div>
+                    </div>
                     <a href="https://www.lsu.co.uk/society/lsuhack/" target="_blank"><button>Get Stash</button></a>
                 </section>
             </div>
