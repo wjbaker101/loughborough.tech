@@ -120,7 +120,7 @@
                     
                     for (let i = 0; i < eventsHTML.length; ++i)
                     {
-                        if (i != 0 && i % 2 == 0) output += '</div>'
+                        if (i != 0 && i % 2 == 0) output += '</div>';
                         if (i % 2 == 0) output += '<div class="cell-row">';
                         
                         output += eventsHTML[i];
