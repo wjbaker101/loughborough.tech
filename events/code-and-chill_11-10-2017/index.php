@@ -58,6 +58,16 @@
                         </div>
                     </div>
                 </section>
+                <section class="section vpadding-regular">
+                    <h2>Helpful Resources and Links:</h2>
+                    <ul>
+                        <li><a class="page-link-underline" href="https://www.w3schools.com/html/" target="_blank">w3schools HTML Reference</a></li>
+                        <li><a class="page-link-underline" href="https://www.codecademy.com/learn/make-a-website" target="_blank">Codecademy Make-a-Website Course</a></li>
+                        <li><a class="page-link-underline" href="https://www.codecademy.com/catalog/language/html-css" target="_blank">Codecademy HTML and CSS Courses</a></li>
+                        <li><a class="page-link-underline" href="http://sass-lang.com/" target="_blank">SASS Website</a></li>
+                        <li><a class="page-link-underline" href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html" target="_blank">SASS Documentation</a></li>
+                    </ul>
+                </section>
             </div>
         </div>
         <?php displayFooter(); ?>
