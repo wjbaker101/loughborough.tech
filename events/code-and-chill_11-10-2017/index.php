@@ -54,24 +54,10 @@
                             <h2>Advanced Topic</h2>
                             <p>If you've done HTML and CSS before, try out the advanced topic.</p>
                             <p>We will be going through the first steps of using SASS.</p>
-                            <p>SASS is a preprocessor for writing CSS. It makes it easier to read and write CSS</p>
+                            <p>SASS is a preprocessor for writing CSS. It makes it easier to read and write CSS.</p>
                         </div>
                     </div>
                 </section>
-                <!--<section class="section vpadding-regular">
-                    <a class="beginners-button unselectable hpadding-small vpadding-regular">Beginners Topic</a>
-                    <a class="advanced-button unselectable hpadding-small vpadding-regular">Advanced Topic</a>
-                </section>
-                <section class="topic-content-container section vpadding-regular">
-                    <article class="beginners">
-                        <h3>HTML and CSS</h3>
-                        <p>HTML and CSS are markup languages and the building blocks that make up the web.</p>
-                        <p>In this topic, you will learn how to structure HTML and style it with CSS.</p>
-                    </article>
-                    <article class="advanced hidden">
-                        <h3>SASS</h3>
-                    </article>
-                </section>-->
             </div>
         </div>
         <?php displayFooter(); ?>
