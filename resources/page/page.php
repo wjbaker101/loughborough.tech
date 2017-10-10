@@ -14,20 +14,10 @@ $navLinks = array
 
 $socialMediaLinks = array
 (
-    (object)["icon" => "fa-facebook", "url" => "https://facebook.com/lsuhack"],
-    (object)["icon" => "fa-twitter", "url" => "https://twitter.com/lsuhack"],
-    (object)["icon" => "fa-github", "url" => "https://github.com/lsuhack"]
+    (object)["icon" => "fa-facebook", "url" => "https://www.facebook.com/lborotechsoc"],
+    (object)["icon" => "fa-twitter", "url" => "https://twitter.com/lborotechsoc"],
+    (object)["icon" => "fa-instagram", "url" => "https://www.instagram.com/lborotechsoc/"]
 );
-
-initialise();
-
-/**
- * Sets up initial variables and settings before page is rendered.
- */
-function initialise()
-{
-    
-}
 
 /**
  * Displays defualt HTML tags inside <head></head> tags.
