@@ -56,74 +56,83 @@
         </style>
         
         <script>
-            function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
-
-            window.addEventListener('load', function () {
-                var getDay = function getDay() {
-                    var index = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
-
-                    var values = ['MON', 'TUES', 'WED', 'THURS', 'FRI', 'SAT', 'SUN'];
-
+            window.addEventListener('load', () =>
+            {
+                const getDay = (index = 0) =>
+                {
+                    const values = ['MON', 'TUES', 'WED', 'THURS', 'FRI', 'SAT', 'SUN'];
+                    
                     if (index < 0 || index > 6) return 'ERR';
-
+                    
                     return values[index];
                 };
-
-                var getDateSuffixed = function getDateSuffixed(date) {
-                    var s = ['th', 'st', 'nd', 'rd'];
+                
+                const getDateSuffixed = date =>
+                {
+                    const s = ['th', 'st', 'nd', 'rd'];
                     v = date % 100;
                     return date + (s[(v - 20) % 10] || s[v] || s[0]);
                 };
-
-                var getMonth = function getMonth() {
-                    var index = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
-
-                    var values = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
-
+                
+                const getMonth = (index = 0) =>
+                {
+                    const values = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
+                    
                     if (index < 0 || index > 11) return 'ERR';
-
+                    
                     return values[index];
                 };
-
-                var formatDigits = function formatDigits() {
-                    var number = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
-
-                    if (number < 10) return '0' + number;
-
+                
+                const formatDigits = (number = 0) =>
+                {
+                    if (number < 10) return `0${number}`;
+                    
                     return String(number);
                 };
-
-                techSoc.ajax.onSuccess(function (response) {
-                    var events = [].concat(_toConsumableArray(response.contents.events.upcoming), _toConsumableArray(response.contents.events.past));
-
-                    var eventsHTML = events.map(function (event) {
-                        var startDate = new Date(event.StartDate);
-                        var endDate = new Date(event.EndDate);
-
-                        var formattedDate = getDay(startDate.getDay()) + ', ' + getDateSuffixed(startDate.getDate()) + ' ' + getMonth(startDate.getMonth()) + ' ' + startDate.getFullYear();
-
-                        var formattedTime = formatDigits(startDate.getHours()) + ':' + formatDigits(startDate.getMinutes()) + ' - ' + formatDigits(endDate.getHours()) + ':' + formatDigits(endDate.getMinutes());
-
-                        var pastEvent = new Date() > endDate ? ' past' : '';
-
-                        var location = event.MapUrl !== null ? '<a class="page-link-underline" href="https://maps.lboro.ac.uk/?l=' + event.MapUrl + '" target="_blank">' + event.Name + '</a>' : event.Name;
-
-                        return '<article class="cell l6 m12 vpadding-regular hpadding-small text-centered' + pastEvent + '"><p>' + (event.EventURL !== null ? '<a href="' + event.EventURL + '">' : '') + '<img class="image" src="' + event.ImageFileLocation + '"></p><h3>' + event.Title + '</h3>' + (event.EventURL !== null ? '</a>' : '') + '<p class="date">' + formattedDate + '</p><p class="time">' + formattedTime + '</p><p class="location">' + location + '</p></article>';
+                
+                techSoc.ajax.onSuccess(response =>
+                {
+                    const events = [...response.contents.events.upcoming, ...response.contents.events.past];
+                    
+                    const eventsHTML = events.map(event =>
+                    {
+                        const startDate = new Date(event.StartDate);
+                        const endDate = new Date(event.EndDate);
+                        
+                        const formattedDate = `${getDay(startDate.getDay())}, ${getDateSuffixed(startDate.getDate())} ${getMonth(startDate.getMonth())} ${startDate.getFullYear()}`;
+                        
+                        const formattedTime = `${formatDigits(startDate.getHours())}:${formatDigits(startDate.getMinutes())} - ${formatDigits(endDate.getHours())}:${formatDigits(endDate.getMinutes())}`;
+                        
+                        const pastEvent = (new Date() > endDate) ? ' past' : '';
+                        
+                        const location = (event.MapUrl !== null) ? `<a class="page-link-underline" href="https://maps.lboro.ac.uk/?l=${event.MapUrl}" target="_blank">${event.Name}</a>` : event.Name;
+                        
+                        return `<article class="cell l6 m12 vpadding-regular hpadding-small text-centered${pastEvent}">
+                                    <p><img class="image" src="${event.ImageFileLocation}"></p>
+                                    <h3>${event.Title}</h3>
+                                    <p class="date">${formattedDate}</p>
+                                    <p class="time">${formattedTime}</p>
+                                    <p class="location">${location}</p>
+                                </article>`
                     });
-
-                    var output = '';
-
-                    for (var i = 0; i < eventsHTML.length; ++i) {
-                        if (i != 0 && i % 2 == 0) output += '</div>';
+                    
+                    let output = '';
+                    
+                    for (let i = 0; i < eventsHTML.length; ++i)
+                    {
+                        if (i != 0 && i % 2 == 0) output += '</div>'
                         if (i % 2 == 0) output += '<div class="cell-row">';
-
+                        
                         output += eventsHTML[i];
                     }
-
+                    
                     document.querySelector('.events-container').innerHTML = output;
-                }).onFailure(function (status) {
-                    techSoc.displayInfoMessage('.message-output', techSoc.createResponse('failed', 'Unable to load events.<br>Error ' + status + '.', 'ERROR'));
-                }).send({ method: 'GET', url: 'resources/get-events.php' });
+                })
+                .onFailure(status =>
+                {
+                    techSoc.displayInfoMessage('.message-output', techSoc.createResponse('failed', `Unable to load events.<br>Error ${status}.`, 'ERROR'));
+                })
+                .send({ method: 'GET', url: 'resources/get-events.php' });
             });
         </script>
     </head>
