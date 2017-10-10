@@ -143,20 +143,21 @@
         </script>
         
         <script>
-            (function () {
-                window.addEventListener('load', function () {
-                    var scrollArrowButton = document.querySelector('.scroll-indicator');
+            window.addEventListener('load', () =>
+            {
+                const scrollArrowButton = document.querySelector('.scroll-indicator');
 
-                    var onWindowScroll = function onWindowScroll() {
-                        if (window.scrollY > 50) {
-                            scrollArrowButton.classList.add('scrolled');
-                            window.removeEventListener('scroll', onWindowScroll);
-                        }
-                    };
+                const onWindowScroll = () =>
+                {
+                    if (window.scrollY > 50)
+                    {
+                        scrollArrowButton.classList.add('scrolled');
+                        window.removeEventListener('scroll', onWindowScroll);
+                    }
+                };
 
-                    window.addEventListener('scroll', onWindowScroll);
-                });
-            })();
+                window.addEventListener('scroll', onWindowScroll);
+            });
         </script>
     </head>
     <body id="top">
