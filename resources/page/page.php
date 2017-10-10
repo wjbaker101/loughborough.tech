@@ -62,8 +62,10 @@ function displayHeader()
     {
         // Creates each link in the format:
         // <a href="url">name</a>
-        $links .= "<a href=" . $navLinks[$i]->url . ">" . $navLinks[$i]->name . "</a>";
+        $links .= "<a href='" . $navLinks[$i]->url . "'>" . $navLinks[$i]->name . "</a>";
     }
+    
+    $links .= '<a class="page-link-underline" href="/events/code-and-chill_11-10-2017/" style="color:#d11f26">Code and Chill!</a>';
     
     $html = <<<EOT
         <header role="header" class="hpadding-small vpadding-mid bg-white">
