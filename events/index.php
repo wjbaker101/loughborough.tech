@@ -108,7 +108,7 @@
 
                         var location = event.MapUrl !== null ? '<a class="page-link-underline" href="https://maps.lboro.ac.uk/?l=' + event.MapUrl + '" target="_blank">' + event.Name + '</a>' : event.Name;
 
-                        return '<article class="cell l6 m12 vpadding-regular hpadding-small text-centered' + pastEvent + '">\n                                    <p><img class="image" src="' + event.ImageFileLocation + '"></p>\n                                    <h3>' + event.Title + '</h3>\n                                    <p class="date">' + formattedDate + '</p>\n                                    <p class="time">' + formattedTime + '</p>\n                                    <p class="location">' + location + '</p>\n                                </article>';
+                        return '<article class="cell l6 m12 vpadding-regular hpadding-small text-centered' + pastEvent + '"><p>' + (event.EventURL !== null ? '<a href="' + event.EventURL + '">' : '') + '<img class="image" src="' + event.ImageFileLocation + '"></p><h3>' + event.Title + '</h3>' + (event.EventURL !== null ? '</a>' : '') + '<p class="date">' + formattedDate + '</p><p class="time">' + formattedTime + '</p><p class="location">' + location + '</p></article>';
                     });
 
                     var output = '';
