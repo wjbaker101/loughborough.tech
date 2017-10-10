@@ -108,12 +108,14 @@
                         const location = (event.MapUrl !== null) ? `<a class="page-link-underline" href="https://maps.lboro.ac.uk/?l=${event.MapUrl}" target="_blank">${event.Name}</a>` : event.Name;
                         
                         return `<article class="cell l6 m12 vpadding-regular hpadding-small text-centered${pastEvent}">
-                                    <p><img class="image" src="${event.ImageFileLocation}"></p>
-                                    <h3>${event.Title}</h3>
+                                    ${(event.EventURL !== null) ? `<a href="${event.EventURL}">` : ''}
+                                        <p><img class="image" src="${event.ImageFileLocation}"></p>
+                                        <h3>${event.Title}</h3>
+                                    ${(event.EventURL !== null) ? '</a>' : ''}
                                     <p class="date">${formattedDate}</p>
                                     <p class="time">${formattedTime}</p>
                                     <p class="location">${location}</p>
-                                </article>`
+                                </article>`;
                     });
                     
                     let output = '';
