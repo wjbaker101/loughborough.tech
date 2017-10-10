@@ -16,7 +16,8 @@ $socialMediaLinks = array
 (
     (object)["icon" => "fa-facebook", "url" => "https://www.facebook.com/lborotechsoc"],
     (object)["icon" => "fa-twitter", "url" => "https://twitter.com/lborotechsoc"],
-    (object)["icon" => "fa-instagram", "url" => "https://www.instagram.com/lborotechsoc/"]
+    (object)["icon" => "fa-instagram", "url" => "https://www.instagram.com/lborotechsoc/"],
+    (object)["icon" => "fa-github", "url" => "https://github.com/wjbaker101/loughborough.tech/"]
 );
 
 /**
@@ -101,9 +102,13 @@ function displayFooter()
     $socialLinks = ""; // Stores the HTML code for the social media links
     for ($i = 0; $i < count($socialMediaLinks); ++$i)
     {
+        $socialUrl = $socialMediaLinks[$i]->url;
+        $socialIcon = $socialMediaLinks[$i]->icon;
+        
         // Creates each link in the format:
         // <a href="url"><i class="fa fa-icon"></i></a>
-        $socialLinks .= "<a href=\"" . $socialMediaLinks[$i]->url . "\" target=\"_blank\"><i class=\"fa " . $socialMediaLinks[$i]->icon . "\"></i></a>";
+        $socialLinks .= "<a class='hover-text-theme' href='{$socialUrl}' target='_blank' rel='nofollow'><i class='fa {$socialIcon}'></i></a>";
+        //$socialLinks .= "<a href=\"" . $socialMediaLinks[$i]->url . "\" target=\"_blank\" rel=""><i class=\"fa " . $socialMediaLinks[$i]->icon . "\"></i></a>";
     }
     
     $year = (new DateTime())->format("Y");
@@ -112,7 +117,8 @@ function displayFooter()
         <footer role="footer" class="hpadding-small vpadding-mid">
             <div class="content-width text-centered">
                 <section class="section navigation">
-                    ${links}
+                    <p>${links}</p>
+                    <p>${socialLinks}</p>
                 </section>
                 <section class="section copyright">
                     <p>Copyright &copy; 2016-${year} Loughborough Technology Society</p>
