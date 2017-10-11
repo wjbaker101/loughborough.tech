@@ -62,10 +62,33 @@
                             <p>If you've done HTML and CSS before, try out the advanced topic.</p>
                             <p>We will be going through the first steps of using SASS.</p>
                             <p>SASS is a preprocessor for writing CSS. It makes it easier to read and write CSS.</p>
+                            <h2>Instructions:</h2>
+                            <ol class="text-left">
+                                <li><a class="page-link-underline" href="http://rubyinstaller.org/" target="_blank">Install Ruby</a> if you are on Windows.</li>
+                                <li>Install SASS from <a href="http://sass-lang.com/install">here</a>.</li>
+                                <li>Topics we will cover:</li>
+                                <ul>
+                                    <li>Variables (e.g. Breakpoints, Colour Themes)</li>
+                                    <li>Maps</li>
+                                    <li>String Interpolation</li>
+                                    <li>Nesting (e.g. Media Queries)</li>
+                                    <li>Functions</li>
+                                    <li>Mixins</li>
+                                    <li>Partial Files and Imports</li>
+                                    <li>Extending</li>
+                                    <li>Operators</li>
+                                </ul>
+                            </ol>
                             <h2>Resources:</h2>
                             <ul class="text-left">
                                 <li><a class="page-link-underline" href="http://sass-lang.com/" target="_blank">SASS Website</a></li>
                                 <li><a class="page-link-underline" href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html" target="_blank">SASS Documentation</a></li>
+                            </ul>
+                            <h2>Further Reading:</h2>
+                            <p class="text-left">Have a look at these:</p>
+                            <ul class="text-left">
+                                <li><a class="page-link-underline" href="http://compass-style.org/">Compass</a></li>
+                                <li>An alternative to SASS: <a class="page-link-underline" href="http://lesscss.org/" target="_blank">LESS</a>.</li>
                             </ul>
                         </div>
                     </div>
