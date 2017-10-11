@@ -105,7 +105,7 @@
                         
                         const pastEvent = (new Date() > endDate) ? ' past' : '';
                         
-                        const location = (event.MapUrl !== null) ? `<a class="page-link-underline" href="https://maps.lboro.ac.uk/?l=${event.MapUrl}" target="_blank">${event.Name}</a>` : event.Name;
+                        const location = (event.MapUrl !== null) ? `<a class="page-link-underline" href="https://maps.lboro.ac.uk/?l=${event.MapUrl}" target="_blank">${event.Name} ${event.RoomNumber || ''}</a>` : event.Name;
                         
                         return `<article class="cell l6 m12 vpadding-regular hpadding-small text-centered${pastEvent}">
                                     ${(event.EventURL !== null) ? `<a href="${event.EventURL}">` : ''}
