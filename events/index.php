@@ -60,7 +60,7 @@
             {
                 const getDay = (index = 0) =>
                 {
-                    const values = ['MON', 'TUES', 'WED', 'THURS', 'FRI', 'SAT', 'SUN'];
+                    const values = ['SUN', 'MON', 'TUES', 'WED', 'THURS', 'FRI', 'SAT'];
                     
                     if (index < 0 || index > 6) return 'ERR';
                     
