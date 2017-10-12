@@ -201,7 +201,7 @@
                 <section class="section text-centered vpadding-mid">
                     <div class="content-text-width">
                         <h2>Keep up-to-date!</h2>
-                        <p>By joining the Loughborough Technology Society, you will be invited to our internal Slack Channel and receive emails about upcoming events and sessions.</p>
+                        <p>By joining the Loughborough Technology Society, you will be invited to our Discord and receive emails about upcoming events and sessions.</p>
                         <p>Feel free to stay up-to-date with us on social media or shoot us a facebook message if you have any questions!</p>
                         <p>
                             <a href="https://www.facebook.com/lborotechsoc/" target="_blank" rel="nofollow"><button><i class="fa fa-facebook"></i> Facebook</button></a>
