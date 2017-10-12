@@ -60,15 +60,6 @@
             {
                 margin-top: 0;
             }
-            
-            .discord-logo
-            {
-                width: 14px;
-                height: 13px;
-                display: inline-block;
-                vertical-align: middle;
-                background-image: url('/resources/images/discord-logo.svg');
-            }
         </style>
         
         <script src="/resources/external/paper.js"></script>
