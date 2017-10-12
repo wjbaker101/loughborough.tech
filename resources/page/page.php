@@ -9,7 +9,7 @@ $navLinks = array
     (object)["name" => "home", "url" => "/"],
     (object)["name" => "about", "url" => "/about/"],
     (object)["name" => "events", "url" => "/events/"],
-    (object)["name" => "stash", "url" => "/stash/"]
+    (object)["name" => "stash", "url" => "/stash/"],
 );
 
 $socialMediaLinks = array
@@ -17,7 +17,8 @@ $socialMediaLinks = array
     (object)["icon" => "fa-facebook", "url" => "https://www.facebook.com/lborotechsoc"],
     (object)["icon" => "fa-twitter", "url" => "https://twitter.com/lborotechsoc"],
     (object)["icon" => "fa-instagram", "url" => "https://www.instagram.com/lborotechsoc/"],
-    (object)["icon" => "fa-github", "url" => "https://github.com/wjbaker101/loughborough.tech/"]
+    (object)["icon" => "fa-github", "url" => "https://github.com/wjbaker101/loughborough.tech/"],
+    (object)["icon" => "discord-logo", "url" => "https://discord.gg/N7KxW2G"],
 );
 
 /**
@@ -48,15 +49,18 @@ function displayHeader()
 {
     global $navLinks; //Gets the navigation links from the global variable
     
-    $links = ""; // Stores the HTML code for the website links
-    for ($i = 0; $i < count($navLinks); ++$i)
+    // Creates each link in the format:
+    // <a href="url">name</a>
+    function createHeaderLinkHTML($navLink)
     {
-        // Creates each link in the format:
-        // <a href="url">name</a>
-        $links .= "<a href='" . $navLinks[$i]->url . "'>" . $navLinks[$i]->name . "</a>";
+        return "<a href='{$navLink->url}'>{$navLink->name}</a>";
     }
     
-    $links .= '<a class="page-link-underline" href="/events/code-and-chill_11-10-2017/" style="color:#d11f26">Code and Chill!</a>';
+    $links = "";
+    for ($i = 0; $i < count($navLinks); ++$i)
+    {
+        $links .= createHeaderLinkHTML($navLinks[$i]);
+    }
     
     $html = <<<EOT
         <header role="header" class="hpadding-small vpadding-mid bg-white">
@@ -91,24 +95,30 @@ function displayFooter()
 {
     global $navLinks, $socialMediaLinks; //Gets the navigation and social media links from the global variables
     
-    $links = ""; // Stores the HTML code for the website links
-    for ($i = 0; $i < count($navLinks); ++$i)
+    // Creates each link in the format:
+    // <a href="url" class="hover-text-theme">name</a>
+    function createFooterLinkHTML($navLink)
     {
-        // Creates each link in the format:
-        // <a href="url">name</a>
-        $links .= "<a href=" . $navLinks[$i]->url . " class='hover-text-theme'>" . $navLinks[$i]->name . "</a>";
+        return "<a href='{$navLink->url}' class='hover-text-theme'>{$navLink->name}</a>";
     }
     
-    $socialLinks = ""; // Stores the HTML code for the social media links
+    $links = "";
+    for ($i = 0; $i < count($navLinks); ++$i)
+    {
+        $links .= createFooterLinkHTML($navLinks[$i]);
+    }
+    
+    // Creates each link in the format:
+    // <a href="url"><i class="fa fa-icon"></i></a>
+    function createFooterSocialLinkHTML($socialLink)
+    {
+        return "<a class='hover-text-theme' href='{$socialLink->url}' target='_blank' rel='nofollow'><i class='fa {$socialLink->icon}'></i></a>";
+    }
+    
+    $socialLinks = "";
     for ($i = 0; $i < count($socialMediaLinks); ++$i)
     {
-        $socialUrl = $socialMediaLinks[$i]->url;
-        $socialIcon = $socialMediaLinks[$i]->icon;
-        
-        // Creates each link in the format:
-        // <a href="url"><i class="fa fa-icon"></i></a>
-        $socialLinks .= "<a class='hover-text-theme' href='{$socialUrl}' target='_blank' rel='nofollow'><i class='fa {$socialIcon}'></i></a>";
-        //$socialLinks .= "<a href=\"" . $socialMediaLinks[$i]->url . "\" target=\"_blank\" rel=""><i class=\"fa " . $socialMediaLinks[$i]->icon . "\"></i></a>";
+        $socialLinks .= createFooterSocialLinkHTML($socialMediaLinks[$i]);
     }
     
     $year = (new DateTime())->format("Y");
