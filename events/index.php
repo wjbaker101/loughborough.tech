@@ -90,14 +90,28 @@
                     return String(number);
                 };
                 
+                const parseDate = date =>
+                {
+                    const dateAndTime = date.split(' ');
+                    
+                    if (dateAndTime.length !== 2) throw new Error('Invalid date format.');
+                    
+                    const dates = dateAndTime[0].split('-');
+                    const times = dateAndTime[1].split(':');
+                    
+                    if (dates.length !== 3 || times.length !== 3) throw new Error('Invalid date format.');
+                    
+                    return new Date(dates[0], dates[1] - 1, dates[2], times[0], times[1], times[2]);
+                };
+                
                 techSoc.ajax.onSuccess(response =>
                 {
                     const events = [...response.contents.events.upcoming, ...response.contents.events.past];
                     
                     const eventsHTML = events.map(event =>
                     {
-                        const startDate = new Date(event.StartDate);
-                        const endDate = new Date(event.EndDate);
+                        const startDate = parseDate(event.StartDate);
+                        const endDate = parseDate(event.EndDate);
                         
                         const formattedDate = `${getDay(startDate.getDay())}, ${getDateSuffixed(startDate.getDate())} ${getMonth(startDate.getMonth())} ${startDate.getFullYear()}`;
                         
