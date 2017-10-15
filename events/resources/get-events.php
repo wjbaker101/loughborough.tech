@@ -17,7 +17,7 @@ if (!$connection)
 
 
 $now = (new DateTime())->format('Y-m-d H:m:i');
-$sqlData = "Title, StartDate, EndDate, Category, EventURL, Description, ImageFileLocation, MapUrl, RoomNumber, Name";
+$sqlData = "Title, StartDate, EndDate, Category, EventURL, Description, ImageFileLocation, FacebookURL, MapUrl, RoomNumber, Name";
 $sql = "SELECT {$sqlData} FROM Events, Buildings WHERE (Events.BuildingID = Buildings.BuildingID) AND (EndDate > '{$now}') ORDER BY EndDate ASC";
 
 $result = $connection->query($sql);

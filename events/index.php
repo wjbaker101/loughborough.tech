@@ -32,9 +32,38 @@
             
             .events-container article
             {
+                position: relative;
+                overflow: hidden;
                 border: 1px solid #edeef0;
                 border-bottom: 2px solid #4ac0de;
                 transition: border-color 0.5s;
+            }
+            
+            .events-container article .social-media
+            {
+                width: 150px;
+                height: 150px;
+                padding-left: 40px;
+                padding-top: 40px;
+                line-height: 1em;
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                border: 1px solid #4ac0de;
+                border-radius: 50%;
+                background-color: rgba(255, 255, 255, 0.8);
+                transform: translate(100%, 100%);
+                transition: transform 0.5s;
+            }
+            
+            .events-container article .social-media a
+            {
+                transition: color 0.5s;
+            }
+            
+            .events-container article:hover .social-media
+            {
+                transform: translate(50%, 50%);
             }
             
             .events-container article:hover
@@ -121,7 +150,13 @@
                         
                         const location = (event.MapUrl !== null) ? `<a class="page-link-underline" href="https://maps.lboro.ac.uk/?l=${event.MapUrl}" target="_blank">${event.Name} ${event.RoomNumber || ''}</a>` : event.Name;
                         
+                        let socialMediaUrls = [];
+                        if (event.FacebookURL !== null) socialMediaUrls.push(`<a class="hover-text-theme" href="https://facebook.com/events/${event.FacebookURL}" target="_blank" rel="nofollow"><i class="fa fa-facebook"></i></a>`);
+                        
+                        const socialMediaHTML = socialMediaUrls.length === 0 ? '' : `<div class="social-media text-left">${socialMediaUrls.join('')}</div>`;
+                        
                         return `<article class="cell l6 m12 vpadding-regular hpadding-small text-centered${pastEvent}">
+                                    ${socialMediaHTML}
                                     ${(event.EventURL !== null) ? `<a href="${event.EventURL}">` : ''}
                                         <p><img class="image" src="${event.ImageFileLocation}"></p>
                                         <h3>${event.Title}</h3>
