@@ -7,10 +7,16 @@
         <?php displayHead(); ?>
         
         <style>
+            .loading-container
+            {
+                max-height: 45px;
+            }
+            
             .loading-container.done
             {
+                max-height: 0;
                 opacity: 0;
-                transition: opacity 0.5s;
+                transition: opacity 0.5s, max-height 0.5s;
             }
             
             .events-container
@@ -133,8 +139,20 @@
                     return new Date(dates[0], dates[1] - 1, dates[2], times[0], times[1], times[2]);
                 };
                 
+                const hideLoadingIcon = () =>
+                {
+                    document.querySelector('.loading-container').classList.add('done');
+                };
+                
                 techSoc.ajax.onSuccess(response =>
                 {
+                    if (response.code !== 'success')
+                    {
+                        techSoc.displayInfoMessage('.message-output', response);
+                    
+                        hideLoadingIcon();
+                    }
+                    
                     const events = [...response.contents.events.upcoming, ...response.contents.events.past];
                     
                     const eventsHTML = events.map(event =>
@@ -178,10 +196,14 @@
                     }
                     
                     document.querySelector('.events-container').innerHTML = output;
+                    
+                    hideLoadingIcon();
                 })
                 .onFailure(status =>
                 {
                     techSoc.displayInfoMessage('.message-output', techSoc.createResponse('failed', `Unable to load events.<br>Error ${status}.`, 'ERROR'));
+                    
+                    hideLoadingIcon();
                 })
                 .send({ method: 'GET', url: 'resources/get-events.php' });
             });
@@ -194,8 +216,10 @@
                 <section class="section">
                     <h1 class="text-centered">Society Events</h1>
                 </section>
-                <section class="section vpadding-mid">
-                    <div class="loading-container"></div>
+                <section class="section vpadding-regular">
+                    <div class="loading-container text-centered">
+                        <img src="/resources/images/loading.svg" width="45" height="45">
+                    </div>
                     <div class="message-output text-centered"></div>
                     <div class="events-container"></div>
                 </section>
