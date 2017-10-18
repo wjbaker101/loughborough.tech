@@ -62,6 +62,8 @@ function displayHeader()
         $links .= createHeaderLinkHTML($navLinks[$i]);
     }
     
+    $links .= "<a href='https://lsu.co.uk/elections/vote/811' class='page-link-underline'>elections!</a>";
+    
     $html = <<<EOT
         <header role="header" class="hpadding-small vpadding-mid bg-white">
             <div class="content-width clearfix">
