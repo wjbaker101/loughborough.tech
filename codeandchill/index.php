@@ -108,8 +108,8 @@
         <?php displayHeader(); ?>
         <div class="page vpadding-regular">
             <div class="content-width hpadding-small">
-                <section class="section">
-                    <h1 class="cc-heading text-centered">Code and Chill</h1>
+                <section class="section text-centered">
+                    <img src="/resources/images/events/code-and-chill.png" width="135" height="150">
                 </section>
                 <section class="cc-container section vpadding-regular">
                     <article class="hpadding-small vpadding-regular clearfix">
