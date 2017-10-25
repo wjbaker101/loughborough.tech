@@ -200,6 +200,8 @@
                                         <li><a class="page-link-underline" href="https://www.codecademy.com/learn/make-a-website" target="_blank">Codecademy Make-a-Website Course</a></li>
                                         <li><a class="page-link-underline" href="https://www.codecademy.com/catalog/language/html-css" target="_blank">Codecademy HTML and CSS Courses</a></li>
                                     </ul>
+                                    <h2>View Slides:</h2>
+                                    <p><a href="https://drive.google.com/open?id=0B79kOzBclpj-dVU5NzhYQWdfa28" class="page-link-underline" target="_blank">Here!</a></p>
                                 </div>
                                 <div class="advanced-content cell l6 m12 hpadding-small vpadding-regular text-centered">
                                     <h2>Advanced Topic</h2>
@@ -258,6 +260,8 @@
                                         <li><a class="page-link-underline" href="https://www.codecademy.com/learn/make-a-website" target="_blank">Codecademy Make-a-Website Course</a></li>
                                         <li><a class="page-link-underline" href="https://www.codecademy.com/catalog/language/html-css" target="_blank">Codecademy HTML and CSS Courses</a></li>
                                     </ul>
+                                    <h2>View Slides:</h2>
+                                    <p><a href="https://drive.google.com/open?id=0B79kOzBclpj-TndwSU5ZNFZYRXM" class="page-link-underline" target="_blank">Here!</a></p>
                                 </div>
                                 <div class="advanced-content cell l6 m12 hpadding-small vpadding-regular text-centered">
                                     <h2>Advanced Topic</h2>
