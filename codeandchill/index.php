@@ -1,4 +1,4 @@
-<?php require ($_SERVER['DOCUMENT_ROOT'] . "/resources/page/page.php"); ?>
+<?php session_start(); require ($_SERVER['DOCUMENT_ROOT'] . "/resources/page/page.php"); ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -85,6 +85,18 @@
             {
                 border-bottom: 2px solid #d11f26; 
             }
+            
+            .sign-in-input
+            {
+                width: 500px;
+                max-width: 100%;
+            }
+            
+            .sign-in-container .stage1.hide,
+            .sign-in-container .stage2.hide
+            {
+                display: none;
+            }
         </style>
         
         <script>
@@ -101,6 +113,39 @@
                         e.classList.toggle('active');
                     });
                 });
+                
+                
+                <?php  if (!isset($_SESSION["signed"])) { ?>
+                const button = document.querySelector('.sign-in-button');
+                const signInContainer = document.querySelector('.sign-in-container');
+                
+                button.addEventListener('click', () =>
+                {
+                    const parameters =
+                    {
+                        email: signInContainer.querySelector('.sign-in-input').value,
+                    };
+                    
+                    techSoc.ajax.onSuccess(response =>
+                    {
+                        if (response.code === 'success')
+                        {
+                            signInContainer.querySelector('.stage1').classList.add('hide');
+                            signInContainer.querySelector('.stage2').classList.remove('hide');
+                        }
+                        else
+                        {
+                        
+                            console.log(response);
+                        }
+                    })
+                    .onFailure(status =>
+                    {
+                        
+                    })
+                    .send({ url: 'resources/signin.php', method: 'POST', parameters: parameters });
+                });
+                <?php } ?>
             });
         </script>
     </head>
@@ -111,6 +156,18 @@
                 <section class="section text-centered">
                     <img src="/resources/images/events/code-and-chill.png" width="135" height="150">
                 </section>
+                <?php  if (!isset($_SESSION["signed"])) { ?>
+                <section class="sign-in-container section vpadding-regular text-centered">
+                    <div class="stage1">
+                        <h2>Sign In!</h2>
+                        <p><input class="sign-in-input" type="text"></p>
+                        <p><button class="sign-in-button">Sign me in!</button></p>
+                    </div>
+                    <div class="stage2 hide">
+                        <p>Thank you for signing in!</p>
+                    </div>
+                </section>
+                <?php } ?>
                 <section class="cc-container section vpadding-regular">
                     <article class="hpadding-small vpadding-regular clearfix">
                         <h4 class="float-l">Session One:</h4>
