@@ -90,12 +90,26 @@
             {
                 width: 500px;
                 max-width: 100%;
+                border-color: #d00c14;
             }
             
             .sign-in-container .stage1.hide,
             .sign-in-container .stage2.hide
             {
                 display: none;
+            }
+            
+            .sign-in-button
+            {
+                background-color: #e41f28;
+                color: #fff;
+                border: 3px solid #e41f28;
+            }
+            
+            .sign-in-button:not(.reset-button):hover,
+            .sign-in-button:not(.reset-button):focus
+            {
+                background-color: #d00c14;
             }
         </style>
         
@@ -113,7 +127,6 @@
                         e.classList.toggle('active');
                     });
                 });
-                
                 
                 <?php  if (!isset($_SESSION["signed"])) { ?>
                 const button = document.querySelector('.sign-in-button');
@@ -159,9 +172,7 @@
                 <?php  if (!isset($_SESSION["signed"])) { ?>
                 <section class="sign-in-container section vpadding-regular text-centered">
                     <div class="stage1">
-                        <h2>Sign In!</h2>
-                        <p><input class="sign-in-input" type="text"></p>
-                        <p><button class="sign-in-button">Sign me in!</button></p>
+                        <input class="sign-in-input" type="text" placeholder="email@example.com"><button class="sign-in-button">Sign me in!</button>
                     </div>
                     <div class="stage2 hide">
                         <p>Thank you for signing in!</p>
