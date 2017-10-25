@@ -270,7 +270,22 @@
                                     <ul class="text-left">
                                         <li><a class="page-link-underline" href="https://nodejs.org/en/" target="_blank">Node.js Website</a></li>
                                         <li><a class="page-link-underline" href="https://www.w3schools.com/nodejs/default.asp" target="_blank">w3schools Node.js Tutorial</a></li>
+                                        <li><a class="page-link-underline" href="https://www.npmjs.com/" target="_blank">npm Website</a></li>
                                     </ul>
+                                    <h2>Instructions:</h2>
+                                    <ol class="text-left">
+                                        <li>Visit the Node.js website: <a class="page-link-underline" href="https://nodejs.org/en/download/" target="_blank">here</a>!</li>
+                                        <li>Download the LTS version of Node for your relevant operating system.</li>
+                                        <li>Open a terminal and run "node -v" to make sure it has installed correctly.</li>
+                                    </ol>
+                                    <h2>Further Reading:</h2>
+                                    <p class="text-left">Have a look at these:</p>
+                                    <ul class="text-left">
+                                        <li><a class="page-link-underline" href="https://expressjs.com/" target="_blank">Express JS</a></li>
+                                        <li><a class="page-link-underline" href="https://github.com/GoogleChrome/puppeteer" target="_blank">Headless Chrome Library</a></li>
+                                    </ul>
+                                    <h2>View Slides:</h2>
+                                    <p><a href="https://drive.google.com/open?id=0B9CDy1rp7c80LVBHdVRZX1FoNlE" class="page-link-underline" target="_blank">Here!</a></p>
                                 </div>
                             </div>
                         </div>
