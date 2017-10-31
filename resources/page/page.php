@@ -6,10 +6,10 @@
  */
 $navLinks = array
 (
-    (object)["name" => "home", "url" => "http://loughborough.tech/"],
-    (object)["name" => "about", "url" => "http://loughborough.tech/about/"],
-    (object)["name" => "events", "url" => "http://loughborough.tech/events/"],
-    (object)["name" => "stash", "url" => "http://loughborough.tech/stash/"],
+    (object)["name" => "home", "url" => "/"],
+    (object)["name" => "about", "url" => "/about/"],
+    (object)["name" => "events", "url" => "/events/"],
+    (object)["name" => "stash", "url" => "/stash/"],
 );
 
 $socialMediaLinks = array
@@ -32,11 +32,10 @@ function displayHead()
         <meta charset="utf-8">
         <meta name=viewport content="width=device-width, initial-scale=1.0">
 
-        <link rel="stylesheet" type="text/css" href="http://loughborough.tech/resources/style/css/webstyle.css">
         <link rel="stylesheet" type="text/css" href="/resources/style/css/webstyle.css">
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         
-        <!--<script src="http://loughborough.tech/resources/scripts/webjs.js" defer ></script>-->
+        <script src="/resources/scripts/bundle.js" defer></script>
 EOT;
     
     echo $html;
