@@ -1,0 +1,39 @@
+code.block
+{
+    margin: 1em 0;
+    padding-right: 1em;
+    display: block;
+    white-space: normal;
+    border: 1px solid GET-COLOUR("THEME-L4");
+    border-left: 5px solid GET-COLOUR("THEME");
+    background-color: GET-COLOUR("WHITE");
+    counter-reset: line-number;
+    
+    p
+    {
+        counter-increment: line-number;
+        margin: 0;
+        white-space: pre-wrap;
+        
+        &:first-child
+        {
+            padding-top: 1em;
+        }
+        
+        &:last-child
+        {
+            padding-bottom: 1em;
+        }
+        
+        &:before
+        {
+            content: counter(line-number);
+            height: 100%;
+            display: table;
+            float: left;
+            padding: 0 1em;
+            margin-right: 1em;
+            border-right: 1px solid GET-COLOUR("THEME-L4");
+        }
+    }
+}
