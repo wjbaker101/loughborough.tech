@@ -1,0 +1,291 @@
+<style type="text/css">
+    .text-centered { text-align: center; }
+    
+    #static-banner > div
+    {
+        display: none;
+    }
+    
+    #static-banner
+    {
+        width: 100%;
+        height: 500px;
+        background-image: url('https://i.imgur.com/tscpDVq.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-color: #000;
+        margin: 0;
+    }
+    
+    @media (max-width: 991px)
+    {
+        #static-banner
+        {
+            height: 400px;
+        }
+    }
+    
+    @media (max-width: 540px)
+    {
+        #static-banner
+        {
+            height: 300px;
+        }
+    }
+    
+    #ctl00_ctl15_lnkHome > img
+    {
+        display: none;
+    }
+    
+    #ctl00_ctl15_lnkHome
+    {
+        width: 120px;
+        height: 150px;
+        display: inline-block;
+        background-image: url('https://i.imgur.com/6EygOiB.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    
+    @media (max-width: 1200px)
+    {
+        #ctl00_ctl15_lnkHome
+        {
+            left: 50px;
+        }
+    }
+    
+    header.container-fluid > .row > .col-xs-12
+    {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    
+    .admin-bar
+    {
+        background: #4ac0de;
+    }
+
+    .shadow
+    {
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+    }
+    
+    .padding
+    {
+        padding: 24px 0;
+    }
+    
+    .h-margin
+    {
+        margin-left: 24px;
+        margin-right: 24px;
+    }
+    
+    .v-margin
+    {
+        margin-top: 24px;
+        margin-bottom: 24px;
+    }
+    
+    .content-width
+    {
+        width: 480px;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+    
+    .heading1
+    {
+        font-size: 32px;
+        font-weight: bold;
+        line-height: 2em;
+    }
+    
+    .main
+    {
+        padding: 0 24px;
+        line-height: 2em;
+    }
+    
+    .main p
+    {
+        margin: 0;
+    }
+    
+    .main p + p
+    {
+        margin-top: 24px;
+    }
+    
+    .main a
+    {
+        color: #4ac0de;
+        transition: color 0.5s;
+    }
+    
+    .main a:hover, .main a:focus
+    {
+        color: #2092af;
+    }
+    
+    .main a.fancy
+    {
+        display: inline-block;
+        position: relative;
+        line-height: 1em;
+        padding: 0 0.5em;
+        margin: 0 0.5em;
+        font-weight: bold;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+    
+    .main a.fancy:before, .main a.fancy:after
+    {
+        content: '';
+        width: 1px;
+        height: 100%;
+        position: absolute;
+        background-color: #4ac0de;
+        transition: all 0.5s;
+    }
+    
+    .main a.fancy:before
+    {
+        top: 0; left: 0;
+    }
+    
+    .main a.fancy:after
+    {
+        top: 0; right: 0;
+    }
+    
+    .main a.fancy:hover:before
+    {
+        left: calc(50% - 0.5em);
+        transform: translateY(1em) rotate(-90deg);
+    }
+    
+    .main a.fancy:hover:after
+    {
+        right: calc(50% - 0.5em);
+        transform: translateY(1em) rotate(90deg);
+    }
+    
+    .main .ts-button
+    {
+        display: inline-block;
+        padding: 5px 15px;
+        background-color: #fff;
+        border: 1px solid #4ac0de;
+        cursor: pointer;
+        transition: background-color 0.2s, color 0.2s;
+    }
+    
+    .main .ts-button:hover
+    {
+        background-color: #4ac0de;
+        color: #fff;
+    }
+    
+    .main .ts-button.circle
+    {
+        width: 48px;
+        height: 48px;
+        line-height: 48px;
+        border-radius: 50%;
+        padding-top: 8px;
+    }
+    
+    .vertical-borders
+    {
+        border-top: 1px solid #4ac0de;
+        border-bottom: 1px solid #4ac0de;
+    }
+    
+    .techsoc-logo
+    {
+        max-height: 289px;
+        position: relative;
+        background-color: #4ac0de;
+        cursor: pointer;
+        overflow: hidden;
+        animation: fade-in 1s;
+        transition: background-color 0.5s;
+    }
+    
+    .techsoc-logo img
+    {
+        max-width: 100%;
+        z-index: 1;
+    }
+    
+    @keyframes fade-in
+    {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+    
+    .mslwidget h3
+    {
+        display: none;
+    }
+    
+    .mslwidget .msl_notification
+    {
+        background-color: #4ac0de;
+        color: #fff;
+        margin: 0;
+    }
+    
+    .mslwidget .join_list
+    {
+        margin: 0;
+    }
+    
+    .mslwidget .join_list .join-item
+    {
+        border-color: #4ac0de;
+    }
+    
+    .mslwidget .join_list .join-item input
+    {
+        background-color: #4ac0de;
+    }
+</style>
+<div class="main shadow v-margin">
+<section class="padding">
+<div class="content-width techsoc-logo"><a href="http://loughborough.tech"><img alt="Loughborough Technology Society" src="http://loughborough.tech/resources/images/title-logo.png" width="480" /></a></div>
+</section>
+
+<section class="padding">
+<p class="heading1 text-centered">Join us: Saturday 21st October 12pm-3pm, J203 EHB for <span style="color:#4ac0de;">Hacking with Amazon Alexa</span></p>
+</section>
+
+<section class="padding vertical-borders v-margin">
+<p class="text-centered">Welcome to the Loughborough Technology Society. A society about computers, programming and technology.</p>
+</section>
+
+<section class="padding">
+<div class="content-width text-centered">
+<p><a class="fancy" href="http://loughborough.tech">website</a><a class="fancy" href="https://facebook.com/lborotechsoc">facebook</a></p>
+</div>
+</section>
+
+<section class="padding">
+<div class="content-width text-centered">
+<p>The Loughborough Technology Society is a great way to meet like-minded people. You can work on any ideas or projects you have and we can help you get access to anything you may need.</p>
+
+<p>If you know nothing about computers, electronics and technology and would like to learn more then definitely come along. We can help you get started and point you in the right direction of the tools and resources you need.</p>
+</div>
+</section>
+
+<section class="padding">
+<p>{join}</p>
+
+<p>{2017ByElectionCommittee}</p>
+</section>
+</div>

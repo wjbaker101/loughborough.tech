@@ -39,7 +39,8 @@
             
             .face-container .face.olly { background-image: url(/resources/images/committee/olly.jpg); }
             .face-container .face.jakub { background-image: url(/resources/images/committee/jakub.jpg); }
-            .face-container .face.niall { background-image: url(/resources/images/committee/niall.jpg); }
+            .face-container .face.vinay { background-image: url(/resources/images/committee/vinay.jpg); }
+            .face-container .face.irina { background-image: url(/resources/images/committee/irina.jpg); }
             .face-container .face.jas { background-image: url(/resources/images/committee/jas.jpg); }
             .face-container .face.will { background-image: url(/resources/images/committee/will.jpg); }
             
@@ -89,6 +90,22 @@
                         </div>
                     </article>
                     <article class="committee-container">
+                        <div class="face-container"><div class="face vinay"></div></div>
+                        <div class="description">
+                            <p class="name">Vinay Longia</p>
+                            <p class="role">MATHEMATICS</p>
+                            <p class="course">Computer Science and AI</p>
+                        </div>
+                    </article>
+                    <article class="committee-container">
+                        <div class="face-container"><div class="face irina"></div></div>
+                        <div class="description">
+                            <p class="name">Irina Gongu</p>
+                            <p class="role">Events Coordinator</p>
+                            <p class="course">ITMB</p>
+                        </div>
+                    </article>
+                    <article class="committee-container">
                         <div class="face-container"><div class="face jas"></div></div>
                         <div class="description">
                             <p class="name">Jasmeen Tatani</p>
@@ -97,10 +114,26 @@
                         </div>
                     </article>
                     <article class="committee-container">
+                        <div class="face-container"><div class="face amanvar"></div></div>
+                        <div class="description">
+                            <p class="name">Amanvar Dhoot</p>
+                            <p class="role">HARDWARE OFFICER</p>
+                            <p class="course">Computer Science</p>
+                        </div>
+                    </article>
+                    <article class="committee-container">
                         <div class="face-container"><div class="face will"></div></div>
                         <div class="description">
                             <p class="name">Will Baker</p>
-                            <p class="role">TECHNICAL OFFICER</p>
+                            <p class="role">SOFTWARE OFFICER</p>
+                            <p class="course">Computer Science</p>
+                        </div>
+                    </article>
+                    <article class="committee-container">
+                        <div class="face-container"><div class="face josh"></div></div>
+                        <div class="description">
+                            <p class="name">Josh Wilkinson</p>
+                            <p class="role">Innovation and Projects Officer</p>
                             <p class="course">Computer Science</p>
                         </div>
                     </article>
