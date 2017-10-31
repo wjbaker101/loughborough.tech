@@ -144,7 +144,7 @@
                     document.querySelector('.loading-container').classList.add('done');
                 };
                 
-                techSoc.ajax.onSuccess(response =>
+                techSoc.ajax({ method: 'GET', url: 'resources/get-events.php' }).then(response =>
                 {
                     if (response.code !== 'success')
                     {
@@ -199,13 +199,12 @@
                     
                     hideLoadingIcon();
                 })
-                .onFailure(status =>
+                .catch(status =>
                 {
                     techSoc.displayInfoMessage('.message-output', techSoc.createResponse('failed', `Unable to load events.<br>Error ${status}.`, 'ERROR'));
                     
                     hideLoadingIcon();
-                })
-                .send({ method: 'GET', url: 'resources/get-events.php' });
+                });
             });
         </script>
     </head>
