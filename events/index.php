@@ -139,10 +139,7 @@
                     return new Date(dates[0], dates[1] - 1, dates[2], times[0], times[1], times[2]);
                 };
                 
-                const hideLoadingIcon = () =>
-                {
-                    document.querySelector('.loading-container').classList.add('done');
-                };
+                const hideLoadingIcon = () => document.querySelector('.loading-container').classList.add('done');
                 
                 techSoc.ajax({ method: 'GET', url: 'resources/get-events.php' }).then(response =>
                 {
@@ -201,7 +198,7 @@
                 })
                 .catch(status =>
                 {
-                    techSoc.displayInfoMessage('.message-output', techSoc.createResponse('failed', `Unable to load events.<br>Error ${status}.`, 'ERROR'));
+                    techSoc.displayInfoMessage('.message-output', techSoc.createResponse('failed', `Unable to load events.<br>Error: ${status}.`, 'ERROR'));
                     
                     hideLoadingIcon();
                 });
