@@ -1,4 +1,4 @@
-const displayInfoMessage = () =>
+const displayInfoMessage = (selector, message) =>
 {
     const messageOutput = document.querySelector(selector);
     
@@ -6,13 +6,9 @@ const displayInfoMessage = () =>
 
     messageOutput.innerHTML = message.message;
 
-    //messageOutput.classList.remove('text-error');
-    //messageOutput.classList.remove('text-warning');
-    //messageOutput.classList.remove('text-success');
-
-    const newClasses = messageOutput.classList.filter(className => !className.startsWith('text-'));
-
-    messageOutput.classList = newClasses;
+    messageOutput.classList.remove('text-error');
+    messageOutput.classList.remove('text-warning');
+    messageOutput.classList.remove('text-success');
 
     if (message.type !== 'REGULAR')
     {
