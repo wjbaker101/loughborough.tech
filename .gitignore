@@ -6,3 +6,4 @@
 *.bat
 /resources/page/database.php
 php_errors.log
+bundle.js
