@@ -1,0 +1,18 @@
+body > footer
+{
+    border-top: 1px solid GET-COLOUR("THEME");
+    
+    .navigation
+    {
+        a
+        {
+            display: inline-block;
+            transition: color $duration-mid;
+            
+            + a
+            {
+                margin-left: 2em;
+            }
+        }
+    }
+}
