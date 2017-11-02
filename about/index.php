@@ -7,6 +7,12 @@
         <?php displayHead(); ?>
         
         <style>
+            .committee
+            {
+                max-width: 750px;
+                margin: 0 auto;
+            }
+            
             .committee-container
             {
                 width: 175px;
@@ -42,7 +48,9 @@
             .face-container .face.vinay { background-image: url(/resources/images/committee/vinay.jpg); }
             .face-container .face.irina { background-image: url(/resources/images/committee/irina.jpg); }
             .face-container .face.jas { background-image: url(/resources/images/committee/jas.jpg); }
+            .face-container .face.amanvir { background-image: url(/resources/images/committee/amanvir.jpg); }
             .face-container .face.will { background-image: url(/resources/images/committee/will.jpg); }
+            .face-container .face.josh { background-image: url(/resources/images/committee/josh.jpg); }
             
             .committee-container .description
             {
@@ -71,7 +79,7 @@
                 <section class="section">
                     <h1 class="text-centered">About the Society</h1>
                 </section>
-                <section class="section vpadding-mid text-centered">
+                <section class="committee section vpadding-mid text-centered">
                     <h2>Committee</h2>
                     <article class="committee-container">
                         <div class="face-container"><div class="face olly"></div></div>
@@ -114,9 +122,9 @@
                         </div>
                     </article>
                     <article class="committee-container">
-                        <div class="face-container"><div class="face amanvar"></div></div>
+                        <div class="face-container"><div class="face amanvir"></div></div>
                         <div class="description">
-                            <p class="name">Amanvar Dhoot</p>
+                            <p class="name">Amanvir Dhoot</p>
                             <p class="role">HARDWARE OFFICER</p>
                             <p class="course">Computer Science</p>
                         </div>
