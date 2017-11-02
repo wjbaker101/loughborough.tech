@@ -65,7 +65,7 @@ function displayHeader()
     //$links .= "<a href='/codeandchill/' class='cc-nav-link page-link-underline'>code and chill!</a><style>.cc-nav-link{color:#e41f28 !important}.cc-nav-link:after{background-color:#e41f28}</style>";
     
     $html = <<<EOT
-        <header role="header" class="hpadding-small vpadding-mid bg-white">
+        <header class="hpadding-small vpadding-mid">
             <div class="content-width clearfix">
                 <div class="header-lsu-logo">
                     <a href="https://www.lsu.co.uk/society/lsuhack/">
@@ -126,7 +126,7 @@ function displayFooter()
     $year = (new DateTime())->format("Y");
     
     $html = <<<EOT
-        <footer role="footer" class="hpadding-small vpadding-mid">
+        <footer class="hpadding-small vpadding-mid bg-white">
             <div class="content-width text-centered">
                 <section class="section navigation">
                     <p>${links}</p>
