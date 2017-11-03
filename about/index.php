@@ -101,8 +101,8 @@
                         <div class="face-container"><div class="face vinay"></div></div>
                         <div class="description">
                             <p class="name">Vinay Longia</p>
-                            <p class="role">MATHEMATICS</p>
-                            <p class="course">Computer Science and AI</p>
+                            <p class="role">TREASURER</p>
+                            <p class="course">Mathematics</p>
                         </div>
                     </article>
                     <article class="committee-container">
