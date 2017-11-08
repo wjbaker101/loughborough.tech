@@ -62,7 +62,7 @@ function displayHeader()
         $links .= createHeaderLinkHTML($navLinks[$i]);
     }
     
-    //$links .= "<a href='/codeandchill/' class='cc-nav-link page-link-underline'>code and chill!</a><style>.cc-nav-link{color:#e41f28 !important}.cc-nav-link:after{background-color:#e41f28}</style>";
+    $links .= "<a href='/codeandchill/' class='cc-nav-link page-link-underline'>code and chill!</a><style>.cc-nav-link{color:#e41f28 !important}.cc-nav-link:after{background-color:#e41f28}</style>";
     
     $html = <<<EOT
         <header class="hpadding-small vpadding-mid">
