@@ -6,7 +6,7 @@
         
         <?php displayHead(); ?>
         
-        <style>
+        <style> 
             body.no-scroll
             {
                 overflow-y: hidden;
@@ -15,88 +15,6 @@
             .cc-heading
             {
                 color: #e41f28;
-            }
-            
-            .cc-container article
-            {
-                /*border: 1px solid #edeef0;
-                border-bottom: 2px solid #4ac0de;*/
-                background-color: #e41f28;
-                cursor: pointer;
-                color: #fff;
-                transition: all 0.5s;
-            }
-            
-            .cc-container article:hover
-            {
-                background-color: #d00c14;
-            }
-            
-            .cc-container article > *
-            {
-                margin: 0;
-            }
-            
-            .cc-container article h4
-            {
-                line-height: 45px;
-            }
-            
-            .cc-container article .date
-            {
-                color: #ccc;
-                line-height: 45px;
-            }
-            
-            .cc-container article + .session-content + article
-            {
-                margin-top: 1em;
-            }
-            
-            .cc-container article + .session-content
-            {
-                display: none;
-            }
-            
-            .cc-container article.active + .session-content
-            {
-                width: 100%;
-                height: 100%;
-                display: block;
-                position: fixed;
-                top: 0;
-                left: 0;
-                z-index: 12;
-                background-color: #fff;
-                overflow-y: scroll;
-                animation: fade-in 0.5s;
-            }
-            
-            @keyframes fade-in
-            {
-                from { opacity: 0 }
-                to { opacity: 1 }
-            }
-            
-            .topic-container
-            {
-                border-spacing: 1em;
-            }
-            
-            .beginners-content,
-            .advanced-content
-            {
-                border: 1px solid #edeef0;
-            }
-            
-            .beginners-content
-            {
-                border-bottom: 2px solid #449826;
-            }
-            
-            .advanced-content
-            {
-                border-bottom: 2px solid #d11f26; 
             }
             
             .sign-in-input
@@ -128,91 +46,175 @@
             
             
             
-            .title-header
+            .logo-full-height
             {
-                border-bottom: 1px solid #e41f28;
-                animation: header-ani 0.8s;
+                width: 100%;
+                height: 100vh;
+                display: table;
+                position: relative;
+                background-image: linear-gradient(0deg, rgba(255, 0, 0, 0.5), rgba(255, 0, 0, 0.5)), url(/resources/images/events/session.jpg);
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-attachment: fixed;
             }
             
-            @keyframes header-ani
+            body > header
             {
-                from { transform: translateY(-200px) }
-                to { transform: translateY(0) }
+                color: #fff;
+                background-color: transparent;
+                transition: padding 0.5s, border-color 0.5s, background-color 0.5s;
             }
             
-            .title-header h1,
-            .session-close
+            body > header.scrolling
             {
-                color: #e41f28;
+                color: initial;
+                background-color: #fff;
             }
             
-            @media (min-width: 540px)
+            .logo-content
             {
-                .title-header h1
-                {
-                    margin-top: 0;
-                }
+                display: table-cell;
             }
             
-            .session-date
+            .scroll-arrow
             {
-                color: #000;
+                position: absolute;
+                bottom: 3em;
+                transform: translateX(-50%);
+                animation: bounce 5s infinite;
             }
             
-            .session-close
+            @keyframes bounce
             {
+                0% { transform: translateY(0) translateX(-50%) }
+                5% { transform: translateY(1em) translateX(-50%) }
+                10% { transform: translateY(0) translateX(-50%) }
+                15% { transform: translateY(1em) translateX(-50%) }
+                20% { transform: translateY(0) translateX(-50%) }
+            }
+            
+            .scroll-indicator.scrolled .arrow
+            {
+                opacity: 0;
+                transition: opacity 0.5s;
+            }
+            
+            .sign-in-container
+            {
+                border-bottom: 1px solid #4ac0de;
+            }
+            
+            .sessions-container
+            {
+                margin-bottom: 90px;
+            }
+            
+            .session-item
+            {
+                border: 1px solid #edeef0;
+                border-bottom-color: #e41f28;
                 cursor: pointer;
+                transition: border-color 0.5s;
             }
             
-            .session-close .svg path,
-            .session-close .svg text
+            .session-item:hover
             {
-                transition: stroke 0.5s, fill 0.5s;
+                border-color: #e41f28;
             }
             
-            .session-close .svg:hover path
+            .session-contents
             {
-                stroke: #d00c14;
+                width: 100%;
+                position: fixed;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                z-index: 7;
+                overflow-y: auto;
             }
             
-            .session-close .svg:hover text
+            .hidden { display: none; }
+            
+            button:not(.reset-button).session-close-button
             {
-                fill: #d00c14;
+                position: fixed;
+                top: 1rem;
+                right: 2rem;
+                z-index: 8;
             }
             
-            .session-description
+            .session-description .session-title,
+            .session-description .session-content
             {
-                animation: description-ani 0.5s;
+                position: relative;
             }
             
-            @keyframes description-ani
+            .session-description .session-title { animation: title-animation 1s ease-out; }
+            
+            @keyframes title-animation
             {
-                from { transform: translateY(2em) }
-                to { transform: translateY(0) }
+                0% { transform: translateY(5rem) }
+                20% { transform: translateY(5rem) }
+                100% { transform: translateY(0) }
+            }
+            
+            .session-description .session-content { animation: content-animation 1s; }
+            
+            @keyframes content-animation
+            {
+                0% { opacity: 0 }
+                50% { opacity: 0; transform: translateY(-2rem) }
+                100% { opacity: 1; transform: translateY(0) }
+            }
+            
+            .session-description .topic-button
+            {
+                width: 7rem;
+                height: 7rem;
             }
         </style>
         
         <script>
             window.addEventListener('load', () =>
             {
-                const events = Array.from(document.querySelectorAll('.cc-container article'));
+                const items = Array.from(document.querySelectorAll('.session-item'));
                 
-                let currentActive = null;
+                const sessionDescriptions = Array.from(document.querySelectorAll('.session-description'));
                 
-                events.forEach(e =>
+                items.forEach(e =>
                 {
                     e.addEventListener('click', () =>
                     {
-                        e.classList.add('active');
+                        sessionDescriptions.forEach(d => d.classList.add('hidden'));
+                        
+                        const description = sessionDescriptions.find(d => d.getAttribute('data-session') === e.getAttribute('data-session'));
+                        description.classList.remove('hidden');
+                        
+                        document.querySelector('.session-contents').classList.remove('hidden');
                         document.body.classList.add('no-scroll');
                     });
-                    
-                    e.nextElementSibling.querySelector('.session-close').addEventListener('click', () =>
-                    {
-                        e.classList.remove('active');
-                        document.body.classList.remove('no-scroll');
-                    });
                 });
+                
+                const closeButton = document.querySelector('.session-contents .session-close-button');
+                
+                closeButton.addEventListener('click', () =>
+                {
+                    document.querySelector('.session-contents').classList.add('hidden');
+                    document.body.classList.remove('no-scroll');
+                });
+                
+                const scrollArrowButton = document.querySelector('.scroll-indicator');
+
+                const onWindowScroll = () =>
+                {
+                    if (window.scrollY > 50)
+                    {
+                        scrollArrowButton.classList.add('scrolled');
+                        window.removeEventListener('scroll', onWindowScroll);
+                    }
+                };
+
+                window.addEventListener('scroll', onWindowScroll);
                 
                 <?php  if (!isset($_SESSION["signed"])) { ?>
                 const button = document.querySelector('.sign-in-button');
@@ -225,24 +227,15 @@
                         email: signInContainer.querySelector('.sign-in-input').value,
                     };
                     
-                    techSoc.ajax.onSuccess(response =>
+                    techSoc.ajax({ url: 'resources/signin.php', method: 'POST', parameters: parameters }).then(response =>
                     {
                         if (response.code === 'success')
                         {
                             signInContainer.querySelector('.stage1').classList.add('hide');
                             signInContainer.querySelector('.stage2').classList.remove('hide');
                         }
-                        else
-                        {
-                        
-                            console.log(response);
-                        }
                     })
-                    .onFailure(status =>
-                    {
-                        
-                    })
-                    .send({ url: 'resources/signin.php', method: 'POST', parameters: parameters });
+                    .catch(status => {});
                 });
                 <?php } ?>
             });
@@ -250,165 +243,225 @@
     </head>
     <body id="top">
         <?php displayHeader(); ?>
-        <div class="page vpadding-regular">
-            <div class="content-width hpadding-small">
-                <section class="section text-centered">
-                    <img src="/resources/images/events/code-and-chill.png" width="135" height="150">
-                </section>
-                <?php  if (!isset($_SESSION["signed"])) { ?>
-                <section class="sign-in-container section vpadding-regular text-centered">
-                    <div class="stage1">
-                        <input class="sign-in-input" type="text" placeholder="email@example.com"><button class="sign-in-button">Sign me in!</button>
-                    </div>
-                    <div class="stage2 hide">
-                        <p>Thank you for signing in!</p>
-                    </div>
-                </section>
-                <?php } ?>
-                <section class="cc-container section vpadding-regular">
-                    <article class="hpadding-small vpadding-regular clearfix">
-                        <h4 class="float-l">Session One:</h4>
-                        <p class="date float-r">11/10/2017</p>
-                    </article>
-                    <div class="session-content text-centered">
-                        <div class="title-header hpadding-small vpadding-regular">
-                            <div class="content-width">
-                                <p class="text-left">
-                                    <span class="session-close page-link">
-                                        <svg width="60" height="16" class="svg" version="1.1" viewBox="0 0 14.022915 4.2333335" xmlns="http://www.w3.org/2000/svg">
-                                            <g transform="translate(0 -292.77)">
-                                                <text x="4.1712408" y="296.32812" fill="#000000" letter-spacing="0px" stroke-width=".26458" word-spacing="0px" style="line-height:1.25" xml:space="preserve">
-                                                    <tspan x="5.1712408" y="296.32812" font="inherit" font-size="3.8806px" stroke-width=".26458">Back</tspan>
-                                                </text>
-                                                <path d="m3.175 293.3-2.3812 1.5875 2.3812 1.5875" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".39687"/>
-                                            </g>
-                                        </svg>
-                                    </span>
-                                </p>
-                                <h1>Session One</h1>
-                                <p class="session-date">11/10/2017</p>
-                            </div>
+        <div class="logo-full-height">
+            <div class="logo-content text-centered cell-middle">
+                <img src="/resources/images/events/code-and-chill-white.png" width="270" height="300">
+                <h3 class="text-white">Next Session: 08/11/2017<br>Room: EHB J205</h3>
+                <div class="scroll-indicator">
+                    <svg width="26" height="26" class="scroll-arrow" viewBox="0 0 9.5249998 9.5250002">
+                        <g class="arrow" transform="translate(0 -287.47)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m2.6458 292.77 2.1167 2.6458 2.1167-2.6458" stroke-width="1.2"/>
+                            <path d="m4.7625 295.41v-6.35" stroke-width="1.2"/>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <?php  if (!isset($_SESSION["signed"])) { ?>
+        <section class="sign-in-container hpadding-small vpadding-mid text-centered">
+            <div class="stage1">
+                <input class="sign-in-input" type="text" placeholder="email@example.com"><button class="sign-in-button">Sign me in!</button>
+            </div>
+            <div class="stage2 hide">
+                <p>Thank you for signing in!</p>
+            </div>
+        </section>
+        <?php } ?>
+        <div class="about-description hpadding-small vpadding-large">
+            <div class="content-text-width text-centered">
+                <h2>What is Code and Chill?</h2>
+                <p>Come and see what the society has to offer and learn something new. We will simply be coding in a room with Netflix/Music in the background.</p>
+                <p><strong>Please bring your own laptops and devices as there are no computers available at this venue!</strong></p>
+                <p>View each session's topics below:</p>
+            </div>
+        </div>
+        <div class="hpadding-small">
+            <div class="sessions-container content-width">
+                <article class="session-item section hpadding-small vpadding-mid clearfix" data-session="1">
+                    <div class="cell-row">
+                        <div class="cell m12 cell-middle">
+                            <h3>Session One:</h3>
                         </div>
-                        <div class="session-description content-width hpadding-small vpadding-mid">
-                            <p><strong>Wednesday 11th October 2017</strong></p>
-                            <p>It's our first official session of the year and it's FREE! Come and see what the society has to offer and learn something new. We will simply be coding in a room with Netflix/Music in the background.</p>
-                            <p><strong>Please bring your own laptops and devices as there are no computers available at this venue!</strong></p>
-                            <div class="clearfix">
-                                <div class="col-6 m12 hpadding-small">
-                                    <div class="beginners-content section hpadding-small vpadding-regular">
-                                        <h2>Beginners Topic</h2>
-                                        <p>HTML and CSS are markup languages and the building blocks that make up the web.</p>
-                                        <p>In this topic, you will learn how to structure HTML and style it with CSS.</p>
-                                    </div>
-                                    <div class="beginners-content section hpadding-small vpadding-regular">
-                                        <h2>Resources:</h2>
-                                        <ul class="text-left">
-                                            <li><a class="page-link-underline" href="https://www.w3schools.com/html/" target="_blank">w3schools HTML Reference</a></li>
-                                            <li><a class="page-link-underline" href="https://www.codecademy.com/learn/make-a-website" target="_blank">Codecademy Make-a-Website Course</a></li>
-                                            <li><a class="page-link-underline" href="https://www.codecademy.com/catalog/language/html-css" target="_blank">Codecademy HTML and CSS Courses</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="beginners-content section hpadding-small vpadding-regular">
-                                        <h2>View Slides:</h2>
-                                        <p><a href="https://drive.google.com/open?id=0B79kOzBclpj-dVU5NzhYQWdfa28" class="page-link-underline" target="_blank">Here!</a></p>
-                                    </div>
-                                </div>
-                                <div class="col-6 m12 hpadding-small">
-                                    <div class="advanced-content section hpadding-small vpadding-regular">
-                                        <h2>Advanced Topic</h2>
-                                        <p>If you've done HTML and CSS before, try out the advanced topic.</p>
-                                        <p>We will be going through the first steps of using SASS.</p>
-                                        <p>SASS is a preprocessor for writing CSS. It makes it easier to read and write CSS.</p>
-                                    </div>
-                                    <div class="advanced-content section hpadding-small vpadding-regular">
-                                        <h2>Installation Instructions:</h2>
-                                        <ol class="text-left">
-                                            <li><a class="page-link-underline" href="http://rubyinstaller.org/" target="_blank">Install Ruby</a> if you are on Windows.</li>
-                                            <li>Install SASS from <a class="page-link-underline" href="http://sass-lang.com/install">here</a>.</li>
-                                            <li>Topics we will cover:</li>
-                                            <ul>
-                                                <li>Variables (e.g. Breakpoints, Colour Themes)</li>
-                                                <li>Maps</li>
-                                                <li>String Interpolation</li>
-                                                <li>Nesting (e.g. Media Queries)</li>
-                                                <li>Functions</li>
-                                                <li>Mixins</li>
-                                                <li>Partial Files and Imports</li>
-                                                <li>Extending</li>
-                                                <li>Operators</li>
-                                            </ul>
-                                        </ol>
-                                    </div>
-                                    <div class="advanced-content section hpadding-small vpadding-regular">
-                                        <h2>Resources:</h2>
-                                        <ul class="text-left">
-                                            <li><a class="page-link-underline" href="http://sass-lang.com/" target="_blank">SASS Website</a></li>
-                                            <li><a class="page-link-underline" href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html" target="_blank">SASS Documentation</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="advanced-content section hpadding-small vpadding-regular">
-                                        <h2>Further Reading:</h2>
-                                        <p class="text-left">Have a look at these:</p>
-                                        <ul class="text-left">
-                                            <li><a class="page-link-underline" href="http://compass-style.org/">Compass</a></li>
-                                            <li>An alternative to SASS: <a class="page-link-underline" href="http://lesscss.org/" target="_blank">LESS</a>.</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="cell m12 cell-middle text-right">
+                            <p class="date text-dark-grey">11/10/2017</p>
                         </div>
                     </div>
-                    <article class="hpadding-small vpadding-regular clearfix">
-                        <h4 class="float-l">Session Two:</h4>
-                        <p class="date float-r">25/10/2017</p>
-                    </article>
-                    <div class="session-content vpadding-regular hpadding-small text-centered">
-                        <div>
-                            <p><strong>Wednesday 25th October 2017</strong></p>
-                            <p>The Code and Chill session is back again! We will be going over more HTML and CSS for beginners, and some more Node JS for our more advanced members. Come along for more music, more snacks (promise I will bring more than Doritos this time), drinks and more good times!</p>
-                            <p><strong>Please bring your own laptops and devices as there are no computers available at this venue!</strong></p>
-                            <div class="topic-container cell-row">
-                                <div class="beginners-content cell l6 m12 hpadding-small vpadding-regular text-centered">
-                                    <h2>Beginners Topic</h2>
-                                    <p>HTML and CSS are markup languages and the building blocks that make up the web.</p>
-                                    <p>In this topic, you will learn how to structure HTML and style it with CSS.</p>
-                                    <h2>Resources:</h2>
-                                    <ul class="text-left">
-                                        <li><a class="page-link-underline" href="https://www.w3schools.com/html/" target="_blank">w3schools HTML Reference</a></li>
-                                        <li><a class="page-link-underline" href="https://www.codecademy.com/learn/make-a-website" target="_blank">Codecademy Make-a-Website Course</a></li>
-                                        <li><a class="page-link-underline" href="https://www.codecademy.com/catalog/language/html-css" target="_blank">Codecademy HTML and CSS Courses</a></li>
-                                    </ul>
-                                    <h2>View Slides:</h2>
-                                    <p><a href="https://drive.google.com/open?id=0B79kOzBclpj-TndwSU5ZNFZYRXM" class="page-link-underline" target="_blank">Here!</a></p>
-                                </div>
-                                <div class="advanced-content cell l6 m12 hpadding-small vpadding-regular text-centered">
-                                    <h2>Advanced Topic</h2>
-                                    <p>Node.js</p>
-                                    <h2>Resources:</h2>
-                                    <ul class="text-left">
-                                        <li><a class="page-link-underline" href="https://nodejs.org/en/" target="_blank">Node.js Website</a></li>
-                                        <li><a class="page-link-underline" href="https://www.w3schools.com/nodejs/default.asp" target="_blank">w3schools Node.js Tutorial</a></li>
-                                        <li><a class="page-link-underline" href="https://www.npmjs.com/" target="_blank">npm Website</a></li>
-                                    </ul>
-                                    <h2>Instructions:</h2>
-                                    <ol class="text-left">
-                                        <li>Visit the Node.js website: <a class="page-link-underline" href="https://nodejs.org/en/download/" target="_blank">here</a>!</li>
-                                        <li>Download the LTS version of Node for your relevant operating system.</li>
-                                        <li>Open a terminal and run "node -v" to make sure it has installed correctly.</li>
-                                    </ol>
-                                    <h2>Further Reading:</h2>
-                                    <p class="text-left">Have a look at these:</p>
-                                    <ul class="text-left">
-                                        <li><a class="page-link-underline" href="https://expressjs.com/" target="_blank">Express JS</a></li>
-                                        <li><a class="page-link-underline" href="https://github.com/GoogleChrome/puppeteer" target="_blank">Headless Chrome Library</a></li>
-                                    </ul>
-                                    <h2>View Slides:</h2>
-                                    <p><a href="https://drive.google.com/open?id=0B9CDy1rp7c80LVBHdVRZX1FoNlE" class="page-link-underline" target="_blank">Here!</a></p>
-                                </div>
+                </article>
+                <article class="session-item section hpadding-small vpadding-mid clearfix" data-session="2">
+                    <div class="cell-row">
+                        <div class="cell m12 cell-middle">
+                            <h3>Session Two:</h3>
+                        </div>
+                        <div class="cell m12 cell-middle text-right">
+                            <p class="date text-dark-grey">11/10/2017</p>
+                        </div>
+                    </div>
+                </article>
+                <article class="session-item section hpadding-small vpadding-mid clearfix" data-session="3">
+                    <div class="cell-row">
+                        <div class="cell m12 cell-middle">
+                            <h3>Session Three:</h3>
+                        </div>
+                        <div class="cell m12 cell-middle text-right">
+                            <p class="date text-dark-grey">11/10/2017</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+        <div class="session-contents bg-white hidden">
+            <button class="session-close-button">&times;</button>
+            <div class="hpadding-small vpadding-mid">
+                <article class="session-description" data-session="1">
+                    <div class="session-title text-centered">
+                        <h1 class="cc-heading">Session One</h1>
+                        <h3>11/10/2017</h3>
+                    </div>
+                    <div class="session-content">
+                        <div class="content-text-width vpadding-mid">
+                            <div class="beginners-content section hpadding-small vpadding-regular">
+                                <h1>Beginners Topic</h1>
+                                <p>HTML and CSS are markup languages and the building blocks that make up the web.</p>
+                                <p>In this topic, you will learn how to structure HTML and style it with CSS.</p>
+                                <p>View the slides we went through <a href="https://drive.google.com/open?id=0B79kOzBclpj-dVU5NzhYQWdfa28" class="page-link-underline" target="_blank">here</a>!</p>
+                                <h3>Resources:</h3>
+                                <ul>
+                                    <li><a class="page-link-underline" href="https://www.w3schools.com/html/" target="_blank">w3schools HTML Reference</a></li>
+                                    <li><a class="page-link-underline" href="https://www.w3schools.com/css/" target="_blank">w3schools CSS Reference</a></li>
+                                    <li><a class="page-link-underline" href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">Mozilla Developer Network (HTML)</a></li>
+                                    <li><a class="page-link-underline" href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">Mozilla Developer Network (CSS)</a></li>
+                                    <li><a class="page-link-underline" href="https://www.codecademy.com/learn/make-a-website" target="_blank">Codecademy Make-a-Website Course</a></li>
+                                    <li><a class="page-link-underline" href="https://www.codecademy.com/catalog/language/html-css" target="_blank">Codecademy HTML and CSS Courses</a></li>
+                                </ul>
+                            </div>
+                            <div class="advanced-content section hpadding-small vpadding-regular">
+                                <h1>Advanced Topic</h1>
+                                <p>If you've done HTML and CSS before, try out the advanced topic.</p>
+                                <p>We will be going through the first steps of using SASS.</p>
+                                <p>SASS is a preprocessor for writing CSS. It makes it easier to read and write CSS.</p>
+                                <h3>Topics we will cover:</h3>
+                                <ul>
+                                    <li>Variables (e.g. Breakpoints, Colour Themes)</li>
+                                    <li>Maps</li>
+                                    <li>String Interpolation</li>
+                                    <li>Nesting (e.g. Media Queries)</li>
+                                    <li>Functions</li>
+                                    <li>Mixins</li>
+                                    <li>Partial Files and Imports</li>
+                                    <li>Extending</li>
+                                    <li>Operators</li>
+                                </ul>
+                                <h3>Installing SASS:</h3>
+                                <ol>
+                                    <li><a class="page-link-underline" href="http://rubyinstaller.org/" target="_blank">Install Ruby</a> if you are on Windows.</li>
+                                    <li>Install SASS from <a class="page-link-underline" href="http://sass-lang.com/install">here</a>.</li>
+                                </ol>
+                                <h3>Resources:</h3>
+                                <ul>
+                                    <li><a class="page-link-underline" href="http://sass-lang.com/" target="_blank">SASS Website</a></li>
+                                    <li><a class="page-link-underline" href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html" target="_blank">SASS Documentation</a></li>
+                                </ul>
+                                <h3>Further Reading:</h3>
+                                <ul>
+                                    <li><a class="page-link-underline" href="http://compass-style.org/">Compass</a></li>
+                                    <li><a class="page-link-underline" href="http://lesscss.org/" target="_blank">LESS</a>, an alternative to SASS.</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
-                </section>
+                </article>
+                <article class="session-description" data-session="2">
+                    <div class="session-title text-centered">
+                        <h1 class="cc-heading">Session Two</h1>
+                        <h3>25/10/2017</h3>
+                    </div>
+                    <div class="session-content">
+                        <div class="content-text-width vpadding-mid">
+                            <div class="beginners-content section hpadding-small vpadding-regular">
+                                <h1>Beginners Topic</h1>
+                                <p>HTML and CSS are markup languages and the building blocks that make up the web.</p>
+                                <p>In this topic, you will learn how to structure HTML and style it with CSS.</p>
+                                <p>View the slides we went through <a href="https://drive.google.com/open?id=0B79kOzBclpj-TndwSU5ZNFZYRXM" class="page-link-underline" target="_blank">here</a>!</p>
+                                <h3>Resources:</h3>
+                                <ul>
+                                    <li><a class="page-link-underline" href="https://www.w3schools.com/html/" target="_blank">w3schools HTML Reference</a></li>
+                                    <li><a class="page-link-underline" href="https://www.w3schools.com/css/" target="_blank">w3schools CSS Reference</a></li>
+                                    <li><a class="page-link-underline" href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">Mozilla Developer Network (HTML)</a></li>
+                                    <li><a class="page-link-underline" href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">Mozilla Developer Network (CSS)</a></li>
+                                    <li><a class="page-link-underline" href="https://www.codecademy.com/learn/make-a-website" target="_blank">Codecademy Make-a-Website Course</a></li>
+                                    <li><a class="page-link-underline" href="https://www.codecademy.com/catalog/language/html-css" target="_blank">Codecademy HTML and CSS Courses</a></li>
+                                </ul>
+                            </div>
+                            <div class="advanced-content section hpadding-small vpadding-regular">
+                                <h1>Advanced Topic</h1>
+                                <p>Node.js is a runtime environment that uses JavaScript to execute code from the server side.</p>
+                                <p>View the slides we went through <a href="https://drive.google.com/open?id=0B9CDy1rp7c80LVBHdVRZX1FoNlE" class="page-link-underline" target="_blank">here</a>!</p>
+                                <h3>Resources:</h3>
+                                <ul>
+                                    <li><a class="page-link-underline" href="https://nodejs.org/en/" target="_blank">Node.js Website</a></li>
+                                    <li><a class="page-link-underline" href="https://www.w3schools.com/nodejs/default.asp" target="_blank">w3schools Node.js Tutorial</a></li>
+                                    <li><a class="page-link-underline" href="https://www.npmjs.com/" target="_blank">npm Website</a></li>
+                                </ul>
+                                <h3>Installing Node.js:</h3>
+                                <ol>
+                                    <li>Visit the Node.js website: <a class="page-link-underline" href="https://nodejs.org/en/download/" target="_blank">here</a>!</li>
+                                    <li>Download the LTS version of Node for your relevant operating system.</li>
+                                    <li>Open a terminal and run "node -v" to make sure it has installed correctly.</li>
+                                </ol>
+                                <h3>Further Reading:</h3>
+                                <ul>
+                                    <li><a class="page-link-underline" href="https://expressjs.com/" target="_blank">Express JS</a></li>
+                                    <li><a class="page-link-underline" href="https://github.com/GoogleChrome/puppeteer" target="_blank">Headless Chrome Library</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="session-description" data-session="3">
+                    <div class="session-title text-centered">
+                        <h1 class="cc-heading">Session Three</h1>
+                        <h3>08/11/2017</h3>
+                    </div>
+                    <div class="session-content">
+                        <div class="content-text-width vpadding-mid">
+                            <div class="beginners-content section hpadding-small vpadding-regular">
+                                <h1>Beginners Topic</h1>
+                                <p>HTML and CSS are markup languages and the building blocks that make up the web.</p>
+                                <p>In this topic, you will learn how to structure HTML and style it with CSS.</p>
+                                <!--<p>View the slides we went through <a href="https://drive.google.com/open?id=0B79kOzBclpj-dVU5NzhYQWdfa28" class="page-link-underline" target="_blank">here</a>!</p>-->
+                                <h3>Resources:</h3>
+                                <ul>
+                                    <li><a class="page-link-underline" href="https://www.w3schools.com/html/" target="_blank">w3schools HTML Reference</a></li>
+                                    <li><a class="page-link-underline" href="https://www.w3schools.com/css/" target="_blank">w3schools CSS Reference</a></li>
+                                    <li><a class="page-link-underline" href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">Mozilla Developer Network (HTML)</a></li>
+                                    <li><a class="page-link-underline" href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">Mozilla Developer Network (CSS)</a></li>
+                                    <li><a class="page-link-underline" href="https://www.codecademy.com/learn/make-a-website" target="_blank">Codecademy Make-a-Website Course</a></li>
+                                    <li><a class="page-link-underline" href="https://www.codecademy.com/catalog/language/html-css" target="_blank">Codecademy HTML and CSS Courses</a></li>
+                                </ul>
+                            </div>
+                            <div class="advanced-content section hpadding-small vpadding-regular">
+                                <h1>Advanced Topic</h1>
+                                <p>AngularJS (v1) is a JavaScript-based front-end web application framework mainly maintained by Google.</p>
+                                <!--<p>View the slides we went through <a href="https://drive.google.com/open?id=0B9CDy1rp7c80LVBHdVRZX1FoNlE" class="page-link-underline" target="_blank">here</a>!</p>-->
+                                <h3>Resources:</h3>
+                                <ul>
+                                    <li><a class="page-link-underline" href="https://angularjs.org/" target="_blank">Angular.js Website</a></li>
+                                    <li><a class="page-link-underline" href="https://drive.google.com/open?id=1Vofr1GTawYUkPdJPVN4zmjbrojoJj-o9" target="_blank">Our Angular.js Template</a></li>
+                                </ul>
+                                <!--<h3>Installing Node.js:</h3>
+                                <ol>
+                                    <li>Visit the Node.js website: <a class="page-link-underline" href="https://nodejs.org/en/download/" target="_blank">here</a>!</li>
+                                    <li>Download the LTS version of Node for your relevant operating system.</li>
+                                    <li>Open a terminal and run "node -v" to make sure it has installed correctly.</li>
+                                </ol>-->
+                                <h3>Further Reading:</h3>
+                                <ul>
+                                    <li><a class="page-link-underline" href="http://angular.io/" target="_blank">Angular (v2) Website</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </article>
             </div>
         </div>
         <?php displayFooter(); ?>
