@@ -24,6 +24,12 @@
                 border-color: #d00c14;
             }
             
+            .sign-in-input:hover,
+            .sign-in-input:focus
+            {
+                outline-color: #d00c14;
+            }
+            
             .sign-in-container .stage1.hide,
             .sign-in-container .stage2.hide
             {
@@ -32,6 +38,7 @@
             
             .sign-in-button
             {
+                
                 background-color: #e41f28;
                 color: #fff;
                 border: 3px solid #e41f28;
@@ -43,8 +50,10 @@
                 background-color: #d00c14;
             }
             
-            
-            
+            h2::after
+            {
+                background-color: #d00c14;
+            }
             
             .logo-full-height
             {
@@ -101,7 +110,7 @@
             
             .sign-in-container
             {
-                border-bottom: 1px solid #4ac0de;
+                border-bottom: 1px solid #d00c14;
             }
             
             .sessions-container
@@ -111,13 +120,36 @@
             
             .session-item
             {
+                width: 25%;
+                float: left;
+                padding: 0.5em;
+            }
+            
+            .session-item > div
+            {
                 border: 1px solid #edeef0;
                 border-bottom-color: #e41f28;
                 cursor: pointer;
                 transition: border-color 0.5s;
             }
             
-            .session-item:hover
+            @media (max-width: 720px)
+            {
+                .session-item
+                {
+                    width: 50%;
+                }
+            }
+            
+            @media (max-width: 540px)
+            {
+                .session-item
+                {
+                    width: 100%;
+                }
+            }
+            
+            .session-item > div:hover
             {
                 border-color: #e41f28;
             }
@@ -246,7 +278,7 @@
         <div class="logo-full-height">
             <div class="logo-content text-centered cell-middle">
                 <img src="/resources/images/events/code-and-chill-white.png" width="270" height="300">
-                <h3 class="text-white">Next Session: 08/11/2017<br>Room: EHB J205</h3>
+                <h3 class="text-white">Next Session: 06/12/2017<br>Room: EHB J205</h3>
                 <div class="scroll-indicator">
                     <svg width="26" height="26" class="scroll-arrow" viewBox="0 0 9.5249998 9.5250002">
                         <g class="arrow" transform="translate(0 -287.47)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round">
@@ -276,37 +308,37 @@
             </div>
         </div>
         <div class="hpadding-small">
-            <div class="sessions-container content-width">
-                <article class="session-item section hpadding-small vpadding-mid clearfix" data-session="1">
-                    <div class="cell-row">
-                        <div class="cell m12 cell-middle">
-                            <h3>Session One:</h3>
-                        </div>
-                        <div class="cell m12 cell-middle text-right">
-                            <p class="date text-dark-grey">11/10/2017</p>
-                        </div>
+            <div class="sessions-container content-width clearfix text-centered">
+                <article class="session-item section" data-session="1">
+                    <div class="cell-row hpadding-small vpadding-mid">
+                        <h3>Session One:</h3>
+                        <p class="date text-dark-grey">11/10/2017</p>
                     </div>
                 </article>
-                <article class="session-item section hpadding-small vpadding-mid clearfix" data-session="2">
-                    <div class="cell-row">
-                        <div class="cell m12 cell-middle">
-                            <h3>Session Two:</h3>
-                        </div>
-                        <div class="cell m12 cell-middle text-right">
-                            <p class="date text-dark-grey">11/10/2017</p>
-                        </div>
+                <article class="session-item" data-session="2">
+                    <div class="cell-row hpadding-small vpadding-mid">
+                        <h3>Session Two:</h3>
+                        <p class="date text-dark-grey">25/10/2017</p>
                     </div>
                 </article>
-                <article class="session-item section hpadding-small vpadding-mid clearfix" data-session="3">
-                    <div class="cell-row">
-                        <div class="cell m12 cell-middle">
-                            <h3>Session Three:</h3>
-                        </div>
-                        <div class="cell m12 cell-middle text-right">
-                            <p class="date text-dark-grey">11/10/2017</p>
-                        </div>
+                <article class="session-item" data-session="3">
+                    <div class="cell-row hpadding-small vpadding-mid">
+                        <h3>Session Three:</h3>
+                        <p class="date text-dark-grey">08/11/2017</p>
                     </div>
                 </article>
+                <article class="session-item" data-session="4">
+                    <div class="cell-row hpadding-small vpadding-mid">
+                        <h3>Session Four:</h3>
+                        <p class="date text-dark-grey">06/12/2017</p>
+                    </div>
+                </article>
+                <!--<article class="session-item" data-session="5">
+                    <div class="cell-row hpadding-small vpadding-mid">
+                        <h3>Session Five:</h3>
+                        <p class="date text-dark-grey">11/10/2017</p>
+                    </div>
+                </article>-->
             </div>
         </div>
         <div class="session-contents bg-white hidden">
@@ -442,22 +474,33 @@
                             <div class="advanced-content section hpadding-small vpadding-regular">
                                 <h1>Advanced Topic</h1>
                                 <p>AngularJS (v1) is a JavaScript-based front-end web application framework mainly maintained by Google.</p>
-                                <!--<p>View the slides we went through <a href="https://drive.google.com/open?id=0B9CDy1rp7c80LVBHdVRZX1FoNlE" class="page-link-underline" target="_blank">here</a>!</p>-->
+                                <p>View the slides we went through <a href="https://drive.google.com/open?id=1pkKE7Cw_o-3PvwS5kkpVMU2Upffxcx8J" class="page-link-underline" target="_blank">here</a>!</p>
                                 <h3>Resources:</h3>
                                 <ul>
-                                    <li><a class="page-link-underline" href="https://angularjs.org/" target="_blank">Angular.js Website</a></li>
                                     <li><a class="page-link-underline" href="https://drive.google.com/open?id=1Vofr1GTawYUkPdJPVN4zmjbrojoJj-o9" target="_blank">Our Angular.js Template</a></li>
+                                    <li><a class="page-link-underline" href="https://angularjs.org/" target="_blank">Angular.js Website</a></li>
+                                    <li><a class="page-link-underline" href="https://docs.angularjs.org/api/ng/directive" target="_blank">Angular Documentation</a></li>
                                 </ul>
-                                <!--<h3>Installing Node.js:</h3>
-                                <ol>
-                                    <li>Visit the Node.js website: <a class="page-link-underline" href="https://nodejs.org/en/download/" target="_blank">here</a>!</li>
-                                    <li>Download the LTS version of Node for your relevant operating system.</li>
-                                    <li>Open a terminal and run "node -v" to make sure it has installed correctly.</li>
-                                </ol>-->
                                 <h3>Further Reading:</h3>
                                 <ul>
                                     <li><a class="page-link-underline" href="http://angular.io/" target="_blank">Angular (v2) Website</a></li>
                                 </ul>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="session-description" data-session="4a">
+                    <div class="session-title text-centered">
+                        <h1 class="cc-heading">Session Four</h1>
+                        <h3>06/12/2017</h3>
+                    </div>
+                    <div class="session-content">
+                        <div class="content-text-width vpadding-mid">
+                            <div class="beginners-content section hpadding-small vpadding-regular">
+                                <h1>Beginners Topic</h1>
+                            </div>
+                            <div class="advanced-content section hpadding-small vpadding-regular">
+                                <h1>Advanced Topic</h1>
                             </div>
                         </div>
                     </div>
