@@ -31,6 +31,13 @@ function displayHead()
     $html = <<<EOT
         <meta charset="utf-8">
         <meta name=viewport content="width=device-width, initial-scale=1.0">
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="/resources/images/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/resources/images/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/resources/images/favicon/favicon-16x16.png">
+        <link rel="manifest" href="/resources/images/favicon/manifest.json">
+        <link rel="mask-icon" href="/resources/images/favicon/safari-pinned-tab.svg" color="#000000">
+        <meta name="theme-color" content="#000000">
 
         <link rel="stylesheet" type="text/css" href="/resources/style/css/webstyle.css">
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -63,6 +70,7 @@ function displayHeader()
     }
     
     //$links .= "<a href='/codeandchill/' class='cc-nav-link page-link-underline'>code and chill!</a><style>.cc-nav-link{color:#e41f28 !important}.cc-nav-link:after{background-color:#e41f28}</style>";
+    $links .= "<a href='/localhackday/' class='cc-nav-link' target=\"_blank\"><strong>LOCAL HACK DAY</strong></a>";
     
     $html = <<<EOT
         <header class="hpadding-small vpadding-mid">
