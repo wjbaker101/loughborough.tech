@@ -76,7 +76,7 @@ function displayHeader()
         <header class="hpadding-small vpadding-mid">
             <div class="content-width clearfix">
                 <div class="header-lsu-logo">
-                    <a href="https://www.lsu.co.uk/society/lsuhack/">
+                    <a href="https://www.lsu.co.uk/society/techsoc/" target="_blank">
                         <img width="96" height="120" src="/resources/images/lsu-logo-black.png">
                     </a>
                 </div>

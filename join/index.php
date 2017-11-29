@@ -1,1 +1,1 @@
-<?php header('Location: https://lsu.co.uk/society/lsuhack') ?>
+<?php header('Location: https://lsu.co.uk/society/techsoc') ?>

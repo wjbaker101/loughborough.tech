@@ -169,7 +169,7 @@
                     <img class="logo" src="/resources/images/title-logo.png" width="500">
                 </div>
                 <h3 class="vpadding-small">Loughborough University's <strong>Tech and Coding</strong> Society</h3>
-                <p><a href="https://www.lsu.co.uk/society/lsuhack/" target="_blank"><button>Join</button></a></p>
+                <p><a href="https://www.lsu.co.uk/society/techsoc/" target="_blank"><button>Join</button></a></p>
                 <p class="scroll-indicator vpadding-regular">
                     <svg width="26" height="26" viewBox="0 0 9.5249998 9.5250002">
                         <g class="arrow" transform="translate(0 -287.47)" fill="none" stroke="#4ac0de" stroke-linecap="round" stroke-linejoin="round">
