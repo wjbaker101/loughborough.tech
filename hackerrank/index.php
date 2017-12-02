@@ -1,1 +1,0 @@
-<?php header('Location: https://www.hackerrank.com/lborotechsoc-lhd-2017') ?>

@@ -1,1 +1,0 @@
-<?php header('Location: https://lsu.co.uk/society/techsoc') ?>
