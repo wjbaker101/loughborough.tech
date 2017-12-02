@@ -262,7 +262,7 @@
                             <div class="content-text-width vpadding-mid">
                                 <p class="text-centered">The absolute basics of creating an Android app in Java. Learn by creating a simple calculator that you can run on your phone.</p>
                                 <h3>View the Slides:</h3>
-                                <p><a class="page-link-underline" href="https://drive.google.com/open?id=1Tr-HhMrPuaCXM_HtfCgHnEmAqjIFWOox" target="_blank" rel="noopener noreferrer">Here</a> are the slides we went through during the workshop.</p>
+                                <p><a class="page-link-underline" href="https://drive.google.com/open?id=1B3lWdBC5ErNwbTZZ7Ao9YfBuSOYbco7y" target="_blank" rel="noopener noreferrer">Here</a> are the slides we went through during the workshop.</p>
                                 <h3>Resources:</h3>
                                 <ul>
                                     <li><a class="page-link-underline" href="https://developer.android.com/studio/run/oem-usb.html" target="_blank" rel="noreferrer">Install the drivers</a></li>
@@ -305,6 +305,8 @@
                         <div class="session-content">
                             <div class="content-text-width vpadding-mid">
                                 <p class="text-centered">Learn all the basics of HTML, CSS and JavaScript you need to ace your MiTunes coursework. We're even here to help you with any other modules you may be stuggling with, or want to learn more about.</p>
+                                <p><a class="page-link-underline" href="https://drive.google.com/open?id=1MqvFuSZFVreAvnjCgfVIcn23sqBf4hr6" target="_blank" rel="noopener noreferrer">Here</a> are the slides we went through during the workshop.</p>
+                                <p><a class="page-link-underline" href="https://drive.google.com/open?id=1G-gtEvIE7FVI3D5XpH_Tx3WZ1qbRo6QS" target="_blank" rel="noopener noreferrer">Get the code (.zip)</a></p>
                             </div>
                         </div>
                     </article>
