@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Loughborough TechSoc | Code and Chill</title>
+        <title>Loughborough TechSoc | Workshops</title>
         
         <?php displayHead(); ?>
         
@@ -30,39 +30,6 @@
                 padding-bottom: calc(0.75em + 2px);
             }
             
-            .logo-content
-            {
-                display: table-cell;
-            }
-            
-            .scroll-arrow
-            {
-                position: absolute;
-                bottom: 3em;
-                transform: translateX(-50%);
-                animation: bounce 5s infinite;
-            }
-            
-            @keyframes bounce
-            {
-                0% { transform: translateY(0) translateX(-50%) }
-                5% { transform: translateY(1em) translateX(-50%) }
-                10% { transform: translateY(0) translateX(-50%) }
-                15% { transform: translateY(1em) translateX(-50%) }
-                20% { transform: translateY(0) translateX(-50%) }
-            }
-            
-            .scroll-indicator.scrolled .arrow
-            {
-                opacity: 0;
-                transition: opacity 0.5s;
-            }
-            
-            .sessions-container
-            {
-                margin-bottom: 90px;
-            }
-            
             .session-item
             {
                 width: 50%;
@@ -79,7 +46,7 @@
             
             .session-item:hover > div
             {
-                border: 1px solid #edeef0;
+                border: 1px solid #4ac0de;
             }
             
             .session-item img
@@ -90,16 +57,8 @@
             
             @media (max-width: 720px)
             {
-                .session-item
-                {
-                    width: 100%;
-                }
+                .session-item { width: 100%; }
             }
-            
-            /*.session-item > div:hover
-            {
-                border-color: #e41f28;
-            }*/
             
             .session-contents
             {
@@ -273,103 +232,79 @@
                 <div class="hpadding-small vpadding-mid">
                     <article class="session-description" data-session="1">
                         <div class="session-title text-centered">
-                            <h1 class="cc-heading">An introduction to Git and GitHub</h1>
+                            <h1>An introduction to Git and GitHub</h1>
                         </div>
                         <div class="session-content">
                             <div class="content-text-width vpadding-mid">
-                                <div class="beginners-content section hpadding-small vpadding-regular">
-                                    <iframe class="github-video-container" src="https://drive.google.com/file/d/1Epr_QplfV8tnIa4l-FId1CmfpH_vMaua/preview" width="720" height="405"></iframe>
-                                    <div class="vpadding-mid">
-                                        <h3>View the Slides:</h3>
-                                        <p><a class="page-link-underline" href="https://drive.google.com/open?id=15934Ag_mDX_TjGCIOyAIzp4TEf-gIG2W" target="_blank" rel="noopener noreferrer">Here</a> are the slides we went through during the workshop.</p>
-                                        <h3>Resources:</h3>
-                                        <ul>
-                                            <li><a class="page-link-underline" href="https://github.com/join" target="_blank" rel="noreferrer">Create a GitHub Account</a></li>
-                                            <li><a class="page-link-underline" href="https://education.github.com/pack" target="_blank" rel="noreferrer">Student Developer Pack</a></li>
-                                            <li><a class="page-link-underline" href="https://git-scm.com/" target="_blank" rel="noreferrer">Install Git</a></li>
-                                            <li><a class="page-link-underline" href="https://guides.github.com/" target="_blank" rel="noreferrer">GitHub Guides</a></li>
-                                            <li><a class="page-link-underline" href="https://help.github.com/articles/about-team-discussions/" target="_blank" rel="noreferrer">About GitHub Team Discussions</a></li>
-                                            <li><a class="page-link-underline" href="https://help.github.com/articles/tracking-the-progress-of-your-work-with-project-boards/" target="_blank" rel="noreferrer">About Project Boards</a></li>
-                                        </ul>
-                                    </div>
+                                <p class="text-centered">Your number 1 tool for version control. Learn how to use git through the command line and upload your projects to GitHub.</p>
+                                <iframe class="github-video-container" src="https://drive.google.com/file/d/1Epr_QplfV8tnIa4l-FId1CmfpH_vMaua/preview" width="720" height="405"></iframe>
+                                <div class="vpadding-mid">
+                                    <h3>View the Slides:</h3>
+                                    <p><a class="page-link-underline" href="https://drive.google.com/open?id=15934Ag_mDX_TjGCIOyAIzp4TEf-gIG2W" target="_blank" rel="noopener noreferrer">Here</a> are the slides we went through during the workshop.</p>
+                                    <h3>Resources:</h3>
+                                    <ul>
+                                        <li><a class="page-link-underline" href="https://github.com/join" target="_blank" rel="noreferrer">Create a GitHub Account</a></li>
+                                        <li><a class="page-link-underline" href="https://education.github.com/pack" target="_blank" rel="noreferrer">Student Developer Pack</a></li>
+                                        <li><a class="page-link-underline" href="https://git-scm.com/" target="_blank" rel="noreferrer">Install Git</a></li>
+                                        <li><a class="page-link-underline" href="https://guides.github.com/" target="_blank" rel="noreferrer">GitHub Guides</a></li>
+                                        <li><a class="page-link-underline" href="https://help.github.com/articles/about-team-discussions/" target="_blank" rel="noreferrer">About GitHub Team Discussions</a></li>
+                                        <li><a class="page-link-underline" href="https://help.github.com/articles/tracking-the-progress-of-your-work-with-project-boards/" target="_blank" rel="noreferrer">About Project Boards</a></li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
                     </article>
                     <article class="session-description" data-session="2">
                         <div class="session-title text-centered">
-                            <h1 class="cc-heading">Building an Android App</h1>
+                            <h1>Building an Android App</h1>
                         </div>
                         <div class="session-content">
                             <div class="content-text-width vpadding-mid">
-                                <div class="beginners-content section hpadding-small vpadding-regular">
-                                    <h3>View the Slides:</h3>
-                                    <p><a class="page-link-underline" href="https://drive.google.com/open?id=1Tr-HhMrPuaCXM_HtfCgHnEmAqjIFWOox" target="_blank" rel="noopener noreferrer">Here</a> are the slides we went through during the workshop.</p>
-                                    <h3>Resources:</h3>
-                                    <ul>
-                                        <li><a class="page-link-underline" href="https://developer.android.com/studio/run/oem-usb.html" target="_blank" rel="noreferrer">Install the drivers</a></li>
-                                        <li><a class="page-link-underline" href="https://developer.android.com/studio/index.html" target="_blank" rel="noreferrer">Download Android Studio</a></li>
-                                        <li><a class="page-link-underline" href="https://developer.android.com/training/index.html" target="_blank" rel="noopener noreferrer">Training for Android Developers</a></li>
-                                        <li><a class="page-link-underline" href="https://www.javatpoint.com/android-tutorial" target="_blank" rel="noopener noreferrer">Android Tutorial</a></li>
-                                        <li><a class="page-link-underline" href="http://www.vogella.com/tutorials/Android/article.html" target="_blank" rel="noopener noreferrer">Getting Started with Android Development</a></li>
-                                    </ul>
-                                </div>
+                                <p class="text-centered">The absolute basics of creating an Android app in Java. Learn by creating a simple calculator that you can run on your phone.</p>
+                                <h3>View the Slides:</h3>
+                                <p><a class="page-link-underline" href="https://drive.google.com/open?id=1Tr-HhMrPuaCXM_HtfCgHnEmAqjIFWOox" target="_blank" rel="noopener noreferrer">Here</a> are the slides we went through during the workshop.</p>
+                                <h3>Resources:</h3>
+                                <ul>
+                                    <li><a class="page-link-underline" href="https://developer.android.com/studio/run/oem-usb.html" target="_blank" rel="noreferrer">Install the drivers</a></li>
+                                    <li><a class="page-link-underline" href="https://developer.android.com/studio/index.html" target="_blank" rel="noreferrer">Download Android Studio</a></li>
+                                    <li><a class="page-link-underline" href="https://developer.android.com/training/index.html" target="_blank" rel="noopener noreferrer">Training for Android Developers</a></li>
+                                    <li><a class="page-link-underline" href="https://www.javatpoint.com/android-tutorial" target="_blank" rel="noopener noreferrer">Android Tutorial</a></li>
+                                    <li><a class="page-link-underline" href="http://www.vogella.com/tutorials/Android/article.html" target="_blank" rel="noopener noreferrer">Getting Started with Android Development</a></li>
+                                </ul>
                             </div>
                         </div>
                     </article>
                     <article class="session-description" data-session="3">
                         <div class="session-title text-centered">
-                            <h1 class="cc-heading">Session Three</h1>
-                            <h3>08/11/2017</h3>
+                            <h1>Introduction to Docker</h1>
                         </div>
                         <div class="session-content">
                             <div class="content-text-width vpadding-mid">
-                                <div class="beginners-content section hpadding-small vpadding-regular">
-                                    <h1>Beginners Topic</h1>
-                                    <p>HTML and CSS are markup languages and the building blocks that make up the web.</p>
-                                    <p>In this topic, you will learn how to structure HTML and style it with CSS.</p>
-                                    <!--<p>View the slides we went through <a href="https://drive.google.com/open?id=0B79kOzBclpj-dVU5NzhYQWdfa28" class="page-link-underline" target="_blank">here</a>!</p>-->
-                                    <h3>Resources:</h3>
-                                    <ul>
-                                        <li><a class="page-link-underline" href="https://www.w3schools.com/html/" target="_blank">w3schools HTML Reference</a></li>
-                                        <li><a class="page-link-underline" href="https://www.w3schools.com/css/" target="_blank">w3schools CSS Reference</a></li>
-                                        <li><a class="page-link-underline" href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">Mozilla Developer Network (HTML)</a></li>
-                                        <li><a class="page-link-underline" href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">Mozilla Developer Network (CSS)</a></li>
-                                        <li><a class="page-link-underline" href="https://www.codecademy.com/learn/make-a-website" target="_blank">Codecademy Make-a-Website Course</a></li>
-                                        <li><a class="page-link-underline" href="https://www.codecademy.com/catalog/language/html-css" target="_blank">Codecademy HTML and CSS Courses</a></li>
-                                    </ul>
-                                </div>
-                                <div class="advanced-content section hpadding-small vpadding-regular">
-                                    <h1>Advanced Topic</h1>
-                                    <p>AngularJS (v1) is a JavaScript-based front-end web application framework mainly maintained by Google.</p>
-                                    <p>View the slides we went through <a href="https://drive.google.com/open?id=1pkKE7Cw_o-3PvwS5kkpVMU2Upffxcx8J" class="page-link-underline" target="_blank">here</a>!</p>
-                                    <h3>Resources:</h3>
-                                    <ul>
-                                        <li><a class="page-link-underline" href="https://drive.google.com/open?id=1Vofr1GTawYUkPdJPVN4zmjbrojoJj-o9" target="_blank">Our Angular.js Template</a></li>
-                                        <li><a class="page-link-underline" href="https://angularjs.org/" target="_blank">Angular.js Website</a></li>
-                                        <li><a class="page-link-underline" href="https://docs.angularjs.org/api/ng/directive" target="_blank">Angular Documentation</a></li>
-                                    </ul>
-                                    <h3>Further Reading:</h3>
-                                    <ul>
-                                        <li><a class="page-link-underline" href="http://angular.io/" target="_blank">Angular (v2) Website</a></li>
-                                    </ul>
-                                </div>
+                                <p class="text-centered">Reduce your workload with Docker. Docker allows you to create environments that will be consistent across different platforms, so you won't have to install all those dependencies yourself.</p>
+                                <h3>View the Slides:</h3>
+                                <p><a class="page-link-underline" href="https://drive.google.com/open?id=1UmYTyvVVBZS1-Xxj9ySKQoceWrH50t82" target="_blank" rel="noopener noreferrer">Here</a> are the slides we went through during the workshop.</p>
+                                <h3>Resources:</h3>
+                                <ul>
+                                    <li><a class="page-link-underline" href="https://hub.docker.com/" target="_blank" rel="noopener noreferrer">Docker Hub</a></li>
+                                    <li><a class="page-link-underline" href="https://docs.docker.com/docker-for-mac/" target="_blank" rel="noopener noreferrer">Docker for Mac</a></li>
+                                    <li><a class="page-link-underline" href="https://docs.docker.com/docker-for-windows/" target="_blank" rel="noopener noreferrer">Docker for Windows</a></li>
+                                    <li><a class="page-link-underline" href="https://docs.docker.com/toolbox/overview/" target="_blank" rel="noopener noreferrer">Docker Toolbox</a></li>
+                                    <li><a class="page-link-underline" href="http://hackp.ac/docker-static-site-source" target="_blank" rel="noopener noreferrer">Static Site Source Code (.zip)</a></li>
+                                    <li><a class="page-link-underline" href="http://hackp.ac/docker-flask-source" target="_blank" rel="noopener noreferrer">Cat GIF of the Day Source Code (.zip)</a></li>
+                                    <li><a class="page-link-underline" href="https://docker-flask-app.herokuapp.com/" target="_blank" rel="noopener noreferrer">Cat GIF of the Day!</a></li>
+                                    <li><a class="page-link-underline" href="https://www.codecademy.com/learn/learn-python" target="_blank" rel="noopener noreferrer">Learn Python</a></li>
+                                    <li><a class="page-link-underline" href="http://flask.pocoo.org/docs/0.12/" target="_blank" rel="noopener noreferrer">Flask Documentation</a></li>
+                                </ul>
                             </div>
                         </div>
                     </article>
-                    <article class="session-description" data-session="4a">
+                    <article class="session-description" data-session="4">
                         <div class="session-title text-centered">
-                            <h1 class="cc-heading">Session Four</h1>
-                            <h3>06/12/2017</h3>
+                            <h1>Coursework Crash Course</h1>
                         </div>
                         <div class="session-content">
                             <div class="content-text-width vpadding-mid">
-                                <div class="beginners-content section hpadding-small vpadding-regular">
-                                    <h1>Beginners Topic</h1>
-                                </div>
-                                <div class="advanced-content section hpadding-small vpadding-regular">
-                                    <h1>Advanced Topic</h1>
-                                </div>
+                                <p class="text-centered">Learn all the basics of HTML, CSS and JavaScript you need to ace your MiTunes coursework. We're even here to help you with any other modules you may be stuggling with, or want to learn more about.</p>
                             </div>
                         </div>
                     </article>
