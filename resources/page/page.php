@@ -10,6 +10,7 @@ $navLinks = array
     (object)["name" => "about", "url" => "/about/"],
     (object)["name" => "events", "url" => "/events/"],
     (object)["name" => "stash", "url" => "/stash/"],
+    (object)["name" => "workshops", "url" => "/workshops/"],
 );
 
 $socialMediaLinks = array
@@ -69,8 +70,8 @@ function displayHeader()
         $links .= createHeaderLinkHTML($navLinks[$i]);
     }
     
-    //$links .= "<a href='/codeandchill/' class='cc-nav-link page-link-underline'>code and chill!</a><style>.cc-nav-link{color:#e41f28 !important}.cc-nav-link:after{background-color:#e41f28}</style>";
-    $links .= "<a href='/localhackday/' class='cc-nav-link' target=\"_blank\"><strong>LOCAL HACK DAY</strong></a>";
+    $links .= "<a href='/codeandchill/' class='cc-nav-link page-link-underline'>code and chill</a><style>.cc-nav-link{color:#e41f28 !important}.cc-nav-link:after{background-color:#e41f28}</style>";
+    //$links .= "<a href='/localhackday/' class='cc-nav-link' target=\"_blank\"><strong>LOCAL HACK DAY</strong></a>";
     
     $html = <<<EOT
         <header class="hpadding-small vpadding-mid">
