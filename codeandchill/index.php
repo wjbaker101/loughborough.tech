@@ -278,7 +278,7 @@
         <div class="logo-full-height">
             <div class="logo-content text-centered cell-middle">
                 <img src="/resources/images/events/code-and-chill-white.png" width="270" height="300">
-                <h3 class="text-white">Next Session: 06/12/2017<br>Room: EHB J205</h3>
+                <h3 class="text-white">Next Session: 13/12/2017<br>Room: EHB J205</h3>
                 <div class="scroll-indicator">
                     <svg width="26" height="26" class="scroll-arrow" viewBox="0 0 9.5249998 9.5250002">
                         <g class="arrow" transform="translate(0 -287.47)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round">
@@ -330,7 +330,7 @@
                 <article class="session-item" data-session="4">
                     <div class="cell-row hpadding-small vpadding-mid">
                         <h3>Session Four:</h3>
-                        <p class="date text-dark-grey">06/12/2017</p>
+                        <p class="date text-dark-grey">13/12/2017</p>
                     </div>
                 </article>
                 <!--<article class="session-item" data-session="5">
@@ -492,7 +492,7 @@
                 <article class="session-description" data-session="4a">
                     <div class="session-title text-centered">
                         <h1 class="cc-heading">Session Four</h1>
-                        <h3>06/12/2017</h3>
+                        <h3>13/12/2017</h3>
                     </div>
                     <div class="session-content">
                         <div class="content-text-width vpadding-mid">
