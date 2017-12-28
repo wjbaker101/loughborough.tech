@@ -23,7 +23,7 @@
             </div>
         </div>
         <div class="card-content padding-small text-centered">
-            <a><button>View Session</button></a>
+            <a href="<?= $session->url ?>"><button>View Session</button></a>
         </div>
     </div>
 </div>
