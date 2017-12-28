@@ -35,6 +35,8 @@ if (!$result || $result->num_rows === 0)
     return;
 }
 
+require_once(ROOT . '/resources/page/utils/date-utils.php');
+
 displayEvents($result, ' past');
 
 $connection->close();
@@ -88,17 +90,6 @@ function getLocationDisplay($event)
     {
         return "<a class=\"page-link-underline\" href=\"https://maps.lboro.ac.uk/?l={$event['MapUrl']}\" target=\"_blank\" rel=\"noopener noreferrer\">{$event['Name']} {$event['RoomNumber']}</a>";
     }
-}
-
-function formatDate($date)
-{
-    $first = $date->format('D, j');
-    $first = strtoupper($first);
-    
-    $second = $date->format(' M Y');
-    $second = strtoupper($second);
-    
-    return $first . $date->format('S') . $second;
 }
 
 ?>
