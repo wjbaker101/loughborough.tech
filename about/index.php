@@ -1,153 +1,171 @@
 <?php require ($_SERVER['DOCUMENT_ROOT'] . "/resources/page/page.php"); ?>
 <!DOCTYPE html>
-<html>
+<html lang="en" dir="ltr">
     <head>
-        <title>Loughborough TechSoc | About</title>
+        <?php include(INCLUDE_META) ?>
         
-        <?php displayHead(); ?>
+        <title>TechSoc - About</title>
+        
+        <meta name="description" content="About the Loughborough Technology Society.">
+        
+        <?php include(INCLUDE_STYLE) ?>
         
         <style>
-            .committee
+            .icon-text
             {
-                max-width: 750px;
-                margin: 0 auto;
-            }
-            
-            .committee-container
-            {
-                width: 175px;
-                display: inline-block;
-                vertical-align: top;
-                margin-top: 2em;
-            }
-            
-            .face-container
-            {
-                width: 150px;
-                height: 150px;
-                max-width: 100%;
-                max-height: 100%;
-                display: inline-block;
-                border: 1px solid #fff;
-                box-shadow: 0 0 0 1px #4ac0de;
-                border-radius: 50%;
-                overflow: hidden;
-            }
-            
-            .face-container .face
-            {
-                width: 100%;
-                height: 100%;
-                background-repeat: no-repeat;
-                background-position: center;
-                background-size: cover;
-            }
-            
-            .face-container .face.olly { background-image: url(/resources/images/committee/olly.jpg); }
-            .face-container .face.jakub { background-image: url(/resources/images/committee/jakub.jpg); }
-            .face-container .face.vinay { background-image: url(/resources/images/committee/vinay.jpg); }
-            .face-container .face.irina { background-image: url(/resources/images/committee/irina.jpg); }
-            .face-container .face.jas { background-image: url(/resources/images/committee/jas.jpg); }
-            .face-container .face.amanvir { background-image: url(/resources/images/committee/amanvir.jpg); }
-            .face-container .face.will { background-image: url(/resources/images/committee/will.jpg); }
-            .face-container .face.josh { background-image: url(/resources/images/committee/josh.jpg); }
-            
-            .committee-container .description
-            {
-                margin-top: 2em;
-                padding-top: 1em;
-                border-top: 1px solid #4ac0de;
-            }
-            
-            .committee-container .description .name
-            {
-                font-size: 1.25em;
-                font-weight: bold;
-            }
-            
-            .committee-container .description .role
-            {
-                text-transform: uppercase;
-                color: #4ac0de;
+                font-size: 3em;
+                line-height: 1em;
             }
         </style>
+        
+        <?php include(INCLUDE_SCRIPTS) ?>
+        
+        <script></script>
     </head>
-    <body id="top">
-        <?php displayHeader(); ?>
-        <div class="page vpadding-regular">
-            <div class="content-width hpadding-small">
-                <section class="section">
-                    <h1 class="text-centered">About the Society</h1>
-                </section>
-                <section class="committee section vpadding-mid text-centered">
-                    <h2>Committee</h2>
-                    <article class="committee-container">
-                        <div class="face-container"><div class="face olly"></div></div>
-                        <div class="description">
-                            <p class="name">Olly Pethick</p>
-                            <p class="role">CHAIR</p>
-                            <p class="course">Computer Science</p>
+    
+    <body>
+        <?php include(INCLUDE_HEADER) ?>
+        <div class="header-height"></div>
+        <h1 class="title">About Us</h1>
+        <div class="section bordered-section">
+            <div class="content-width hpadding-small vpadding-mid">
+                <div class="column-container">
+                    <div class="column l4 m12 padding-small">
+                        <div class="card bg-white text-centered">
+                            <div class="card-content hpadding-small vpadding-mid">
+                                <span class="icon-text text-theme">@</span>
+                            </div>
+                            <div class="card-content padding-small">
+                                committee<wbr>@loughborough.tech
+                            </div>
                         </div>
-                    </article>
-                    <article class="committee-container">
-                        <div class="face-container"><div class="face jakub"></div></div>
-                        <div class="description">
-                            <p class="name">Jakub Holewik</p>
-                            <p class="role">SECRETARY</p>
-                            <p class="course">Computer Science and AI</p>
+                    </div>
+                    <div class="column l4 m12 padding-small">
+                        <div class="card bg-white text-centered">
+                            <div class="card-content hpadding-small vpadding-mid">
+                                <i class="fab fa-discord fa-3x fa-fw text-theme"></i>
+                            </div>
+                            <div class="card-content padding-small">
+                                <a class="page-link-underline" href="/discord/" target="_blank" rel="noopener noreferrer">Discord</a>
+                            </div>
                         </div>
-                    </article>
-                    <article class="committee-container">
-                        <div class="face-container"><div class="face vinay"></div></div>
-                        <div class="description">
-                            <p class="name">Vinay Longia</p>
-                            <p class="role">TREASURER</p>
-                            <p class="course">Mathematics</p>
+                    </div>
+                    <div class="column l4 m12 padding-small">
+                        <div class="card bg-white text-centered">
+                            <div class="card-content hpadding-small vpadding-mid">
+                                <i class="fab fa-facebook fa-3x fa-fw text-theme"></i>
+                            </div>
+                            <div class="card-content padding-small">
+                                <a class="page-link-underline" href="https://facebook.com/lborotechsoc" target="_blank" rel="noopener noreferrer">Facebook</a>
+                            </div>
                         </div>
-                    </article>
-                    <article class="committee-container">
-                        <div class="face-container"><div class="face irina"></div></div>
-                        <div class="description">
-                            <p class="name">Irina Gongu</p>
-                            <p class="role">Events Coordinator</p>
-                            <p class="course">ITMB</p>
-                        </div>
-                    </article>
-                    <article class="committee-container">
-                        <div class="face-container"><div class="face jas"></div></div>
-                        <div class="description">
-                            <p class="name">Jasmeen Tatani</p>
-                            <p class="role">Media Officer</p>
-                            <p class="course">Computer Science and AI</p>
-                        </div>
-                    </article>
-                    <article class="committee-container">
-                        <div class="face-container"><div class="face amanvir"></div></div>
-                        <div class="description">
-                            <p class="name">Amanvir Dhoot</p>
-                            <p class="role">HARDWARE OFFICER</p>
-                            <p class="course">Computer Science</p>
-                        </div>
-                    </article>
-                    <article class="committee-container">
-                        <div class="face-container"><div class="face will"></div></div>
-                        <div class="description">
-                            <p class="name">Will Baker</p>
-                            <p class="role">SOFTWARE OFFICER</p>
-                            <p class="course">Computer Science</p>
-                        </div>
-                    </article>
-                    <article class="committee-container">
-                        <div class="face-container"><div class="face josh"></div></div>
-                        <div class="description">
-                            <p class="name">Josh Wilkinson</p>
-                            <p class="role">Innovation and Projects Officer</p>
-                            <p class="course">Computer Science</p>
-                        </div>
-                    </article>
-                </section>
+                    </div>
+                </div>
             </div>
         </div>
-        <?php displayFooter(); ?>
+        <div class="content-width hpadding-small vpadding-mid">
+            <h2 class="underlined">Committee</h2>
+            <div class="column-container">
+                <div class="column l3 m6 s12 padding-small">
+                    <div class="committee-container card">
+                        <div class="card-content padding-small text-centered">
+                            <img class="circle" src="/resources/images/committee/olly-pethick.jpg" width="150">
+                        </div>
+                        <div class="card-content padding-small">
+                            <h4>Olly Pethick</h4>
+                            <p class="text-theme">Chair</p>
+                            <p><small>Computer Science</small></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="column l3 m6 s12 padding-small">
+                    <div class="committee-container card">
+                        <div class="card-content padding-small text-centered">
+                            <img class="circle" src="/resources/images/committee/jakub-holewik.jpg" width="150">
+                        </div>
+                        <div class="card-content padding-small">
+                            <h4>Jakub Holewik</h4>
+                            <p class="text-theme">Secretary</p>
+                            <p><small>Computer Science and AI</small></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="column l3 m6 s12 padding-small">
+                    <div class="committee-container card">
+                        <div class="card-content padding-small text-centered">
+                            <img class="circle" src="/resources/images/committee/vinay-longia.jpg" width="150">
+                        </div>
+                        <div class="card-content padding-small">
+                            <h4>Vinay Longia</h4>
+                            <p class="text-theme">Treasurer</p>
+                            <p><small>Mathematics</small></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="column l3 m6 s12 padding-small">
+                    <div class="committee-container card">
+                        <div class="card-content padding-small text-centered">
+                            <img class="circle" src="/resources/images/committee/irina-gongu.jpg" width="150">
+                        </div>
+                        <div class="card-content padding-small">
+                            <h4>Irina Gongu</h4>
+                            <p class="text-theme">Events Coordinator</p>
+                            <p><small>ITMB</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column-container">
+                <div class="column l3 m6 s12 padding-small">
+                    <div class="committee-container card">
+                        <div class="card-content padding-small text-centered">
+                            <img class="circle" src="/resources/images/committee/jasmeen-tatani.jpg" width="150">
+                        </div>
+                        <div class="card-content padding-small">
+                            <h4>Jasmeen Tatani</h4>
+                            <p class="text-theme">Media Officer</p>
+                            <p><small>Computer Science and AI</small></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="column l3 m6 s12 padding-small">
+                    <div class="committee-container card">
+                        <div class="card-content padding-small text-centered">
+                            <img class="circle" src="/resources/images/committee/amanvir-dhoot.jpg" width="150">
+                        </div>
+                        <div class="card-content padding-small">
+                            <h4>Amanvir Dhoot</h4>
+                            <p class="text-theme">Hardware Officer</p>
+                            <p><small>Computer Science</small></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="column l3 m6 s12 padding-small">
+                    <div class="committee-container card">
+                        <div class="card-content padding-small text-centered">
+                            <img class="circle" src="/resources/images/committee/will-baker.jpg" width="150">
+                        </div>
+                        <div class="card-content padding-small">
+                            <h4>Will Baker</h4>
+                            <p class="text-theme">Software Officer</p>
+                            <p><small>Computer Science</small></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="column l3 m6 s12 padding-small">
+                    <div class="committee-container card">
+                        <div class="card-content padding-small text-centered">
+                            <img class="circle" src="/resources/images/committee/josh-wilkinson.jpg" width="150">
+                        </div>
+                        <div class="card-content padding-small">
+                            <h4>Josh Wilkinson</h4>
+                            <p class="text-theme">Projects Officer</p>
+                            <p><small>Computer Science</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <?php include(INCLUDE_FOOTER) ?>
     </body>
 </html>

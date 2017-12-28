@@ -1,9 +1,5 @@
-/!extras
-/!old
-/!versions
 /resources/style/.sass-cache
-/resources/style/css/
 *.bat
-/resources/page/database.php
 php_errors.log
 bundle.js
+/node_modules

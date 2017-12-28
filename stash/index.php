@@ -1,43 +1,143 @@
 <?php require ($_SERVER['DOCUMENT_ROOT'] . "/resources/page/page.php"); ?>
 <!DOCTYPE html>
-<html>
+<html lang="en" dir="ltr">
     <head>
-        <title>Loughborough TechSoc | Stash</title>
+        <?php include(INCLUDE_META) ?>
         
-        <?php displayHead(); ?>
+        <title>TechSoc - Stash</title>
+        
+        <meta name="description" content="Buy Stash representing the Loughborough Technology Society.">
+        
+        <?php include(INCLUDE_STYLE) ?>
         
         <style>
+            .stash-image
+            {
+                max-height: 400px;
+            }
+            
+            .stash-container
+            {
+                position: relative;
+            }
+            
+            .stash-anchor
+            {
+                position: absolute;
+                left: 0;
+                top: -107px;
+            }
         </style>
+        
+        <?php include(INCLUDE_SCRIPTS) ?>
+        
+        <script></script>
     </head>
-    <body id="top">
-        <?php displayHeader(); ?>
-        <div class="page vpadding-regular">
-            <div class="content-width hpadding-small">
-                <section class="section">
-                    <h1 class="text-centered">Stash</h1>
-                </section>
-                <section class="section vpadding-mid text-centered">
-                    <a href="https://www.lsu.co.uk/society/techsoc/#stash" target="_blank"><button>Get Stash</button></a>
-                    <div class="vpadding-regular clearfix">
-                        <div class="col-6 m12">
-                            <img src="/resources/images/stash/hoodie-front-preview.png" width="450">
-                        </div>
-                        <div class="col-6 m12">
-                            <img src="/resources/images/stash/hoodie-back-preview.png" width="450">
-                        </div>
-                    </div>
-                    <div class="vpadding-regular clearfix">
-                        <div class="col-6 m12">
-                            <img src="/resources/images/stash/hoodie-white-front.jpg" width="450">
-                        </div>
-                        <div class="col-6 m12">
-                            <img src="/resources/images/stash/hoodie-white-back.jpg" width="450">
-                        </div>
-                    </div>
-                    <a href="https://www.lsu.co.uk/society/techsoc/#stash" target="_blank"><button>Get Stash</button></a>
-                </section>
+    
+    <body>
+        <?php include(INCLUDE_HEADER) ?>
+        <div class="header-height"></div>
+        <h1 class="title">Stash</h1>
+        <div class="section bordered-section">
+            <div class="content-width hpadding-small vpadding-mid">
+                <p class="text-centered">Purchase Stash representing the Loughborough Technology Society.</p>
+                <p class="text-centered"><a href="https://www.lsu.co.uk/society/techsoc/#stash" target="_blank" rel="noopener noreferrer"><button>Buy Here!</button></a></p>
+                <h3>Navigation:</h3>
+                <ul>
+                    <li><a class="page-link-underline" href="#techsoc-black-zipless-hoodie">TechSoc Black Zipless Hoodie</a></li>
+                    <li><a class="page-link-underline" href="#techsoc-white-zipless-hoodie">TechSoc White Zipless Hoodie</a></li>
+                </ul>
             </div>
         </div>
-        <?php displayFooter(); ?>
+        <div class="content-width hpadding-small vpadding-mid">
+            <h2 class="underlined">Our Catalogue</h2>
+            <div class="card stash-container">
+                <div id="techsoc-black-zipless-hoodie" class="stash-anchor"></div>
+                <div class="card-content">
+                    <div class="column-container">
+                        <div class="column l6 s12 padding-regular text-right">
+                            <img class="stash-image" src="/resources/images/stash/hoodie-black-zipless-front.png">
+                        </div>
+                        <div class="column l6 s12 padding-regular">
+                            <img class="stash-image" src="/resources/images/stash/hoodie-black-zipless-back.png">
+                        </div>
+                    </div>
+                </div>
+                <div class="card-content padding-small">
+                    <h4>TechSoc Black Zipless Hoodie</h4>
+                    <p>Black zipless hoodie with TechSoc and LSU logo.</p>
+                    <p>Includes:</p>
+                    <ul>
+                        <li>Personalised text on the front</li>
+                    </ul>
+                    <table class="overflow-scroll">
+                        <tr>
+                            <th class="text-right"><strong>Size</strong></th>
+                            <th>S</th>
+                            <th>M</th>
+                            <th>L</th>
+                            <th>XL</th>
+                            <th>XXL</th>
+                        </tr>
+                        <tr>
+                            <th class="text-right"><strong>Chest (inches)</strong></th>
+                            <td>36</td>
+                            <td>40</td>
+                            <td>44</td>
+                            <td>48</td>
+                            <td>52</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="card-content padding-small clearfix">
+                    <p class="float-l"><a href="https://www.lsu.co.uk/society/techsoc/#stash" target="_blank" rel="noopener noreferrer"><button>Buy Now</button></a></p>
+                    <p class="float-r"><strong>£28.50</strong></p>
+                </div>
+            </div>
+            <div class="card stash-container">
+                <div id="techsoc-white-zipless-hoodie" class="stash-anchor"></div>
+                <div class="card-content">
+                    <div class="column-container">
+                        <div class="column l6 s12 padding-regular text-right">
+                            <img class="stash-image" src="/resources/images/stash/hoodie-black-zipless-front.png" style="filter:invert(100%)">
+                        </div>
+                        <div class="column l6 s12 padding-regular">
+                            <img class="stash-image" src="/resources/images/stash/hoodie-black-zipless-back.png" style="filter:invert(100%)">
+                        </div>
+                    </div>
+                </div>
+                <div class="card-content padding-small">
+                    <h4>TechSoc White Zipless Hoodie</h4>
+                    <p>White zipless hoodie with TechSoc and LSU logo.</p>
+                    <p>Includes:</p>
+                    <ul>
+                        <li>Personalised text on the front</li>
+                    </ul>
+                    <table class="overflow-scroll">
+                        <tr>
+                            <th class="text-right"><strong>Size</strong></th>
+                            <th>S</th>
+                            <th>M</th>
+                            <th>L</th>
+                            <th>XL</th>
+                            <th>XXL</th>
+                        </tr>
+                        <tr>
+                            <th class="text-right"><strong>Chest (inches)</strong></th>
+                            <td>36</td>
+                            <td>40</td>
+                            <td>44</td>
+                            <td>48</td>
+                            <td>52</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="card-content padding-small clearfix">
+                    <p class="float-l"><a href="https://www.lsu.co.uk/society/techsoc/#stash" target="_blank" rel="noopener noreferrer"><button>Buy Now</button></a></p>
+                    <p class="float-r"><strong>£21.00</strong></p>
+                </div>
+            </div>
+        </div>
+        <?php include(INCLUDE_FOOTER) ?>
     </body>
 </html>

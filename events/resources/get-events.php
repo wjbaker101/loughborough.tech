@@ -1,75 +1,104 @@
 <?php
 
-require_once ($_SERVER['DOCUMENT_ROOT'] . "/resources/page/database.php");
-require_once ($_SERVER['DOCUMENT_ROOT'] . "/resources/page/response.php");
-
-function echoResponse($code, $message, $type)
-{
-    $response = new Response($code, $message, $type);
-    echo json_encode($response);
-    exit;
-}
+require_once ($_SERVER['DOCUMENT_ROOT'] . "/resources/page/utils/database.php");
 
 if (!$connection)
 {
-    echoResponse('failed_database', 'Unable to connect to database.', 'ERROR');
+    echo '<p class="text-centered">We were unable to connect to the database.</p>';
+    echo '<p class="text-centered">Please refresh to try again.</p>';
+    return;
 }
 
-
 $now = (new DateTime())->format('Y-m-d H:m:i');
-$sqlData = "Title, StartDate, EndDate, Category, EventURL, Description, ImageFileLocation, FacebookURL, MapUrl, RoomNumber, Name";
-$sql = "SELECT {$sqlData} FROM Events, Buildings WHERE (Events.BuildingID = Buildings.BuildingID) AND (EndDate > '{$now}') ORDER BY EndDate ASC";
+$sqlData = "Title, StartDate, EndDate, Category, EventURL, Description, ImageFileLocation, FacebookURL, Events.BuildingID, MapUrl, RoomNumber, Name";
+$sql = "SELECT {$sqlData} FROM Events LEFT JOIN Buildings ON (Events.BuildingID = Buildings.BuildingID) WHERE (EndDate > '{$now}') ORDER BY EndDate ASC";
 
 $result = $connection->query($sql);
 
-if ($result && $result->num_rows > 0)
+if (!$result || $result->num_rows === 0)
 {
-    $response = new Response("success", "Events successfully loaded.", "SUCCESS");
+    echo '<p class="text-centered">We were unable to query the database.</p>';
+    echo '<p class="text-centered">Please refresh to try again.</p>';
+    return;
+}
+
+displayEvents($result, '');
+
+$sql = "SELECT {$sqlData} FROM Events LEFT JOIN Buildings ON (Events.BuildingID = Buildings.BuildingID) WHERE (EndDate < '{$now}') ORDER BY EndDate DESC";
+
+$result = $connection->query($sql);
+
+if (!$result || $result->num_rows === 0)
+{
+    echo '<p class="text-centered">We were unable to query the database.</p>';
+    echo '<p class="text-centered">Please refresh to try again.</p>';
+    return;
+}
+
+displayEvents($result, ' past');
+
+$connection->close();
+
+function displayEvents($result, $past)
+{
+    $count = 0;
     
     while ($event = $result->fetch_assoc())
     {
-        $screenshotUrl = "/resources/images/events/{$event['ImageFileLocation']}";
-        
-        if (file_exists($_SERVER['DOCUMENT_ROOT'] . $screenshotUrl))
-        {
-            $event["ImageFileLocation"] = $screenshotUrl;
-        }
-        else
-        {
-            $event["ImageFileLocation"] = '/resources/images/events/default.jpg';
-        }
-        
-        $response->contents['events']['upcoming'][] = $event;
-    }
-    
-    $sql = "SELECT {$sqlData} FROM Events, Buildings WHERE (Events.BuildingID = Buildings.BuildingID) AND (EndDate < '{$now}') ORDER BY EndDate DESC";
-    
-    $result = $connection->query($sql);
-    
-    if ($result && $result->num_rows > 0)
-    {
-        while ($event = $result->fetch_assoc())
-        {
-            $screenshotUrl = "/resources/images/events/{$event['ImageFileLocation']}";
+        $eventDate = getDateDisplay($event['StartDate']);
 
-            if (file_exists($_SERVER['DOCUMENT_ROOT'] . $screenshotUrl))
-            {
-                $event["ImageFileLocation"] = $screenshotUrl;
-            }
-            else
-            {
-                $event["ImageFileLocation"] = '/resources/images/events/default.jpg';
-            }
+        $eventLocation = getLocationDisplay($event);
 
-            $response->contents['events']['past'][] = $event;
+        $eventImage = "/resources/images/events/{$event['ImageFileLocation']}";
+
+        if (!file_exists(ROOT . $eventImage))
+        {
+            $eventImage = '/resources/images/events/default.jpg';
         }
+        
+        if ($count % 2 === 0) echo '<div class="column-container">';
+
+        include('event-component.php');
+
+        if ($count % 2 !== 0 || $count + 1 === $result->num_rows) echo '</div>';
+
+        $count ++;
     }
-    
-    echo json_encode($response);
 }
-else
+
+function getDateDisplay($date)
 {
-    echoResponse('failed_empty', 'No events to display.', 'REGULAR');
+    if ($date === '9999-01-01 00:00:00')
+    {
+        return '<strong>Date:</strong> TBC';
+    }
+    else
+    {
+        return formatDate(new DateTime($date)); 
+    }
+}
+
+function getLocationDisplay($event)
+{
+    if ($event['BuildingID'] === '5' || $event['BuildingID'] === null)
+    {
+        return '<strong>Location:</strong> TBC';
+    }
+    else
+    {
+        return "<a class=\"page-link-underline\" href=\"https://maps.lboro.ac.uk/?l={$event['MapUrl']}\" target=\"_blank\" rel=\"noopener noreferrer\">{$event['Name']} {$event['RoomNumber']}</a>";
+    }
+}
+
+function formatDate($date)
+{
+    $first = $date->format('D, j');
+    $first = strtoupper($first);
+    
+    $second = $date->format(' M Y');
+    $second = strtoupper($second);
+    
+    return $first . $date->format('S') . $second;
 }
 
 ?>
