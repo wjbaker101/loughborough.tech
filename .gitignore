@@ -3,3 +3,4 @@
 php_errors.log
 bundle.js
 /node_modules
+web.config
