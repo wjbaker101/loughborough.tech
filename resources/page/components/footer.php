@@ -1,10 +1,10 @@
 <?php $date = (new DateTime())->format("Y"); ?>
 
 <footer>
-    <div class="navigation bg-light-grey hpadding-small vpadding-mid">
-        <div class="content-width column-container">
-            <div class="column l4 m12">
-                <h2>Navigation:</h2>
+    <div class="navigation bg-light-grey padding-small">
+        <div class="content-width cell-row text-centered">
+            <div class="v-card-content cell l4 m12 hpadding-small vpadding-small">
+                <h3>Navigation</h3>
                 <ul>
                     <?php
                     
@@ -18,8 +18,8 @@
                     ?>
                 </ul>
             </div>
-            <div class="column l4 m12">
-                <h2>Social Media:</h2>
+            <div class="v-card-content cell l4 m12 hpadding-small vpadding-small">
+                <h3>Social Media:</h3>
                 <ul>
                     <?php
                     
@@ -33,9 +33,9 @@
                     ?>
                 </ul>
             </div>
-            <div class="column l4 m12">
+            <div class="v-card-content cell l4 m12 hpadding-small vpadding-small">
                 <h2>Committee:</h2>
-                <ul>
+                <!--<ul>
                     <li>Olly Pethick</li>
                     <li>Jakub Holewik</li>
                     <li>Vinay Longia</li>
@@ -44,13 +44,13 @@
                     <li>Amanvir Dhoot</li>
                     <li>Will Baker</li>
                     <li>Josh Wilkinson</li>
-                </ul>
+                </ul>-->
             </div>
         </div>
     </div>
     <div class="copyright bg-dark-grey">
         <div class="content-width hpadding-small vpadding-small clearfix">
-            <p class="float-l">Copyright &copy; 2016-<?php echo $date; ?></p>
+            <p class="float-l">Copyright &copy; 2016-<?= $date; ?></p>
             <p class="float-r">Loughborough Technology Society</p>
         </div>
     </div>
