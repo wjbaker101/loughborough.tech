@@ -1,7 +1,7 @@
 <?php
 
 require_once(ROOT . '/resources/page/content/footer-nav-links.php');
-require_once(ROOT . '/resources/page/content/header-nav-links.php');
+require_once(ROOT . '/resources/page/content/social-media-links.php');
 
 $date = (new DateTime())->format("Y");
 
@@ -37,7 +37,7 @@ $date = (new DateTime())->format("Y");
                 </ul>
             </div>
             <div class="v-card-content cell l4 m12 hpadding-small vpadding-small">
-                <h2>Committee</h2>
+                <h3>Committee</h3>
                 <!--<ul>
                     <li>Olly Pethick</li>
                     <li>Jakub Holewik</li>
