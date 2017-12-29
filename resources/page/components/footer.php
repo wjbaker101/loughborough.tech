@@ -1,4 +1,11 @@
-<?php $date = (new DateTime())->format("Y"); ?>
+<?php
+
+require_once(ROOT . '/resources/page/content/footer-nav-links.php');
+require_once(ROOT . '/resources/page/content/header-nav-links.php');
+
+$date = (new DateTime())->format("Y");
+
+?>
 
 <footer>
     <div class="navigation bg-light-grey padding-small">
@@ -8,33 +15,29 @@
                 <ul>
                     <?php
                     
-                    require_once(ROOT . '/resources/page/utils/nav-links.php');
-
-                    for ($i = 0; $i < count($navLinks); ++$i)
+                    foreach ($footerNavLinks as $link)
                     {
-                        echo "<li><a class=\"page-link\" href=\"{$navLinks[$i]->url}\">{$navLinks[$i]->name}</a></li>";
+                        echo "<li><a class=\"page-link\" href=\"{$link->url}\">{$link->name}</a></li>";
                     }
                     
                     ?>
                 </ul>
             </div>
             <div class="v-card-content cell l4 m12 hpadding-small vpadding-small">
-                <h3>Social Media:</h3>
+                <h3>Social Media</h3>
                 <ul>
                     <?php
                     
-                    require_once(ROOT . '/resources/page/utils/nav-links.php');
-
-                    for ($i = 0; $i < count($socialMediaLinks); ++$i)
+                    foreach ($socialMediaLinks as $link)
                     {
-                        echo "<li><a class=\"page-link\" href=\"{$socialMediaLinks[$i]->url}\" target=\"_blank\" rel=\"noopener noreferrer\"><i class=\"fab {$socialMediaLinks[$i]->icon} fa-fw\"></i> {$socialMediaLinks[$i]->name}</a></li>";
+                        echo "<li><a class=\"page-link\" href=\"{$link->url}\" target=\"_blank\" rel=\"noopener noreferrer\"><i class=\"fab {$link->icon} fa-fw\"></i> {$link->name}</a></li>";
                     }
                     
                     ?>
                 </ul>
             </div>
             <div class="v-card-content cell l4 m12 hpadding-small vpadding-small">
-                <h2>Committee:</h2>
+                <h2>Committee</h2>
                 <!--<ul>
                     <li>Olly Pethick</li>
                     <li>Jakub Holewik</li>
