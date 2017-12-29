@@ -1,5 +1,7 @@
 <?php
 
+require_once(ROOT . '/resources/page/utils/date-utils.php');
+
 function createWorkshop($title, $date, $alias, $image)
 {
     return (object)

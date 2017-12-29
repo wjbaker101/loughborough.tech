@@ -5,7 +5,8 @@
         </div>
         <div class="card-content padding-small">
             <h4><?= $workshop->title ?></h4>
-            <p><?= $workshop->eventDate ?></p>
+            <p><small><?= formatDate($workshop->eventDate) ?></small></p>
+            <p><small><?= formatTime($workshop->eventDate) ?></small></p>
         </div>
         <div class="card-content padding-small text-centered">
             <button data-micromodal-trigger="<?= $workshop->alias ?>">View Workshop</button>
