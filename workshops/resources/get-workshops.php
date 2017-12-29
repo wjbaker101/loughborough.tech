@@ -27,11 +27,7 @@ echo '<div class="column-container">';
 
 foreach ($workshops as $workshop)
 {
-    if ($count !== 0 && $count % 3 === 0)
-    {
-        echo '</div>';
-        echo '<div class="column-container">';
-    }
+    if ($count !== 0 && $count % 3 === 0) echo '</div><div class="column-container">';
     
     include('workshop-component.php');
     
