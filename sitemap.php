@@ -21,43 +21,51 @@
         <?php include(INCLUDE_HEADER) ?>
         <div class="header-height"></div>
         <h1 class="title">Sitemap</h1>
-        <div class="vmargin-small padding-small">
-            <div class="content-text-width">
-                <h2 class="">Major Pages:</h2>
-                <ul>
-                    <li><a class="page-link" href="/">Homepage</a></li>
-                    <li><a class="page-link" href="/about/">About</a></li>
-                    <li><a class="page-link" href="/events/">Society Events</a></li>
-                    <li><a class="page-link" href="/stash/">Stash</a></li>
-                    <li><a class="page-link" href="/workshops/">Workshops</a></li>
-                </ul>
+        <div class="content-text-width padding-small">
+            <div class="card">
+                <div class="card-content hpadding-small">
+                    <p><a class="page-link-underline" href="/">Homepage</a></p>
+                    <!--<p>A brief introduction about our society and what we are about. Make sure you play around with the bubbles!</p>-->
+                </div>
+                <div class="card-content hpadding-small">
+                    <p><a class="page-link-underline" href="/about/">About</a></p>
+                    <!--<p>Find out who we are, what we do and how to contact us.</p>-->
+                </div>
+                <div class="card-content hpadding-small">
+                    <p><a class="page-link-underline" href="/events/">Events</a></p>
+                    <!--<p>Come and learn with us by attending our workshops.</p>
+                    <p>For example, Code and Chill usually runs every fortnight.</p>-->
+                </div>
+                <div class="card-content hpadding-small">
+                    <p><a class="page-link-underline" href="/stash/">Stash</a></p>
+                    <!--<p>Purchase Stash representing the Loughborough Technology Society.</p>-->
+                </div>
+                <div class="card-content hpadding-small">
+                    <p><a class="page-link-underline" href="/workshops/">Workshops</a></p>
+                    <!--<p>A list of every workshop we have hosted.</p>
+                    <p>Looking for resources or links for a particular workshop?</p>-->
+                </div>
+                <div class="card-content hpadding-small">
+                    <p><a class="page-link-underline" href="/code-and-chill/">Code and Chill</a></p>
+                    <!--<p>Our fortnightly event where we teach you a new interesting technology.</p>-->
+                </div>
             </div>
-        </div>
-        <div class="bordered-section vmargin-small padding-small">
-            <div class="content-text-width">
-                <h2 class="">Event Pages:</h2>
-                <ul>
-                    <li><a class="page-link" href="/code-and-chill/">Code and Chill Sessions</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="vmargin-small padding-small">
-            <div class="content-text-width">
-                <h2 class="">External Pages:</h2>
-                <ul>
-                    <?php
-                    
-                    require_once(ROOT . '/resources/page/utils/nav-links.php');
-
-                    for ($i = 0; $i < count($socialMediaLinks); ++$i)
-                    {
-                        echo "<li><a class=\"page-link\" href=\"{$socialMediaLinks[$i]->url}\" target=\"_blank\" rel=\"noopener noreferrer\"><i class=\"fab {$socialMediaLinks[$i]->icon} fa-fw\"></i> {$socialMediaLinks[$i]->name}</a></li>";
-                    }
-                    
-                    ?>
-                    <li><a class="page-link" href="https://www.lsu.co.uk/society/techsoc/" target="_blank" rel="noopener noreferrer">LSU Site</a></li>
-                    <li><a class="page-link" href="https://github.com/wjbaker101/loughborough.tech/" target="_blank" rel="noopener noreferrer"><i class="fab fa-github fa-fw"></i> GitHub</a></li>
-                </ul>
+            <div class="card">
+                <div class="card-content hpadding-small">
+                    <p><a class="page-link-underline" href="https://www.facebook.com/lborotechsoc" target="_blank" rel="noopener noreferrer">Facebook</a></p>
+                </div>
+                <div class="card-content hpadding-small">
+                    <p><a class="page-link-underline" href="https://twitter.com/lborotechsoc" target="_blank" rel="noopener noreferrer">Twitter</a></p>
+                </div>
+                <div class="card-content hpadding-small">
+                    <p><a class="page-link-underline" href="https://github.com/wjbaker101/loughborough.tech/" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+                </div>
+                <div class="card-content hpadding-small">
+                    <p><a class="page-link-underline" href="/discord/" target="_blank" rel="noopener noreferrer">Discord</a></p>
+                </div>
+                <div class="card-content hpadding-small">
+                    <p><a class="page-link-underline" href="https://www.lsu.co.uk/society/techsoc/" target="_blank" rel="noopener noreferrer">LSU Page</a></p>
+                </div>
             </div>
         </div>
         <?php include(INCLUDE_FOOTER) ?>
