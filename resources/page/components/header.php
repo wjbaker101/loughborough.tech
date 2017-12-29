@@ -15,11 +15,11 @@
         <nav class="text-right">
             <?php
 
-            require_once(ROOT . '/resources/page/utils/nav-links.php');
+            require_once(ROOT . '/resources/page/content/header-nav-links.php');
 
-            for ($i = 0; $i < count($navLinks); ++$i)
+            foreach ($headerNavLinks as $link)
             {
-                echo "<a href=\"{$navLinks[$i]->url}\">{$navLinks[$i]->name}</a>";
+                echo "<a href=\"{$link->url}\">{$link->name}</a>";
             }
 
             ?>
