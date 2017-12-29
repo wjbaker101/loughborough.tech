@@ -16,7 +16,7 @@ $socialMediaLinks = array
     createSocialMediaLink('Twitter', 'https://twitter.com/lborotechsoc', 'fa-twitter'),
     //createSocialMediaLink('Instagram', 'https://www.instagram.com/lborotechsoc/', 'fa-instagram'),
     createSocialMediaLink('GitHub', 'https://github.com/wjbaker101/loughborough.tech/', 'fa-github'),
-    createSocialMediaLink('Discord', 'https://discord.gg/N7KxW2G', 'fa-discord'),
+    createSocialMediaLink('Discord', '/discord/', 'fa-discord'),
 );
 
 ?>
