@@ -47,7 +47,7 @@ function displayEvents($result, $past)
     
     while ($event = $result->fetch_assoc())
     {
-        $eventDate = getDateDisplay($event['StartDate']);
+        $eventDate = getDateDisplay($event['StartDate'], $event['EndDate']);
 
         $eventLocation = getLocationDisplay($event);
 
@@ -68,15 +68,18 @@ function displayEvents($result, $past)
     }
 }
 
-function getDateDisplay($date)
+function getDateDisplay($startDate, $endDate)
 {
-    if ($date === '9999-01-01 00:00:00')
+    $dateStart = new DateTime($startDate);
+    $dateEnd = new DateTime($endDate);
+    
+    if ($startDate === '9999-01-01 00:00:00')
     {
         return '<strong>Date:</strong> TBC';
     }
     else
     {
-        return formatDate(new DateTime($date)); 
+        return '<p><small>' . formatDate($dateStart) . '</small></p><p><small>' . formatTime($dateStart) . ' - ' . formatTime($dateEnd) . '</small></p>';
     }
 }
 
