@@ -11,4 +11,19 @@ function formatDate($date)
     return $first . $date->format('S') . $second;
 }
 
+function formatTime($date)
+{
+    $hour = intval($date->format('h'));
+    
+    $minutes = intval($date->format('i'));
+    
+    $formatted = $hour;
+    
+    if ($minutes > 0) $formatted .= ':' . $minutes;
+    
+    $formatted .= $date->format('a');
+    
+    return $formatted;
+}
+
 ?>
