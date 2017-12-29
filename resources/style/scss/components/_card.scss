@@ -9,9 +9,19 @@
     margin-top: ($base-size * 2);
 }
 
-.card-content + .card-content
+.card-content
 {
-    border-top: 1px solid var(--dark-grey);
+    &::before,
+    &::after
+    {
+        content: '';
+        display: table;
+    }
+    
+    + .card-content
+    {
+        border-top: 1px solid var(--dark-grey);
+    }
 }
 
 .card.card-hover:hover
