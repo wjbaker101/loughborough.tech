@@ -20,6 +20,7 @@ const config =
     js:
     {
         entryPoint: './resources/scripts/src/main.js',
+        entryPoints: './resources/scripts/src/**/*.js',
         outputDirectory: './resources/scripts',
         outputFile: 'bundle.js',
     },
@@ -62,7 +63,7 @@ gulp.task('sass', () =>
 gulp.task('watch', () =>
 {
     gulp.watch(config.style.entryPoints, ['sass']);
-    gulp.watch(config.js.entryPoint, ['js']);
+    gulp.watch(config.js.entryPoints, ['js']);
 });
 
 gulp.task('default', ['sass', 'js']);
