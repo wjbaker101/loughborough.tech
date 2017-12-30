@@ -31,30 +31,6 @@
                 background-attachment: fixed;
             }
             
-            .scroll-arrow
-            {
-                position: absolute;
-                bottom: 3em;
-                left: 50%;
-                transform: translateX(-50%);
-                animation: bounce 5s infinite;
-            }
-            
-            .scroll-indicator.scrolled
-            {
-                opacity: 0;
-                transition: opacity 0.5s;
-            }
-            
-            @keyframes bounce
-            {
-                0% { transform: translateY(0) translateX(-50%) }
-                5% { transform: translateY(1em) translateX(-50%) }
-                10% { transform: translateY(0) translateX(-50%) }
-                15% { transform: translateY(1em) translateX(-50%) }
-                20% { transform: translateY(0) translateX(-50%) }
-            }
-            
             .session-brand-image
             {
                 max-width: 150px;
@@ -65,21 +41,7 @@
         <?php include(INCLUDE_SCRIPTS) ?>
         
         <script>
-            window.addEventListener('load', () =>
-            {
-                const scrollArrowButton = document.querySelector('.scroll-indicator');
-
-                const onWindowScroll = () =>
-                {
-                    if (window.scrollY > 50)
-                    {
-                        scrollArrowButton.classList.add('scrolled');
-                        window.removeEventListener('scroll', onWindowScroll);
-                    }
-                };
-
-                window.addEventListener('scroll', onWindowScroll);
-            });
+            window.addEventListener('load', () => techSoc.scrollIndicator.init('.arrow-scroll-indicator', 'var(--white)'));
         </script>
     </head>
     
@@ -90,14 +52,7 @@
                 <img src="/resources/images/branding/code-and-chill-white.png" width="270">
                 <h4 class="text-white">Next Session: TBC</h4>
                 <h4 class="text-white">Location: <!--EHB J205-->TBC</h4>
-                <div class="scroll-indicator">
-                    <svg width="26" height="26" class="scroll-arrow" viewBox="0 0 9.5249998 9.5250002">
-                        <g class="arrow" transform="translate(0 -287.47)" fill="none" stroke="var(--white)" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="m2.6458 292.77 2.1167 2.6458 2.1167-2.6458" stroke-width="1.2"></path>
-                            <path d="m4.7625 295.41v-6.35" stroke-width="1.2"></path>
-                        </g>
-                    </svg>
-                </div>
+                <div class="arrow-scroll-indicator"></div>
             </div>
         </div>
         <div class="bordered-section hpadding-small vpadding-large">
