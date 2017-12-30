@@ -1,0 +1,28 @@
+.arrow-indicator
+{
+    position: absolute;
+    bottom: 3em;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: bounce 5s infinite;
+}
+
+.indicator-scrolled .arrow-indicator
+{
+    animation: none;
+}
+
+@keyframes bounce
+{
+    0% { transform: translateY(0) translateX(-50%) }
+    5% { transform: translateY(1em) translateX(-50%) }
+    10% { transform: translateY(0) translateX(-50%) }
+    15% { transform: translateY(1em) translateX(-50%) }
+    20% { transform: translateY(0) translateX(-50%) }
+}
+
+.indicator-scrolled
+{
+    opacity: 0;
+    transition: opacity 0.5s;
+}
