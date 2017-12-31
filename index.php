@@ -79,7 +79,9 @@
                     <div class="column l4 s6 padding-small">
                         <div class="card bg-white">
                             <div class="card-content hpadding-small vpadding-regular">
-                                <i class="fas fa-code fa-3x text-theme"></i>
+                                <svg width="64" height="64" class="cell-middle">
+                                    <use xlink:href="/resources/external/orion/icons.svg#source-code-1"></use>
+                                </svg>
                             </div>
                             <div class="card-content hpadding-small clearfix">
                                 <h4>Learn</h4>
@@ -89,7 +91,9 @@
                     <div class="column l4 s6 padding-small">
                         <div class="card bg-white">
                             <div class="card-content hpadding-small vpadding-regular">
-                                <i class="fas fa-desktop fa-3x text-theme"></i>
+                                <svg width="64" height="64" class="cell-middle">
+                                    <use xlink:href="/resources/external/orion/icons.svg#flat-tv-1"></use>
+                                </svg>
                             </div>
                             <div class="card-content hpadding-small clearfix">
                                 <h4>Create</h4>
@@ -99,7 +103,9 @@
                     <div class="column l4 s6 padding-small">
                         <div class="card bg-white">
                             <div class="card-content hpadding-small vpadding-regular">
-                                <i class="fas fa-trophy fa-3x text-theme"></i>
+                                <svg width="64" height="64" class="cell-middle">
+                                    <use xlink:href="/resources/external/orion/icons.svg#champion-1"></use>
+                                </svg>
                             </div>
                             <div class="card-content hpadding-small clearfix">
                                 <h4>Achieve</h4>
