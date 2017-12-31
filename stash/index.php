@@ -40,8 +40,24 @@
         <h1 class="title">Stash</h1>
         <div class="section bordered-section">
             <div class="content-width hpadding-small vpadding-mid">
-                <p class="text-centered">Purchase Stash representing the Loughborough Technology Society.</p>
-                <p class="text-centered"><a href="https://www.lsu.co.uk/society/techsoc/#stash" target="_blank" rel="noopener noreferrer"><button>Buy Here!</button></a></p>
+                <div class="column-container section">
+                    <div class="column l4 m12 padding-small"><div class="card-content"></div></div>
+                    <div class="column l4 m12 padding-small">
+                        <div class="card bg-white text-centered">
+                            <div class="card-content hpadding-small vpadding-mid">
+                                <svg width="64" height="64" class="cell-middle">
+                                    <use xlink:href="/resources/external/orion/icons.svg#boy-1"></use>
+                                </svg>
+                            </div>
+                            <div class="card-content hpadding-small">
+                                <p>
+                                    <a href="https://www.lsu.co.uk/society/techsoc/#stash" target="_blank" rel="noopener noreferrer"><button><i class="fas fa-shopping-cart fa-fw"></i> Buy Here!</button></a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-centered section">Purchase Stash representing the Loughborough Technology Society.</p>
                 <h3>Navigation:</h3>
                 <ul>
                     <li><a class="page-link-underline" href="#techsoc-black-zipless-hoodie">TechSoc Black Zipless Hoodie</a></li>
@@ -90,7 +106,7 @@
                     </table>
                 </div>
                 <div class="card-content padding-small clearfix">
-                    <p class="float-l"><a href="https://www.lsu.co.uk/society/techsoc/#stash" target="_blank" rel="noopener noreferrer"><button>Buy Now</button></a></p>
+                    <p class="float-l"><a href="https://www.lsu.co.uk/society/techsoc/#stash" target="_blank" rel="noopener noreferrer"><button><i class="fas fa-shopping-cart fa-fw"></i> Buy Now</button></a></p>
                     <p class="float-r"><strong>£28.50</strong></p>
                 </div>
             </div>
@@ -133,7 +149,7 @@
                     </table>
                 </div>
                 <div class="card-content padding-small clearfix">
-                    <p class="float-l"><a href="https://www.lsu.co.uk/society/techsoc/#stash" target="_blank" rel="noopener noreferrer"><button>Buy Now</button></a></p>
+                    <p class="float-l"><a href="https://www.lsu.co.uk/society/techsoc/#stash" target="_blank" rel="noopener noreferrer"><button><i class="fas fa-shopping-cart fa-fw"></i> Buy Now</button></a></p>
                     <p class="float-r"><strong>£21.00</strong></p>
                 </div>
             </div>
