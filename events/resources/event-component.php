@@ -1,5 +1,5 @@
 <div class="column l6 m12 hpadding-small vpadding-small">
-    <div class="card card-hover<?= $past ?>">
+    <div class="card card-hover bg-white<?= $past ?>">
         <div class="card-content hpadding-small vpadding-small text-centered">
             <img src="<?= $eventImage ?>">
         </div>
