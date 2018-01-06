@@ -42,6 +42,11 @@
                 position: relative;
                 z-index: 1;
             }
+            
+            .events-container img
+            {
+                max-height: 150px;
+            }
         </style>
         
         <?php include(INCLUDE_SCRIPTS) ?>
@@ -122,6 +127,7 @@
                 </div>
             </div>
         </div>
+        <?php include('get-upcoming-event.php'); ?>
         <div class="hpadding-small vpadding-xlarge">
             <div class="content-text-width text-centered">
                 <h2 class="underlined">Keep Up-to-Date</h2>
