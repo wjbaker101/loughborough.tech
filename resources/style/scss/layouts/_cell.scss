@@ -40,7 +40,7 @@
         &.m9 { width: 75%; }
         &.m10 { width: 83.33%; }
         &.m11 { width: 91.66%; }
-        &.m12 { width: 100%; }
+        &.m12 { width: 100%; display: block; }
     }
     
     @media screen and (max-width: $breakpoint-small)
@@ -56,7 +56,7 @@
         &.s9 { width: 75%; }
         &.s10 { width: 83.33%; }
         &.s11 { width: 91.66%; }
-        &.s12 { width: 100%; }
+        &.s12 { width: 100%; display: block; }
     }
 }
 
