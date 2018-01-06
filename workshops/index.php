@@ -55,19 +55,7 @@
         
         <?php include(INCLUDE_SCRIPTS) ?>
         
-        <script src="https://unpkg.com/micromodal/dist/micromodal.min.js" defer></script>
-        
-        <script>
-            window.addEventListener('load', () =>
-            {
-                MicroModal.init(
-                {
-                    disableScroll: true,
-                    onClose: close,
-                    onOpen: open,
-                });
-            });
-        </script>
+        <script></script>
     </head>
     
     <body>
