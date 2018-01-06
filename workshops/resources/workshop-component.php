@@ -8,7 +8,7 @@
             <p><small><?= formatDate($workshop->eventDate) ?></small></p>
         </div>
         <div class="card-content padding-small text-centered">
-            <button data-micromodal-trigger="<?= $workshop->alias ?>">View Workshop</button>
+            <a href="<?= $workshop->url ?>"><button>View Workshop</button></a>
         </div>
     </div>
 </div>
