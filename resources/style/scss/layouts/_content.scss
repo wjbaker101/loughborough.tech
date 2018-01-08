@@ -1,0 +1,38 @@
+.content-width
+{
+    width: 1024px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.content-text-width
+{
+    width: 720px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.full-height
+{
+    position: relative;
+    height: 100%;
+}
+
+.header-height
+{
+    height: 152px;
+}
+
+.bordered-section
+{
+    background-color: var(--light-grey);
+    border-top: 1px solid var(--dark-grey);
+    border-bottom: 1px solid var(--dark-grey);
+}
+
+.section + .section
+{
+    margin-top: ($base-size * 2);
+}

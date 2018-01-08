@@ -1,0 +1,27 @@
+$colours:
+(
+    'white': #fff,
+    'black': #111,
+
+    'error': #c01717,
+    'warning': #ffb400,
+    'success': #6cc017,
+
+    'theme': #4ac0de,
+    'mono': #69b3c5,
+    
+    'code-and-chill': #e41f28,
+
+    'light-grey': #fbfbfb,
+    'dark-grey': #eee,
+);
+
+@function get-colour($value)
+{
+    @if map-has-key($colours, $value)
+    {
+        @return map-get($colours, $value);
+    }
+
+    @return transparent;
+}

@@ -1,0 +1,22 @@
+:root
+{     
+    --layer1: var(--theme);
+    --layer2: var(--theme);
+}
+
+button
+{
+    --layer1: var(--white);
+    --layer2: var(--white);
+    
+    &:hover
+    {
+        --layer1: var(--black);
+        --layer2: var(--black);
+    }
+    
+    svg *
+    {
+        transition: stroke $duration-short;
+    }
+}

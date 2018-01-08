@@ -1,0 +1,25 @@
+button,
+.button
+{
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    position: relative;
+    padding: 0.5em 1em;
+    display: inline-block;
+    font: inherit;
+    line-height: 1em;
+    letter-spacing: inherit;
+    border-radius: 2em;
+    background-color: var(--theme);
+    border: 1px solid var(--theme);
+    color: var(--white);
+    vertical-align: middle;
+    cursor: pointer;
+    transition: background-color $duration-short, color $duration-short;
+
+    &:hover
+    {
+        background-color: var(--white);
+        color: var(--black);
+    }
+}

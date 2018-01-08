@@ -1,0 +1,8 @@
+@each $name, $colour in $colours
+{
+    .text-#{$name},
+    .hover-text-#{$name}:hover
+    {
+        color: var(--#{$name});
+    }
+}

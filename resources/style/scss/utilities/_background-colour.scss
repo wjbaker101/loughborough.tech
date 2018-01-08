@@ -1,0 +1,18 @@
+@each $name, $colour in $colours
+{
+    .bg-#{$name},
+    .hover-bg-#{$name}:hover
+    {
+        background-color: var(--#{$name});
+        
+        @if (lightness($colour) < 66)
+        {
+            color: var(--#{$name});
+            
+            h1, h2, h3, h4, h5, h6
+            {
+                color: var(--#{$name});
+            }
+        }
+    }
+}
