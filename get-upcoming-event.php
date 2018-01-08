@@ -8,7 +8,7 @@ $now = (new DateTime())->format('Y-m-d H:m:i');
 
 $sqlData = 'Title, StartDate, EndDate, Category, EventURL, Description, ImageFileLocation, FacebookURL, Events.BuildingID, MapUrl, RoomNumber, Name';
 
-$sql = "SELECT {$sqlData} FROM Events LEFT JOIN Buildings ON (Events.BuildingID = Buildings.BuildingID) WHERE (EndDate > '{$now}') ORDER BY StartDate ASC LIMIT 1";
+$sql = "SELECT {$sqlData} FROM Events LEFT JOIN Buildings ON (Events.BuildingID = Buildings.BuildingID) WHERE (EndDate > '{$now}') AND IsVisible=1 ORDER BY StartDate ASC LIMIT 1";
 
 $result = $connection->query($sql);
 
