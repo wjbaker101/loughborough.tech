@@ -11,11 +11,11 @@ if (!$connection)
 
 $now = (new DateTime())->format('Y-m-d H:m:i');
 $sqlData = "Title, StartDate, EndDate, Category, EventURL, Description, ImageFileLocation, FacebookURL, Events.BuildingID, MapUrl, RoomNumber, Name";
-$sql = "SELECT {$sqlData} FROM Events LEFT JOIN Buildings ON (Events.BuildingID = Buildings.BuildingID) WHERE (EndDate > '{$now}') ORDER BY EndDate ASC";
+$sql = "SELECT {$sqlData} FROM Events LEFT JOIN Buildings ON (Events.BuildingID = Buildings.BuildingID) WHERE (EndDate > '{$now}') AND IsVisible=1 ORDER BY EndDate ASC";
 
 $result = $connection->query($sql);
 
-if (!$result || $result->num_rows === 0)
+if (!$result)
 {
     echo '<p class="text-centered">We were unable to query the database.</p>';
     echo '<p class="text-centered">Please refresh to try again.</p>';
@@ -24,11 +24,11 @@ if (!$result || $result->num_rows === 0)
 
 displayEvents($result, '');
 
-$sql = "SELECT {$sqlData} FROM Events LEFT JOIN Buildings ON (Events.BuildingID = Buildings.BuildingID) WHERE (EndDate < '{$now}') ORDER BY EndDate DESC";
+$sql = "SELECT {$sqlData} FROM Events LEFT JOIN Buildings ON (Events.BuildingID = Buildings.BuildingID) WHERE (EndDate < '{$now}') AND IsVisible=1 ORDER BY EndDate DESC";
 
 $result = $connection->query($sql);
 
-if (!$result || $result->num_rows === 0)
+if (!$result)
 {
     echo '<p class="text-centered">We were unable to query the database.</p>';
     echo '<p class="text-centered">Please refresh to try again.</p>';
