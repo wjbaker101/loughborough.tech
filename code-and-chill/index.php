@@ -74,9 +74,10 @@
         <div class="bordered-section hpadding-small vpadding-large">
             <div class="content-text-width text-centered">
                 <h2 class="underlined">What is Code and Chill?</h2>
-                <p>Come and see what the society has to offer and learn something new. We will simply be coding in a room with Netflix/Music in the background.</p>
-                <p><strong>Please bring your own laptops and devices as there are no computers available at this venue!</strong></p>
-                <p>View each session's topics below:</p>
+                <p>Join us for our fortnightly Code and Chill Sessions, where you can either learn a new programming language, or get help with a personal project/coursework!</p>
+                <p>Free food and drinks, as well as music, will be available at the venue for your entertainment.</p>
+                <p>So come over, relax, and learn something new!</p>
+                <p><em><strong>Important:</strong> Please bring your own laptops and devices as there are no computers available at this venue!</em></p>
             </div>
         </div>
         <div class="content-width hpadding-small vpadding-large">
