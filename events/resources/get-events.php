@@ -1,6 +1,6 @@
 <?php
 
-require_once ($_SERVER['DOCUMENT_ROOT'] . "/resources/page/utils/database.php");
+require_once (ROOT . '/resources/page/utils/database.php');
 
 if (!$connection)
 {
