@@ -36,6 +36,10 @@
                 max-width: 150px;
                 max-height: 75px;
             }
+            
+            .next-session-details
+            {
+            }
         </style>
         
         <?php include(INCLUDE_SCRIPTS) ?>
@@ -49,9 +53,21 @@
         <?php include(INCLUDE_HEADER) ?>
         <div class="title-image full-height cell-row">
             <div class="cell cell-middle hpadding-small text-centered">
-                <img src="/resources/images/branding/code-and-chill-white.png" width="270">
-                <h4 class="text-white">Next Session: TBC</h4>
-                <h4 class="text-white">Location: <!--EHB J205-->TBC</h4>
+                <img class="section" src="/resources/images/branding/code-and-chill-white.png" width="270">
+                <div class="content-width column-container section">
+                    <div class="column l4 s12">&nbsp;</div>
+                    <div class="next-session-details column l4 s12 text-white">
+                        <h3>Next Session:</h3>
+                        <div class="column-container">
+                            <div class="column l6 m12">
+                                <h4><i class="far fa-calendar fa-fw"></i> TBC</h4>
+                            </div>
+                            <div class="column l6 m12">
+                                <h4><i class="fas fa-map-marker-alt fa-fw"></i> <!--EHB J205-->TBC</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="arrow-scroll-indicator"></div>
             </div>
         </div>
