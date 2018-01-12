@@ -9,16 +9,16 @@ button,
     font: inherit;
     line-height: 1em;
     letter-spacing: inherit;
-    background-color: var(--white);
+    background-color: var(--theme);
     border: 1px solid var(--theme);
-    color: var(--black);
+    color: var(--white);
     vertical-align: middle;
     cursor: pointer;
     transition: background-color $duration-short, color $duration-short;
 
     &:hover
     {
-        background-color: var(--theme);
-        color: var(--white);
+        background-color: transparent;
+        color: var(--black);
     }
 }
