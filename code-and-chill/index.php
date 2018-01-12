@@ -57,8 +57,8 @@
                 <div class="content-width column-container section">
                     <div class="column l4 s12">&nbsp;</div>
                     <div class="next-session-details column l4 s12 text-white">
-                        <h3>Next Session:</h3>
-                        <div class="column-container">
+                        <h3 class="card-content">Next Session:</h3>
+                        <div class="column-container card-content">
                             <div class="column l6 m12">
                                 <h4><i class="far fa-calendar fa-fw"></i> TBC</h4>
                             </div>
