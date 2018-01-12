@@ -132,7 +132,7 @@
             <div class="content-text-width text-centered">
                 <h2 class="underlined">Keep Up-to-Date</h2>
                 <p>By joining the Loughborough Technology Society, you will be invited to our Discord and receive emails about upcoming events and sessions.</p>
-                <p><a class="button" href="https://www.facebook.com/lborotechsoc/" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i> Facebook</a><a class="button" href="https://twitter.com/lborotechsoc" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i> Twitter</a><a class="button" href="https://discord.gg/N7KxW2G" target="_blank" rel="noopener noreferrer"><i class="fab fa-discord"></i> Discord</a></p>
+                <p><a href="https://www.facebook.com/lborotechsoc/" target="_blank" rel="noopener noreferrer"><button><i class="fab fa-facebook"></i> Facebook</button></a><a href="https://twitter.com/lborotechsoc" target="_blank" rel="noopener noreferrer"><button><i class="fab fa-twitter"></i> Twitter</button></a><a href="https://discord.gg/N7KxW2G" target="_blank" rel="noopener noreferrer"><button><i class="fab fa-discord"></i> Discord</button></a></p>
             </div>
         </div>
         <?php include(INCLUDE_FOOTER) ?>

@@ -1,15 +1,14 @@
 button,
 .button
 {
-    margin-left: 0.5em;
-    margin-right: 0.5em;
+    margin-left: ($base-size / 2);
+    margin-right: ($base-size / 2);
     position: relative;
-    padding: 0.5em 1em;
+    padding: ($base-size / 1.5) $base-size;
     display: inline-block;
     font: inherit;
     line-height: 1em;
     letter-spacing: inherit;
-    border-radius: 2em;
     background-color: var(--theme);
     border: 1px solid var(--theme);
     color: var(--white);
@@ -19,7 +18,7 @@ button,
 
     &:hover
     {
-        background-color: var(--white);
+        background-color: transparent;
         color: var(--black);
     }
 }

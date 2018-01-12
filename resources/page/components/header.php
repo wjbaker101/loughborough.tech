@@ -22,7 +22,7 @@
                 echo "<a href=\"{$link->url}\">{$link->name}</a>";
             }
             
-            echo "<a class=\"page-link-underline\" href=\"code-and-chill\" style=\"--theme: var(--code-and-chill);--mono: var(--code-and-chill)\">code and chill</a>";
+            echo '<a class="page-link-underline" href="/code-and-chill/" style="--theme: var(--code-and-chill);--mono: var(--code-and-chill)">code and chill</a>';
 
             ?>
         </nav>
