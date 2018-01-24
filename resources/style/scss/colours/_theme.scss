@@ -25,3 +25,7 @@ $colours:
 
     @return transparent;
 }
+
+@import 'background-colour';
+@import 'border-colour';
+@import 'text-colour';

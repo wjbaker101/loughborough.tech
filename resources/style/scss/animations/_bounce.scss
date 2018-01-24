@@ -1,0 +1,8 @@
+@keyframes bounce
+{
+    0% { transform: translateY(0) translateX(-50%) }
+    5% { transform: translateY(1em) translateX(-50%) }
+    10% { transform: translateY(0) translateX(-50%) }
+    15% { transform: translateY(1em) translateX(-50%) }
+    20% { transform: translateY(0) translateX(-50%) }
+}
