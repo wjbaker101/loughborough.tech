@@ -1,0 +1,23 @@
+$sizes:
+(
+    'small': $base-size,
+    'regular': ($base-size * 2),
+    'mid': ($base-size * 4),
+    'large': ($base-size * 6),
+    'xlarge': ($base-size * 8)
+);
+
+@each $name, $size in $sizes
+{
+    .vmargin-#{$name}
+    {
+        margin-top: $size;
+        margin-bottom: $size;
+    }
+    
+    .hmargin-#{$name}
+    {
+        margin-left: $size;
+        margin-right: $size;
+    }
+}

@@ -1,0 +1,19 @@
+.arrow-indicator
+{
+    position: absolute;
+    bottom: 3em;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: bounce 5s infinite;
+}
+
+.indicator-scrolled .arrow-indicator
+{
+    animation: none;
+}
+
+.indicator-scrolled
+{
+    opacity: 0;
+    transition: opacity 0.5s;
+}
