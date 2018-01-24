@@ -1,208 +1,140 @@
 <?php require ($_SERVER['DOCUMENT_ROOT'] . "/resources/page/page.php"); ?>
 <!DOCTYPE html>
-<html>
+<html lang="en" dir="ltr">
     <head>
-        <title>Loughborough TechSoc</title>
+        <?php include(INCLUDE_META) ?>
         
-        <?php displayHead(); ?>
+        <title>TechSoc</title>
+        
+        <meta name="description" content="TechSoc is Loughborough's Technology Society.">
+        
+        <?php include(INCLUDE_STYLE) ?>
         
         <style>
             .title-container
             {
-                width: 100%;
-                height: calc(100vh - 152px);
-                margin-top: 152px;
-                display: table;
+                padding-top: 152px;
+                padding-bottom: 152px;
             }
             
             .logo-container
             {
-                max-width: 500px;
-                max-height: 302px;
-                margin: 0 auto;
                 position: relative;
+                display: table;
+                margin-left: auto;
+                margin-right: auto;
+                line-height: 0;
+                background-color: var(--black);
             }
             
             #logo-background
             {
                 width: 100%;
-                height: calc(100% - 10px); /* -10px to prevent "black area under logo" issue */
+                height: 100%;
                 position: absolute;
+                top: 0;
                 left: 0;
-                z-index: -1;
-                background-color: #000;
             }
             
-            .logo-container .logo
+            .techsoc-logo
             {
+                max-width: 100%;
+                position: relative;
                 z-index: 1;
-                pointer-events: none;
             }
             
-            .title-container strong
+            .events-container img
             {
-                text-decoration: underline;
-                color: #4ac0de;
-            }
-            
-            .scroll-indicator
-            {
-                color: #4ac0de;
-            }
-            
-            .scroll-indicator.scrolled .arrow
-            {
-                opacity: 0;
-                transition: opacity 0.5s;
-            }
-            
-            .page
-            {
-                margin-top: 0;
+                max-height: 150px;
             }
         </style>
+        
+        <?php include(INCLUDE_SCRIPTS) ?>
         
         <script src="/resources/external/paper.js"></script>
         
         <script type="text/paperscript" canvas="logo-background">
-            // The amount of symbol we want to place;
-            var count = 20;
-
-            // Create a symbol, which we will use to place instances of later:
-            var path = new Path.Circle({
-                center: [0, 0],
-                radius: 10,
-                fillColor: '#4ac0de',
-                strokeColor: '#4ac0de'
-            });
-
-            var symbol = new Symbol(path);
-
-            // Place the instances of the symbol:
-            for (var i = 0; i < count; i++) {
-                // The center position is a random point in the view:
-                var center = Point.random() * view.size;
-                var placed = symbol.place(center);
-                placed.scale(i / count + 0.001);
-                placed.data.vector = new Point({
-                    angle: Math.random() * 360,
-                    length : (i / count) * Math.random() / 5
-                });
-            }
-
-            var vector = new Point({
-                angle: 45,
-                length: 0
-            });
-
-            var mouseVector = vector.clone();
-
-            function onMouseMove(event) {
-                mouseVector = -(view.center - event.point);
-                return false; // Prevent touch scrolling
-            }
-
-            // The onFrame function is called up to 60 times a second:
-            function onFrame(event) {
-                vector = vector + (mouseVector - vector) / 30;
-
-                // Run through the active layer's children list and change
-                // the position of the placed symbols:
-                for (var i = 0; i < count; i++) {
-                    var item = project.activeLayer.children[i];
-                    var size = item.bounds.size;
-                    var length = (vector.length / 10 * size.width / 10) / 10;
-                    
-                    item.position += vector.normalize(length) + item.data.vector;
-                    keepInView(item);
-                }
-            }
-
-            function keepInView(item) {
-                var position = item.position;
-                var viewBounds = view.bounds;
-                if (position.isInside(viewBounds))
-                    return;
-                var itemBounds = item.bounds;
-                if (position.x > viewBounds.width + 5) {
-                    position.x = -item.bounds.width;
-                }
-
-                if (position.x < -itemBounds.width - 5) {
-                    position.x = viewBounds.width;
-                }
-
-                if (position.y > viewBounds.height + 5) {
-                    position.y = -itemBounds.height;
-                }
-
-                if (position.y < -itemBounds.height - 5) {
-                    position.y = viewBounds.height
-                }
-            }
+            // Modified version of: http://paperjs.org/features/#symbols
+            
+            function onMouseMove(e){return mouseVector=-(view.center-e.point),!1}function onFrame(e){vector+=(mouseVector-vector)/30;for(var o=0;count>o;o++){var t=project.activeLayer.children[o],n=t.bounds.size,i=vector.length/10*n.width/10/10;t.position+=vector.normalize(i)+t.data.vector,keepInView(t)}}function keepInView(e){var o=e.position,t=view.bounds;if(!o.isInside(t)){var n=e.bounds;o.x>t.width+5&&(o.x=-e.bounds.width),o.x<-n.width-5&&(o.x=t.width),o.y>t.height+5&&(o.y=-n.height),o.y<-n.height-5&&(o.y=t.height)}}for(var count=20,path=new Path.Circle({center:[0,0],radius:10,fillColor:"#4ac0de",strokeColor:"#4ac0de"}),symbol=new Symbol(path),i=0;count>i;i++){var center=Point.random()*view.size,placed=symbol.place(center);placed.scale(i/count+.001),placed.data.vector=new Point({angle:360*Math.random(),length:i/count*Math.random()/5})}var vector=new Point({angle:45,length:0}),mouseVector=vector.clone();
         </script>
         
         <script>
-            window.addEventListener('load', () =>
-            {
-                const scrollArrowButton = document.querySelector('.scroll-indicator');
-
-                const onWindowScroll = () =>
-                {
-                    if (window.scrollY > 50)
-                    {
-                        scrollArrowButton.classList.add('scrolled');
-                        window.removeEventListener('scroll', onWindowScroll);
-                    }
-                };
-
-                window.addEventListener('scroll', onWindowScroll);
-            });
+            window.addEventListener('load', () => techSoc.scrollIndicator.init('.arrow-scroll-indicator'));
         </script>
     </head>
-    <body id="top">
-        <?php displayHeader(); ?>
-        <div class="title-container">
-            <div class="cell cell-middle hpadding-small text-centered">
+    
+    <body>
+        <?php include(INCLUDE_HEADER) ?>
+        <div class="title-container full-height cell-row">
+            <div class="cell l12 cell-middle hpadding-small">
                 <div class="logo-container">
                     <canvas id="logo-background" resize></canvas>
-                    <img class="logo" src="/resources/images/title-logo.png" width="500">
+                    <img class="techsoc-logo" src="/resources/images/branding/techsoc-logo-white.png" width="500">
                 </div>
-                <h3 class="vpadding-small">Loughborough University's <strong>Tech and Coding</strong> Society</h3>
-                <p><a href="https://www.lsu.co.uk/society/techsoc/" target="_blank"><button>Join</button></a></p>
-                <p class="scroll-indicator vpadding-regular">
-                    <svg width="26" height="26" viewBox="0 0 9.5249998 9.5250002">
-                        <g class="arrow" transform="translate(0 -287.47)" fill="none" stroke="#4ac0de" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="m2.6458 292.77 2.1167 2.6458 2.1167-2.6458" stroke-width="1.2"/>
-                            <path d="m4.7625 295.41v-6.35" stroke-width="1.2"/>
-                        </g>
-                    </svg>
-                </p>
+                <h2 class="text-centered vpadding-small">Loughborough University's <span class="text-theme">Tech and Coding</span> Society</h2>
+                <p class="text-centered"><a href="https://www.lsu.co.uk/society/techsoc/" target="_blank" rel="noopener noreferrer"><button>Join!</button></a></p>
+                <div class="arrow-scroll-indicator"></div>
             </div>
         </div>
-        <div class="page vpadding-regular">
-            <div class="content-width hpadding-small">
-                <section class="section text-centered vpadding-mid">
-                    <div class="content-text-width">
-                        <h2>About Us</h2>
-                        <p>The Loughborough Technology Society is a great way to meet like-minded people. You can work on any ideas or projects you have and we can help you get access to anything you may need.</p>
-                        <p>If you know nothing about computers, electronics or technology and would like to learn more then definitely come along. We can help you get started and point you in the right direction of the tools and resources you need.</p>
+        <div class="bordered-section hpadding-small vpadding-mid">
+            <div class="content-text-width text-centered">
+                <h2 class="underlined">About Us</h2>
+                <div class="column-container section">
+                    <div class="column l4 s6 padding-small">
+                        <div class="card bg-white">
+                            <div class="card-content hpadding-small vpadding-regular">
+                                <svg width="64" height="64" class="cell-middle">
+                                    <use xlink:href="/resources/external/orion/icons.svg#source-code-1"></use>
+                                </svg>
+                            </div>
+                            <div class="card-content hpadding-small clearfix">
+                                <h4>Learn</h4>
+                            </div>
+                        </div>
                     </div>
-                </section>
-                <section class="section text-centered vpadding-mid">
-                    <div class="content-text-width">
-                        <h2>Keep up-to-date!</h2>
-                        <p>By joining the Loughborough Technology Society, you will be invited to our Discord and receive emails about upcoming events and sessions.</p>
-                        <p>Feel free to stay up-to-date with us on social media or shoot us a facebook message if you have any questions!</p>
-                        <p>
-                            <a href="https://www.facebook.com/lborotechsoc/" target="_blank" rel="nofollow"><button><i class="fa fa-facebook"></i> Facebook</button></a>
-                            <a href="https://twitter.com/lborotechsoc" target="_blank" rel="nofollow"><button><i class="fa fa-twitter"></i> Twitter</button></a>
-                            <a href="https://discord.gg/N7KxW2G" target="_blank" rel="nofollow"><button><i class="discord-logo"></i> Discord</button></a>
-                        </p>
+                    <div class="column l4 s6 padding-small">
+                        <div class="card bg-white">
+                            <div class="card-content hpadding-small vpadding-regular">
+                                <svg width="64" height="64" class="cell-middle">
+                                    <use xlink:href="/resources/external/orion/icons.svg#flat-tv-1"></use>
+                                </svg>
+                            </div>
+                            <div class="card-content hpadding-small clearfix">
+                                <h4>Create</h4>
+                            </div>
+                        </div>
                     </div>
-                </section>
+                    <div class="column l4 s6 padding-small">
+                        <div class="card bg-white">
+                            <div class="card-content hpadding-small vpadding-regular">
+                                <svg width="64" height="64" class="cell-middle">
+                                    <use xlink:href="/resources/external/orion/icons.svg#champion-1"></use>
+                                </svg>
+                            </div>
+                            <div class="card-content hpadding-small clearfix">
+                                <h4>Achieve</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section">
+                    <p>The Loughborough Technology Society is a great way to meet like-minded people. You can work on any ideas or projects you have and we can help you get access to anything you may need.</p>
+                    <p>If you know nothing about computers, electronics or technology and would like to learn more then definitely come along. We can help you get started and point you in the right direction of the tools and resources you need.</p>
+                </div>
+                <div class="section">
+                    <a href="/about/"><button>View About Page!</button></a>
+                </div>
             </div>
         </div>
-        <?php displayFooter(); ?>
+        <?php include('get-upcoming-event.php'); ?>
+        <div class="hpadding-small vpadding-xlarge">
+            <div class="content-text-width text-centered">
+                <h2 class="underlined">Keep Up-to-Date</h2>
+                <p>By joining the Loughborough Technology Society, you will be invited to our Discord and receive emails about upcoming events and sessions.</p>
+                <p><a href="https://www.facebook.com/lborotechsoc/" target="_blank" rel="noopener noreferrer"><button><i class="fab fa-facebook"></i> Facebook</button></a><a href="https://twitter.com/lborotechsoc" target="_blank" rel="noopener noreferrer"><button><i class="fab fa-twitter"></i> Twitter</button></a><a href="https://discord.gg/N7KxW2G" target="_blank" rel="noopener noreferrer"><button><i class="fab fa-discord"></i> Discord</button></a></p>
+            </div>
+        </div>
+        <?php include(INCLUDE_FOOTER) ?>
     </body>
 </html>

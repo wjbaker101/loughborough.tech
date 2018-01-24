@@ -1,0 +1,19 @@
+@import 'colours/theme';
+
+@import 'variables';
+
+:root
+{
+    @each $name, $colour in $colours
+    {
+        --#{$name}: $colour;
+    }
+}
+
+@import 'page/page';
+@import 'utilities/utilities';
+@import 'animations/animations';
+@import 'components/components';
+@import 'elements/elements';
+@import 'layouts/layouts';
+@import 'icons/orion';
