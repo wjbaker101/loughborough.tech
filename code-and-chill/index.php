@@ -60,10 +60,16 @@
                         <h3 class="card-content">Next Session:</h3>
                         <div class="column-container card-content">
                             <div class="column l6 m12">
-                                <h4><i class="far fa-calendar fa-fw"></i> TBC</h4>
+                                <h4>
+                                    <i class="far fa-calendar fa-fw"></i>
+                                    TBC
+                                </h4>
                             </div>
                             <div class="column l6 m12">
-                                <h4><i class="fas fa-map-marker-alt fa-fw"></i> <!--EHB J205-->TBC</h4>
+                                <h4>
+                                    <i class="fas fa-map-marker-alt fa-fw"></i>
+                                    <!--EHB J205-->TBC
+                                </h4>
                             </div>
                         </div>
                     </div>
