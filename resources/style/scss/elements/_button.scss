@@ -4,7 +4,7 @@ button,
     margin-left: ($base-size / 2);
     margin-right: ($base-size / 2);
     position: relative;
-    padding: ($base-size / 1.5) $base-size;
+    padding: calc(0.6667rem + 1px) $base-size;
     display: inline-block;
     font: inherit;
     line-height: 1em;
