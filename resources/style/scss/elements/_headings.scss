@@ -1,6 +1,7 @@
 h1
 {
     font-size: ($base-size * 2);
+    text-transform: uppercase;
     
     &.title
     {
@@ -34,29 +35,8 @@ h6
     font-size: ($base-size * 0.75);
 }
 
-h1, h2, h3, h4, h5, h6
+h1, h2
 {
-    &.underlined
-    {
-        display: table;
-        position: relative;
-        padding-bottom: $base-size;
-        margin: ($base-size * 2) auto ($base-size * 2) auto;
-        
-        &::after
-        {
-            content: '';
-            width: 50%;
-            height: 1px;
-            position: absolute;
-            background-color: var(--theme);
-            left: 25%;
-            bottom: 0;
-        }
-    }
-
-    &.thin
-    {
-        font-weight: normal;
-    }
+    font-weight: normal;
+    color: var(--theme);
 }
