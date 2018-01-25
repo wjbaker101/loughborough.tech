@@ -1,10 +1,10 @@
 button,
 .button
 {
-    margin-left: ($base-size / 2);
-    margin-right: ($base-size / 2);
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
     position: relative;
-    padding: calc(0.6667rem + 1px) $base-size;
+    padding: calc(0.6667rem + 1px) 1rem;
     display: inline-block;
     font: inherit;
     line-height: 1em;
