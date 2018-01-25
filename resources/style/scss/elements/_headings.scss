@@ -1,38 +1,38 @@
 h1
 {
-    font-size: ($base-size * 2);
+    font-size: 2rem;
     text-transform: uppercase;
     
     &.title
     {
         text-align: center;
-        margin-bottom: ($base-size * 4);
+        margin-bottom: 4rem;
     }
 }
 
 h2
 {
-    font-size: ($base-size * 1.75);
+    font-size: 1.75rem;
 }
 
 h3
 {
-    font-size: ($base-size * 1.5);
+    font-size: 1.5rem;
 }
 
 h4
 {
-    font-size: ($base-size * 1.25);
+    font-size: 1.25rem;
 }
 
 h5
 {
-    font-size: $base-size;
+    font-size: 1rem;
 }
 
 h6
 {
-    font-size: ($base-size * 0.75);
+    font-size: 0.75rem;
 }
 
 h1, h2
