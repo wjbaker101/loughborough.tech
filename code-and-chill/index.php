@@ -49,6 +49,20 @@
                 max-width: 150px;
                 max-height: 75px;
             }
+            
+            .next-session-container
+            {
+                font-size: 1.25rem;
+                font-weight: bold;
+                display: table;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            .details + .details
+            {
+                padding-left: 1rem;
+            }
         </style>
         
         <?php include(INCLUDE_SCRIPTS) ?>
@@ -64,23 +78,18 @@
             <div class="cell cell-middle hpadding-small text-centered">
                 <div class="header-height"></div>
                 <img class="section" src="/resources/images/branding/code-and-chill-white.png" width="270">
-                <div class="content-width column-container section">
-                    <div class="column l4 s12">&nbsp;</div>
-                    <div class="next-session-details column l4 s12 text-white">
-                        <h3 class="card-content">Next Session:</h3>
-                        <div class="column-container card-content">
-                            <div class="column l6 m12">
-                                <h4>
-                                    <i class="far fa-calendar fa-fw"></i>
-                                    TBC
-                                </h4>
-                            </div>
-                            <div class="column l6 m12">
-                                <h4>
-                                    <i class="fas fa-map-marker-alt fa-fw"></i>
-                                    <!--EHB J205-->TBC
-                                </h4>
-                            </div>
+                <div class="next-session-container section">
+                    <div class="text-white">
+                        <h3>Next Session:</h3>
+                        <div class="vpadding-small">
+                            <span class="details">
+                                <i class="far fa-calendar fa-fw"></i>
+                                <span>TBC</span>
+                            </span>
+                            <span class="details">
+                                <i class="fas fa-map-marker-alt fa-fw"></i>
+                                <span><!--EHB J205-->TBC</span>
+                            </span>
                         </div>
                     </div>
                 </div>
