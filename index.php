@@ -72,7 +72,7 @@
                     <canvas id="logo-background" resize></canvas>
                     <img class="techsoc-logo" src="/resources/images/branding/techsoc-logo-white.png" width="500">
                 </div>
-                <h2 class="text-centered vpadding-small">Loughborough University's <span class="text-theme">Tech and Coding</span> Society</h2>
+                <h3 class="text-centered vpadding-small">Loughborough University's <span class="text-theme">Tech and Coding</span> Society</h3>
                 <p class="text-centered"><a href="https://www.lsu.co.uk/society/techsoc/" target="_blank" rel="noopener noreferrer"><button>Join!</button></a></p>
                 <div class="arrow-scroll-indicator"></div>
             </div>
