@@ -31,14 +31,23 @@
                 background-attachment: fixed;
             }
             
+            .title-image::before
+            {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                background-color: var(--code-and-chill);
+                opacity: 0.7;
+                z-index: -1;
+            }
+            
             .session-brand-image
             {
                 max-width: 150px;
                 max-height: 75px;
-            }
-            
-            .next-session-details
-            {
             }
         </style>
         
@@ -78,8 +87,8 @@
             </div>
         </div>
         <div class="bordered-section hpadding-small vpadding-large">
-            <div class="content-text-width text-centered">
-                <h2 class="underlined">What is Code and Chill?</h2>
+            <div class="content-text-width">
+                <h2>What is Code and Chill?</h2>
                 <p>Join us for our fortnightly Code and Chill Sessions, where you can either learn a new programming language, or get help with a personal project/coursework!</p>
                 <p>Free food and drinks, as well as music, will be available at the venue for your entertainment.</p>
                 <p>So come over, relax, and learn something new!</p>
