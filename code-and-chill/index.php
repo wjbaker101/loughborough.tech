@@ -46,9 +46,13 @@
             
             .session-brand-image
             {
+                max-height: 75px;
+            }
+            
+            .img-container
+            {
                 width: 150px;
                 max-width: 100%;
-                max-height: 75px;
             }
             
             .next-session-container
