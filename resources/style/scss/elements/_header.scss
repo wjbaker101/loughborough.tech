@@ -81,13 +81,13 @@ body > header
             left: 0;
         }
         
-        @media (max-width: $breakpoint-small)
+        @media (max-width: $breakpoint-large)
         {
             display: inline-block;
         }
     }
     
-    @media (max-width: $breakpoint-small)
+    @media (max-width: $breakpoint-large)
     {
         padding-top: 2em;
         padding-bottom: 2em;
