@@ -9,7 +9,7 @@ $date = (new DateTime())->format("Y");
 
 <footer>
     <div class="navigation bg-light-grey padding-small">
-        <div class="content-width cell-row text-centered">
+        <!--<div class="content-width cell-row text-centered">
             <div class="v-card-content cell l4 m12 hpadding-small vpadding-small">
                 <h3>Navigation</h3>
                 <ul>
@@ -38,7 +38,7 @@ $date = (new DateTime())->format("Y");
             </div>
             <div class="v-card-content cell l4 m12 hpadding-small vpadding-small">
                 <h3>Committee</h3>
-                <!--<ul>
+                <ul>
                     <li>Olly Pethick</li>
                     <li>Jakub Holewik</li>
                     <li>Vinay Longia</li>
@@ -47,9 +47,9 @@ $date = (new DateTime())->format("Y");
                     <li>Amanvir Dhoot</li>
                     <li>Will Baker</li>
                     <li>Josh Wilkinson</li>
-                </ul>-->
+                </ul>
             </div>
-        </div>
+        </div>-->
     </div>
     <div class="copyright bg-dark-grey">
         <div class="content-width hpadding-small vpadding-small clearfix">
