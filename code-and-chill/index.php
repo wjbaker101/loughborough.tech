@@ -46,7 +46,8 @@
             
             .session-brand-image
             {
-                max-width: 150px;
+                width: 150px;
+                max-width: 100%;
                 max-height: 75px;
             }
             
