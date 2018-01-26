@@ -6,10 +6,14 @@
         </div>
         <div class="card-content cell-row vpadding-regular text-centered">
             <div class="cell cell-middle v-card-content l6 hpadding-small">
-                <img class="session-brand-image" src="/resources/images/technologies/<?= $session->beginners->image ?>">
+                <div class="img-container margin-centered">
+                    <img class="session-brand-image" src="/resources/images/technologies/<?= $session->beginners->image ?>">
+                </div>
             </div>
             <div class="cell cell-middle v-card-content l6 hpadding-small">
-                <img class="session-brand-image" src="/resources/images/technologies/<?= $session->advanced->image ?>">
+                <div class="img-container margin-centered">
+                    <img class="session-brand-image" src="/resources/images/technologies/<?= $session->advanced->image ?>">
+                </div>
             </div>
         </div>
         <div class="card-content column-container">
