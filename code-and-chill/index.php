@@ -62,6 +62,7 @@
         <?php include(INCLUDE_HEADER) ?>
         <div class="title-image full-height cell-row">
             <div class="cell cell-middle hpadding-small text-centered">
+                <div class="header-height"></div>
                 <img class="section" src="/resources/images/branding/code-and-chill-white.png" width="270">
                 <div class="content-width column-container section">
                     <div class="column l4 s12">&nbsp;</div>
