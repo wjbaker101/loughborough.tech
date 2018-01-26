@@ -1,0 +1,16 @@
+input
+{
+    display: inline-block;
+    font: inherit;
+    letter-spacing: inherit;
+    line-height: 1em;
+    padding: calc(1rem / 1.5) 1rem;
+    vertical-align: middle;
+    border: 1px solid var(--theme);
+    transition: border-color 0.5s;
+    
+    &:focus
+    {
+        outline-color: var(--mono);
+    }
+}
