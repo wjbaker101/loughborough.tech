@@ -41,6 +41,10 @@
                         <p><small>WED, 12th DEC 2017</small></p>
                         <p>View information, resources, helpful tips on the topics covered in this Code and Chill session.</p>
                         <p>Below you will find content for the beginner and advanced topics.</p>
+                        <ul>
+                            <li><a class="page-link-underline" href="#beginners-topic">Skip</a> to <span class="beginners-text">Beginners Topic</span></li>
+                            <li><a class="page-link-underline" href="#advanced-topic">Skip</a> to <span class="advanced-text">Advanced Topic</span></li>
+                        </ul>
                     </div>
                 </div>
                 <div class="card-content">
@@ -48,7 +52,7 @@
                 </div>
             </div>
         </div>
-        <div class="content-text-width card-content vpadding-regular">
+        <div id="beginners-topic" class="content-text-width card-content vpadding-regular">
             <h1 class="beginners-text">
                 <img src="/resources/images/technologies/html5.svg" height="60">
                 <span class="cell-middle">Beginners Topic</span>
@@ -65,7 +69,7 @@
                 <li><a class="page-link-underline" href="https://www.codecademy.com/catalog/language/html-css" target="_blank" rel="noopener noreferrer">Codecademy HTML and CSS Courses</a></li>
             </ul>
         </div>
-        <div class="content-text-width card-content vpadding-regular">
+        <div id="advanced-topic" class="content-text-width card-content vpadding-regular">
             <h1 class="advanced-text">
                 <img src="/resources/images/technologies/python.svg" height="60">
                 <span class="cell-middle">Advanced Topic</span>
