@@ -1,12 +1,13 @@
 h1
 {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
     font-size: 2rem;
     text-transform: uppercase;
     
     &.title
     {
         text-align: center;
-        margin-bottom: 4rem;
     }
 }
 
