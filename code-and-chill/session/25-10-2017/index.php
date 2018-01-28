@@ -52,6 +52,27 @@
                 </div>
             </div>
         </div>
+        <div class="content-width vpadding-mid">
+            <div class="column-container">
+                <div class="column l6 padding-small">
+                    <a href="https://www.facebook.com/lborotechsoc/" target="_blank" rel="noopener noreferrer"><img class="card card-hover" src="/resources/images/code-and-chill/session-two/introduction.jpg" alt="Introduction to the session." title="Visit our Facebook page for more photos!"></a>
+                </div>
+                <div class="column l6 padding-small">
+                    <a href="https://www.facebook.com/lborotechsoc/" target="_blank" rel="noopener noreferrer"><img class="card card-hover" src="/resources/images/code-and-chill/session-two/nodejs.jpg" alt="Part of the Node.js topic." title="Visit our Facebook page for more photos!"></a>
+                </div>
+            </div>
+            <div class="column-container">
+                <div class="column l4 padding-small">
+                    <a href="https://www.facebook.com/lborotechsoc/" target="_blank" rel="noopener noreferrer"><img class="card card-hover" src="/resources/images/code-and-chill/session-two/html.jpg" alt="Part of the HTML and CSS topic." title="Visit our Facebook page for more photos!"></a>
+                </div>
+                <div class="column l4 padding-small">
+                    <a href="https://www.facebook.com/lborotechsoc/" target="_blank" rel="noopener noreferrer"><img class="card card-hover" src="/resources/images/code-and-chill/session-two/trio.jpg" alt="Trio participating the in HTML and CSS topic." title="Visit our Facebook page for more photos!"></a>
+                </div>
+                <div class="column l4 padding-small">
+                    <a href="https://www.facebook.com/lborotechsoc/" target="_blank" rel="noopener noreferrer"><img class="card card-hover" src="/resources/images/code-and-chill/session-two/banana.jpg" alt="Banana!" title="Visit our Facebook page for more photos!"></a>
+                </div>
+            </div>
+        </div>
         <div id="beginners-topic" class="content-text-width card-content vpadding-regular">
             <h1 class="beginners-text">
                 <img src="/resources/images/technologies/css3.svg" height="60">
@@ -96,51 +117,6 @@
                 <li><a class="page-link-underline" href="https://expressjs.com/" target="_blank" rel="noopener noreferrer">Express JS</a></li>
                 <li><a class="page-link-underline" href="https://github.com/GoogleChrome/puppeteer" target="_blank" rel="noopener noreferrer">Headless Chrome Library</a></li>
             </ul>
-        </div>
-        
-        
-        
-        
-        
-        
-        
-        <h1 class="text-centered"><img src="/resources/images/branding/code-and-chill-red.png" height="150"></h1>
-        <div class="content-width hpadding-small text-centered">
-            <h2>Session Two</h2>
-            <p><small>WED, 25th OCT 2017</small></p>
-            <a href="/code-and-chill/"><button>&larr; Return to Code and Chill</button></a>
-        </div>
-        <div class="content-width column-container vpadding-mid">
-            <div class="column l6 m12 hpadding-small">
-                <h2 class="underlined">Beginners Topic</h2>
-                <div class="card">
-                    <div class="card-content padding-small">
-                        <h3>What You'll Do</h3>
-                    </div>
-                    <div class="card-content padding-small">
-                    </div>
-                    <div class="card-content padding-small">
-                    </div>
-                </div>
-            </div>
-            <div class="column l6 m12 hpadding-small">
-                <h2 class="underlined">Advanced Topic</h2>
-                <div class="card">
-                    <div class="card-content padding-small">
-                        <h3>What You'll Do</h3>
-                    </div>
-                    <div class="card-content padding-small">
-                    </div>
-                    <div class="card-content padding-small">
-                    </div>
-                    <div class="card-content padding-small">
-                        <h3>Helpful Resources</h3>
-                    </div>
-                    <div class="card-content padding-small">
-                        <h3>Further Reading</h3>
-                    </div>
-                </div>
-            </div>
         </div>
         <?php include(INCLUDE_FOOTER) ?>
     </body>
