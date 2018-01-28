@@ -20,6 +20,21 @@
             {
                 color: #d11f26;
             }
+            
+            .img-container
+            {
+                padding: 0.5rem;
+            }
+            
+            .beginners-button
+            {
+                border: 1px solid #449826;
+            }
+            
+            .advanced-button
+            {
+                border: 1px solid #d11f26;
+            }
         </style>
         
         <?php include(INCLUDE_SCRIPTS) ?>
@@ -41,10 +56,8 @@
                         <p><small>WED, 12th DEC 2017</small></p>
                         <p>View information, resources, helpful tips on the topics covered in this Code and Chill session.</p>
                         <p>Below you will find content for the beginner and advanced topics.</p>
-                        <ul>
-                            <li><a class="page-link-underline" href="#beginners-topic">Skip</a> to <span class="beginners-text">Beginners Topic</span></li>
-                            <li><a class="page-link-underline" href="#advanced-topic">Skip</a> to <span class="advanced-text">Advanced Topic</span></li>
-                        </ul>
+                        <p><a href="#beginners-topic"><button class="beginners-button">Skip to Beginners Topic</button></a></p>
+                        <p><a href="#advanced-topic"><button class="advanced-button">Skip to Advanced Topic</button></a></p>
                     </div>
                 </div>
                 <div class="card-content">
