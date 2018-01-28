@@ -11,30 +11,28 @@
         <?php include(INCLUDE_STYLE) ?>
         
         <style>
-            .beginners-text
+            .beginners-title,
+            .advanced-title
             {
-                color: #449826;
+                position: relative;
             }
             
-            .advanced-text
+            #beginners-topic,
+            #advanced-topic
             {
-                color: #d11f26;
+                position: absolute;
+                top: -90px;
             }
             
-            .img-container
-            {
-                padding: 0.5rem;
-            }
+            .beginners-title { background-color: rgba(68, 152, 38, 0.7); }
+            .beginners-text { color: #449826; }
+            .beginners-button { border: 1px solid #449826; }
             
-            .beginners-button
-            {
-                border: 1px solid #449826;
-            }
+            .advanced-title { background-color: rgba(209, 31, 38, 0.7); }
+            .advanced-text { color: #d11f26; }
+            .advanced-button { border: 1px solid #d11f26; }
             
-            .advanced-button
-            {
-                border: 1px solid #d11f26;
-            }
+            .img-container { padding: 0.5rem; }
         </style>
         
         <?php include(INCLUDE_SCRIPTS) ?>
@@ -65,11 +63,16 @@
                 </div>
             </div>
         </div>
-        <div id="beginners-topic" class="content-text-width card-content hpadding-small vpadding-regular">
-            <h1 class="beginners-text">
-                <img src="/resources/images/technologies/html5.svg" height="60">
-                <span class="cell-middle">Beginners Topic</span>
-            </h1>
+        <div class="beginners-title bordered-section">
+            <div id="beginners-topic"></div>
+            <div class="content-text-width hpadding-small">
+                <h1 class="text-white">
+                    <img src="/resources/images/technologies/html5.svg" height="60">
+                    <span class="cell-middle">Beginners Topic</span>
+                </h1>
+            </div>
+        </div>
+        <div class="content-text-width hpadding-small vpadding-regular">
             <h2>What You'll Do</h2>
             <p>HTML and CSS are markup languages and the building blocks that make up the web.</p>
             <p>In this topic, you will learn how to structure HTML and style it with CSS.</p>
@@ -84,11 +87,16 @@
                 <li><a class="page-link-underline" href="https://www.codecademy.com/catalog/language/html-css" target="_blank" rel="noopener noreferrer">Codecademy HTML and CSS Courses</a></li>
             </ul>
         </div>
-        <div id="advanced-topic" class="content-text-width card-content hpadding-small vpadding-regular">
-            <h1 class="advanced-text">
-                <img src="/resources/images/technologies/sass.svg" height="60">
-                <span class="cell-middle">Advanced Topic</span>
-            </h1>
+        <div class="advanced-title bordered-section">
+            <div id="advanced-topic"></div>
+            <div class="content-text-width hpadding-small">
+                <h1 class="text-white">
+                    <img src="/resources/images/technologies/sass.svg" height="60">
+                    <span class="cell-middle">Advanced Topic</span>
+                </h1>
+            </div>
+        </div>
+        <div class="content-text-width hpadding-small vpadding-regular">
             <h2>What You'll Do</h2>
             <p>If you've done HTML and CSS before, try out the advanced topic.</p>
             <p>SASS is a preprocessor for writing CSS. It makes it easier to read and write CSS. We will be going through the first steps of using SASS.</p>
