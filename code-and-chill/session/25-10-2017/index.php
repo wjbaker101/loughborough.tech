@@ -20,6 +20,11 @@
             {
                 color: #d11f26;
             }
+            
+            .img-container
+            {
+                padding: 0.5rem;
+            }
         </style>
         
         <?php include(INCLUDE_SCRIPTS) ?>
@@ -54,21 +59,21 @@
         </div>
         <div class="content-width vpadding-mid">
             <div class="column-container">
-                <div class="column l6 padding-small">
+                <div class="column l6 img-container">
                     <a href="https://www.facebook.com/lborotechsoc/" target="_blank" rel="noopener noreferrer"><img class="card card-hover" src="/resources/images/code-and-chill/session-two/introduction.jpg" alt="Introduction to the session." title="Visit our Facebook page for more photos!"></a>
                 </div>
-                <div class="column l6 padding-small">
+                <div class="column l6 img-container">
                     <a href="https://www.facebook.com/lborotechsoc/" target="_blank" rel="noopener noreferrer"><img class="card card-hover" src="/resources/images/code-and-chill/session-two/nodejs.jpg" alt="Part of the Node.js topic." title="Visit our Facebook page for more photos!"></a>
                 </div>
             </div>
             <div class="column-container">
-                <div class="column l4 padding-small">
-                    <a href="https://www.facebook.com/lborotechsoc/" target="_blank" rel="noopener noreferrer"><img class="card card-hover" src="/resources/images/code-and-chill/session-two/html.jpg" alt="Part of the HTML and CSS topic." title="Visit our Facebook page for more photos!"></a>
+                <div class="column l4 img-container">
+                    <a href="https://www.facebook.com/lborotechsoc/" target="_blank" rel="noopener noreferrer"><img class="card card-hover" src="/resources/images/code-and-chill/session-two/html.jpg" alt="Part of the HTML and CSS topic." title="Visit our Facebook page for more photos!" width="341"></a>
                 </div>
-                <div class="column l4 padding-small">
+                <div class="column l4 img-container">
                     <a href="https://www.facebook.com/lborotechsoc/" target="_blank" rel="noopener noreferrer"><img class="card card-hover" src="/resources/images/code-and-chill/session-two/trio.jpg" alt="Trio participating the in HTML and CSS topic." title="Visit our Facebook page for more photos!"></a>
                 </div>
-                <div class="column l4 padding-small">
+                <div class="column l4 img-container">
                     <a href="https://www.facebook.com/lborotechsoc/" target="_blank" rel="noopener noreferrer"><img class="card card-hover" src="/resources/images/code-and-chill/session-two/banana.jpg" alt="Banana!" title="Visit our Facebook page for more photos!"></a>
                 </div>
             </div>
