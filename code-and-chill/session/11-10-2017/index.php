@@ -65,7 +65,7 @@
                 </div>
             </div>
         </div>
-        <div id="beginners-topic" class="content-text-width card-content vpadding-regular">
+        <div id="beginners-topic" class="content-text-width card-content hpadding-small vpadding-regular">
             <h1 class="beginners-text">
                 <img src="/resources/images/technologies/html5.svg" height="60">
                 <span class="cell-middle">Beginners Topic</span>
@@ -84,7 +84,7 @@
                 <li><a class="page-link-underline" href="https://www.codecademy.com/catalog/language/html-css" target="_blank" rel="noopener noreferrer">Codecademy HTML and CSS Courses</a></li>
             </ul>
         </div>
-        <div id="advanced-topic" class="content-text-width card-content vpadding-regular">
+        <div id="advanced-topic" class="content-text-width card-content hpadding-small vpadding-regular">
             <h1 class="advanced-text">
                 <img src="/resources/images/technologies/sass.svg" height="60">
                 <span class="cell-middle">Advanced Topic</span>
