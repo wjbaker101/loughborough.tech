@@ -31,7 +31,7 @@
                         <div class="v-card-content cell l9 s12 hpadding-small cell-middle">
                             <p><small>SAT, 2nd DEC 2017</small></p>
                             <p>Reduce your workload with Docker. Docker allows you to create environments that will be consistent across different platforms, so you won't have to install all those dependencies yourself.</p>
-                            <p>Click <a class="page-link-underline" href="https://drive.google.com/open?id=0B9CDy1rp7c80aFhwazB6bWtEUVE" target="_blank" rel="noopener noreferrer">here</a> to get the slides!</p>
+                            <p>Click <a class="page-link-underline" href="https://drive.google.com/open?id=11WyWTZgrL-4pv4iKCEOJzPumh1pU32GN" target="_blank" rel="noopener noreferrer">here</a> to get the slides!</p>
                         </div>
                     </div>
                     <div class="card-content hpadding-small text-right">
