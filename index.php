@@ -71,6 +71,11 @@
         
         <script>
             window.addEventListener('load', () => techSoc.scrollIndicator.init('.arrow-scroll-indicator'));
+            
+            window.addEventListener('load', () =>
+            {
+                particlesJS.load('particles-js', '/resources/external/particles-js/config.json');
+            });
         </script>
     </head>
     
