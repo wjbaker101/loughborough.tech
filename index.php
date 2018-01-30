@@ -47,6 +47,15 @@
             {
                 max-height: 150px;
             }
+            
+            #particles-js
+            {
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+            }
         </style>
         
         <?php include(INCLUDE_SCRIPTS) ?>
@@ -68,6 +77,7 @@
     <body>
         <?php include(INCLUDE_HEADER) ?>
         <div class="title-container full-height cell-row">
+            <div id="particles-js"></div>
             <div class="cell l12 cell-middle hpadding-small">
                 <div class="logo-container">
                     <canvas id="logo-background" resize></canvas>
