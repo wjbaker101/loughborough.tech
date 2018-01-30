@@ -5,14 +5,14 @@
         {
             "value": 80,
             "density":
-        {
-            "enable": true,
-            "value_area": 800
-        }
+            {
+                "enable": true,
+                "value_area": 800
+            }
         },
         "color":
         {
-            "value": "#ffffff"
+            "value": "#4ac0de"
         },
         "shape":
         {
@@ -61,7 +61,7 @@
         {
             "enable": true,
             "distance": 150,
-            "color": "#ffffff",
+            "color": "#eaeded",
             "opacity": 0.4,
             "width": 1
         },
