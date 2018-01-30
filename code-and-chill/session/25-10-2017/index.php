@@ -46,7 +46,7 @@
         <?php include(INCLUDE_HEADER) ?>
         <div class="header-height"></div>
         <h1 class="title">Session Two</h1>
-        <div class="bordered-section vpadding-mid">
+        <div class="bordered-section hpadding-small vpadding-mid">
             <div class="content-width card bg-white">
                 <div class="card-content cell-row vpadding-regular">
                     <div class="v-card-content cell l3 s12 cell-middle padding-small text-centered">
@@ -70,23 +70,23 @@
                 <div class="column l6 m12 img-container">
                     <a href="https://www.facebook.com/lborotechsoc/" target="_blank" rel="noopener noreferrer"><img class="card card-hover" src="/resources/images/code-and-chill/session-two/introduction.jpg" alt="Introduction to the session." title="Visit our Facebook page for more photos!"></a>
                 </div>
-                <div class="column l6 m12 img-container">
+                <div class="column l6 m-collapse img-container">
                     <a href="https://www.facebook.com/lborotechsoc/" target="_blank" rel="noopener noreferrer"><img class="card card-hover" src="/resources/images/code-and-chill/session-two/nodejs.jpg" alt="Part of the Node.js topic." title="Visit our Facebook page for more photos!"></a>
                 </div>
             </div>
             <div class="column-container">
-                <div class="column l4 m6 s12 img-container">
+                <div class="column l4 m6 s-collapse img-container">
                     <a href="https://www.facebook.com/lborotechsoc/" target="_blank" rel="noopener noreferrer"><img class="card card-hover" src="/resources/images/code-and-chill/session-two/html.jpg" alt="Part of the HTML and CSS topic." title="Visit our Facebook page for more photos!" width="341"></a>
                 </div>
                 <div class="column l4 m6 s12 img-container">
                     <a href="https://www.facebook.com/lborotechsoc/" target="_blank" rel="noopener noreferrer"><img class="card card-hover" src="/resources/images/code-and-chill/session-two/trio.jpg" alt="Trio participating the in HTML and CSS topic." title="Visit our Facebook page for more photos!"></a>
                 </div>
-                <div class="column l4 m12 s12 img-container">
+                <div class="column l4 m-collapse img-container">
                     <a href="https://www.facebook.com/lborotechsoc/" target="_blank" rel="noopener noreferrer"><img class="card card-hover" src="/resources/images/code-and-chill/session-two/banana.jpg" alt="Banana!" title="Visit our Facebook page for more photos!"></a>
                 </div>
             </div>
         </div>
-        <div id="beginners-topic" class="content-text-width card-content vpadding-regular">
+        <div id="beginners-topic" class="content-text-width card-content hpadding-small vpadding-regular">
             <h1 class="beginners-text">
                 <img src="/resources/images/technologies/css3.svg" height="60">
                 <span class="cell-middle">Beginners Topic</span>
@@ -105,7 +105,7 @@
                 <li><a class="page-link-underline" href="https://www.codecademy.com/catalog/language/html-css" target="_blank" rel="noopener noreferrer">Codecademy HTML and CSS Courses</a></li>
             </ul>
         </div>
-        <div id="advanced-topic" class="content-text-width card-content vpadding-regular">
+        <div id="advanced-topic" class="content-text-width card-content hpadding-small vpadding-regular">
             <h1 class="advanced-text">
                 <img src="/resources/images/technologies/nodejs.png" height="60">
                 <span class="cell-middle">Advanced Topic</span>
