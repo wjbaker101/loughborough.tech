@@ -3,7 +3,7 @@
     {
         "number":
         {
-            "value": 80,
+            "value": 60,
             "density":
             {
                 "enable": true,
@@ -20,7 +20,7 @@
             "stroke":
             {
                 "width": 0,
-                "color": "#000000"
+                "color": "#4ac0de"
             },
             "polygon":
             {
@@ -47,7 +47,7 @@
         },
         "size":
         {
-            "value": 2,
+            "value": 5,
             "random": true,
             "anim":
             {
