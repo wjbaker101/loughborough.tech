@@ -11,6 +11,16 @@
         <?php include(INCLUDE_STYLE) ?>
         
         <style>
+            body > header
+            {
+                background-color: transparent;
+            }
+            
+            body > header.scrolling
+            {
+                background-color: var(--white);
+            }
+            
             .title-container
             {
                 padding-top: 152px;
