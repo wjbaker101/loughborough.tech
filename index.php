@@ -51,7 +51,8 @@
         
         <?php include(INCLUDE_SCRIPTS) ?>
         
-        <script src="/resources/external/paper.js"></script>
+        <script src="/resources/external/paper.js" defer></script>
+        <script src="/resources/external/particles-js/particles.js" defer></script>
         
         <script type="text/paperscript" canvas="logo-background">
             // Modified version of: http://paperjs.org/features/#symbols
