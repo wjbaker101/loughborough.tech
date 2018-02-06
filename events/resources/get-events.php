@@ -2,6 +2,8 @@
 
 require_once (ROOT . '/resources/page/utils/database.php');
 
+require_once(ROOT . '/resources/page/utils/date-utils.php');
+
 if (!$connection)
 {
     echo '<p class="text-centered">We were unable to connect to the database.</p>';
@@ -34,8 +36,6 @@ if (!$result)
     echo '<p class="text-centered">Please refresh to try again.</p>';
     return;
 }
-
-require_once(ROOT . '/resources/page/utils/date-utils.php');
 
 displayEvents($result, ' past');
 
